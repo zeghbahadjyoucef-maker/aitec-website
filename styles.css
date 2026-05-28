@@ -362,22 +362,31 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 16px); }
   background: #fff;
   border: 1.5px solid var(--c-line);
   border-radius: var(--r-xl);
-  padding: 28px 24px;
+  padding: 32px 26px;
+  box-shadow: 0 0 12px rgba(15,27,45,0.05);
   transition: transform .25s, box-shadow .25s, border-color .25s;
+  position: relative; overflow: hidden;
 }
-.fs-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--fs-color, var(--c-blue)); }
+.fs-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--fs-color, var(--c-blue));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .3s;
+}
+.fs-card:hover { transform: translateY(-3px); box-shadow: 0 0 22px rgba(15,27,45,0.09); border-color: transparent; }
+.fs-card:hover::before { transform: scaleX(1); }
 .fs-card__icon {
-  width: 72px; height: 72px; border-radius: 50%;
-  background: linear-gradient(145deg, #fff, color-mix(in srgb, var(--fs-color, var(--c-blue)) 12%, #fff));
-  box-shadow:
-    6px 6px 18px color-mix(in srgb, var(--fs-color, var(--c-blue)) 28%, rgba(0,0,0,0.07)),
-    -3px -3px 12px rgba(255,255,255,0.95);
+  width: 72px; height: 72px; border-radius: 20px;
+  background: color-mix(in srgb, var(--fs-color, var(--c-blue)) 10%, #fff);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--fs-color, var(--c-blue)) 15%, transparent);
   color: var(--fs-color, var(--c-blue));
   display: flex; align-items: center; justify-content: center;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
+  transition: transform .3s;
 }
-.fs-card h3 { font-size: 17px; font-weight: 700; color: var(--c-ink); margin: 0 0 10px; }
-.fs-card p { font-size: 14px; color: var(--c-muted); margin: 0 0 20px; line-height: 1.65; }
+.fs-card:hover .fs-card__icon { transform: scale(1.07); }
+.fs-card h3 { font-size: 18px; font-weight: 700; color: var(--c-ink); margin: 0 0 10px; }
+.fs-card p { font-size: 14px; color: var(--c-muted); margin: 0 0 22px; line-height: 1.65; }
 .fs-card .learn-more { color: var(--fs-color, var(--c-blue)); }
 
 /* ---------- 10. Partners Strip ---------- */
