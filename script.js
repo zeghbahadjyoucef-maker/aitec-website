@@ -70,7 +70,7 @@
   /* Service category filter */
   function initFilter() {
     var filters = document.querySelectorAll('.svc-filter');
-    var cards   = document.querySelectorAll('.svc-card[data-cat]');
+    var cards   = document.querySelectorAll('.svc-card[data-cat], .tile[data-cat]');
     if (!filters.length || !cards.length) return;
 
     function applyFilter(cat) {
