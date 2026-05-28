@@ -20,4 +20,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: e662168c33ab8ce8c5c477b0c306fe82
+          wranglerVersion: "4"
           command: pages deploy . --project-name=aitec-website
