@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nos Services &mdash; AITEC Solutions</title>
+  <meta name="description" content="20 expertises IT : IA, infrastructure, cloud, CCTV, pointage, IPTV, licences et marketing digital &mdash; AITEC Solutions, Alger." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=29" />
+  <style>
+  /* ═══════════════════════════════════════════════════
+     SERVICES PAGE — complete design system
+  ═══════════════════════════════════════════════════ */
+
+  /* ── Category filter bar ── */
+  .cat-bar {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    justify-content: center; margin-bottom: 52px;
+  }
+  .cat-btn {
+    position: relative;
+    padding: 10px 22px; border-radius: 50px;
+    border: 1.5px solid var(--c-line);
+    background: #fff; color: var(--c-muted);
+    font-family: var(--ff-body); font-size: 13.5px; font-weight: 600;
+    cursor: pointer; transition: all .22s;
+    display: flex; align-items: center; gap: 7px;
+  }
+  .cat-btn__dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: currentColor; flex-shrink: 0; opacity: .5;
+    transition: opacity .22s;
+  }
+  .cat-btn:hover {
+    border-color: var(--jc); color: var(--jc);
+    background: color-mix(in srgb, var(--jc) 6%, #fff);
+  }
+  .cat-btn:hover .cat-btn__dot { opacity: 1; }
+  .cat-btn.active {
+    background: var(--jc); border-color: var(--jc);
+    color: #fff; box-shadow: 0 4px 16px -4px color-mix(in srgb, var(--jc) 50%, transparent);
+  }
+  .cat-btn.active .cat-btn__dot { background: rgba(255,255,255,0.6); opacity: 1; }
+
+  /* ── Tile grid ── */
+  .tiles-section { padding: 48px 0 100px; }
+  .tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
+    gap: 22px;
+  }
+
+  /* ── Single tile ── */
+  .tile {
+    border-radius: 22px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 18px -4px rgba(15,27,45,0.09), 0 0 0 1px rgba(15,27,45,0.04);
+    cursor: pointer;
+    display: flex; flex-direction: column;
+    transition:
+      transform .32s cubic-bezier(.34,1.46,.64,1),
+      box-shadow .28s ease;
+    position: relative;
+  }
+  .tile:hover {
+    transform: translateY(-9px) scale(1.013);
+    box-shadow:
+      0 28px 56px -10px color-mix(in srgb, var(--accent) 32%, transparent),
+      0 0 0 1.5px color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+  .tile.hidden { display: none; }
+
+  /* Colored header zone */
+  .tile__head {
+    padding: 28px 26px 22px;
+    background: linear-gradient(135deg,
+      var(--accent) 0%,
+      color-mix(in srgb, var(--accent) 78%, #000) 100%);
+    position: relative; overflow: hidden;
+    flex-shrink: 0;
+  }
+  /* Decorative large circle top-right */
+  .tile__head::before {
+    content: '';
+    position: absolute; top: -30px; right: -30px;
+    width: 120px; height: 120px; border-radius: 50%;
+    background: rgba(255,255,255,0.10);
+  }
+  /* Second smaller circle */
+  .tile__head::after {
+    content: '';
+    position: absolute; bottom: -18px; left: 20px;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+  }
+  /* Big ghost number */
+  .tile__num {
+    position: absolute; right: 14px; bottom: 6px;
+    font-size: 72px; font-weight: 900; line-height: 1;
+    color: rgba(255,255,255,0.11);
+    font-feature-settings: "tnum";
+    pointer-events: none; user-select: none;
+  }
+  .tile__icon {
+    width: 50px; height: 50px; border-radius: 14px;
+    background: rgba(255,255,255,0.20);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; margin-bottom: 14px; position: relative; z-index: 1;
+    transition: transform .28s cubic-bezier(.34,1.46,.64,1), background .2s;
+  }
+  .tile:hover .tile__icon {
+    transform: scale(1.12) rotate(-4deg);
+    background: rgba(255,255,255,0.30);
+  }
+  .tile__head h3 {
+    color: #fff; font-size: 17px; font-weight: 700;
+    margin: 0; position: relative; z-index: 1;
+    line-height: 1.3;
+  }
+
+  /* White body zone */
+  .tile__body {
+    padding: 18px 22px 22px;
+    display: flex; flex-direction: column; flex: 1;
+  }
+  .tile__desc {
+    font-size: 13.5px; color: var(--c-muted);
+    line-height: 1.65; margin: 0 0 14px; flex: 1;
+  }
+  .tile__pills {
+    display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 16px;
+  }
+  .tile__pill {
+    font-size: 11px; font-weight: 600;
+    padding: 4px 11px; border-radius: 50px;
+    background: color-mix(in srgb, var(--accent) 10%, #fff);
+    color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+  .tile__link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 700; color: var(--accent);
+    transition: gap .2s;
+  }
+  .tile:hover .tile__link { gap: 10px; }
+  .tile__link svg { flex-shrink: 0; }
+
+  /* ── Right-side drawer ── */
+  .svc-overlay {
+    position: fixed; inset: 0;
+    background: rgba(10,18,32,0.45);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 9000;
+    opacity: 0; pointer-events: none;
+    transition: opacity .35s ease;
+  }
+  .svc-overlay.open { opacity: 1; pointer-events: all; }
+
+  .svc-drawer {
+    position: fixed; top: 0; right: 0; bottom: 0;
+    width: min(540px, 100vw);
+    background: #fff; z-index: 9001;
+    transform: translateX(100%);
+    transition: transform .38s cubic-bezier(.32,.72,0,1);
+    overflow-y: auto; overflow-x: hidden;
+    display: flex; flex-direction: column;
+    box-shadow: -16px 0 60px rgba(15,27,45,0.18);
+  }
+  .svc-drawer.open { transform: translateX(0); }
+
+  /* Drawer header */
+  .drawer__head {
+    padding: 40px 36px 32px;
+    position: relative; overflow: hidden; flex-shrink: 0;
+  }
+  .drawer__head::before {
+    content: '';
+    position: absolute; top: -60px; right: -60px;
+    width: 220px; height: 220px; border-radius: 50%;
+    background: rgba(255,255,255,0.10);
+  }
+  .drawer__head::after {
+    content: '';
+    position: absolute; bottom: -40px; left: -20px;
+    width: 130px; height: 130px; border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+  }
+  .drawer__close {
+    position: absolute; top: 18px; right: 18px; z-index: 2;
+    width: 36px; height: 36px; border-radius: 10px;
+    border: none; cursor: pointer;
+    background: rgba(255,255,255,0.20);
+    color: #fff; font-size: 20px; line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s;
+    font-family: var(--ff-body);
+  }
+  .drawer__close:hover { background: rgba(255,255,255,0.35); }
+  .drawer__head-icon {
+    width: 60px; height: 60px; border-radius: 18px;
+    background: rgba(255,255,255,0.22);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; margin-bottom: 16px; position: relative; z-index: 1;
+  }
+  .drawer__head h2 {
+    color: #fff; font-size: 26px; font-weight: 800;
+    margin: 0 0 8px; position: relative; z-index: 1;
+    line-height: 1.2;
+  }
+  .drawer__head p {
+    color: rgba(255,255,255,0.85); font-size: 15px;
+    margin: 0; position: relative; z-index: 1; line-height: 1.5;
+  }
+
+  /* Drawer body */
+  .drawer__body {
+    padding: 32px 36px 48px; flex: 1;
+  }
+  .drawer__section { margin-bottom: 32px; }
+  .drawer__section-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--c-muted);
+    margin: 0 0 14px; display: flex; align-items: center; gap: 8px;
+  }
+  .drawer__section-title::after {
+    content: ''; flex: 1; height: 1px; background: var(--c-line);
+  }
+  .drawer__desc {
+    font-size: 15px; color: var(--c-text); line-height: 1.75; margin: 0;
+  }
+  .drawer__features {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .drawer__features li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 14px; color: var(--c-text); line-height: 1.55;
+  }
+  .drawer__feat-ico {
+    width: 22px; height: 22px; border-radius: 7px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 1px;
+  }
+  .drawer__targets {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .drawer__target {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 8px 16px; border-radius: 50px;
+    font-size: 13px; font-weight: 600;
+    background: var(--c-bg-soft); color: var(--c-ink);
+    border: 1.5px solid var(--c-line);
+  }
+  .drawer__brands {
+    display: flex; flex-wrap: wrap; gap: 10px;
+  }
+  .drawer__brand {
+    padding: 7px 16px; border-radius: 10px;
+    font-size: 13px; font-weight: 700;
+    background: #fff; border: 1.5px solid var(--c-line);
+    color: var(--c-ink);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  .drawer__ctas {
+    display: flex; gap: 12px; flex-wrap: wrap; margin-top: 36px;
+    padding-top: 28px; border-top: 1px solid var(--c-line);
+  }
+  .drawer__ctas a {
+    flex: 1; min-width: 140px; text-align: center;
+    padding: 14px 20px; border-radius: 50px;
+    font-family: var(--ff-body); font-size: 14px; font-weight: 700;
+    text-decoration: none; transition: all .2s;
+  }
+  .drawer__cta-primary {
+    background: var(--drawer-accent); color: #fff;
+    box-shadow: 0 4px 16px -4px color-mix(in srgb, var(--drawer-accent) 50%, transparent);
+  }
+  .drawer__cta-primary:hover { filter: brightness(1.08); transform: translateY(-2px); }
+  .drawer__cta-secondary {
+    background: transparent; color: var(--drawer-accent);
+    border: 2px solid var(--drawer-accent);
+  }
+  .drawer__cta-secondary:hover {
+    background: var(--drawer-accent); color: #fff;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .tiles-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .tiles-grid { grid-template-columns: 1fr; }
+    .drawer__body { padding: 24px 22px 36px; }
+    .drawer__head { padding: 32px 22px 24px; }
+    .svc-drawer { width: 100vw; }
+  }
+  </style>
+</head>
+<body>
+
+  <div class="page-blobs" aria-hidden="true">
+    <div class="pb pb--1"></div><div class="pb pb--2"></div>
+    <div class="pb pb--3"></div><div class="pb pb--4"></div>
+    <div class="pb pb--5"></div><div class="pb pb--6"></div>
+    <div class="pb pb--7"></div><div class="pb pb--8"></div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__brand">
+        <img src="assets/logo.png" alt="AITEC Solutions" class="nav__logo" onerror="this.outerHTML='<span class=&quot;logo-text&quot;>AITEC</span>'" />
+      </a>
+      <nav class="nav__links" id="navMenu">
+        <a href="index.html">Accueil</a>
+        <a href="services.html" class="nav-active">Services</a>
+        <a href="about.html">&Agrave; propos</a>
+        <a href="portfolio.html">R&eacute;f&eacute;rences</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__right">
+        <a href="https://wa.me/213658029033" target="_blank" rel="noopener" class="btn btn--whatsapp">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+          WhatsApp
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__blob page-hero__blob--1"></div>
+    <div class="page-hero__blob page-hero__blob--2"></div>
+    <div class="container">
+      <div class="page-hero__breadcrumb">
+        <a href="index.html">Accueil</a><span>&rsaquo;</span><span>Services</span>
+      </div>
+      <p class="section-label">20 expertises, une seule adresse</p>
+      <h1>Tout ce dont votre<br>entreprise a besoin</h1>
+      <p>Cliquez sur un service pour d&eacute;couvrir le d&eacute;tail complet &mdash; technologies, ce qui est inclus et comment d&eacute;marrer.</p>
+    </div>
+  </section>
+
+  <!-- TILES SECTION -->
+  <section class="tiles-section">
+    <div class="container">
+
+      <!-- Category filter bar -->
+      <div class="cat-bar" id="catBar">
+        <button class="cat-btn active" data-cat="all" style="--jc:#1B75BC">
+          <span class="cat-btn__dot"></span>Tout (20)
+        </button>
+        <button class="cat-btn" data-cat="it" style="--jc:#1B75BC">
+          <span class="cat-btn__dot"></span>IT &amp; D&eacute;veloppement
+        </button>
+        <button class="cat-btn" data-cat="installation" style="--jc:#0F766E">
+          <span class="cat-btn__dot"></span>Installation
+        </button>
+        <button class="cat-btn" data-cat="licences" style="--jc:#0891B2">
+          <span class="cat-btn__dot"></span>Licences
+        </button>
+        <button class="cat-btn" data-cat="divertissement" style="--jc:#7C3AED">
+          <span class="cat-btn__dot"></span>Divertissement
+        </button>
+        <button class="cat-btn" data-cat="marketing" style="--jc:#D946EF">
+          <span class="cat-btn__dot"></span>Marketing
+        </button>
+      </div>
+
+      <!-- Tiles grid (rendered by JS) -->
+      <div class="tiles-grid" id="tilesGrid"></div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="contact-cta">
+    <div class="container contact-cta__inner">
+      <div class="contact-cta__blob" aria-hidden="true"></div>
+      <div class="contact-cta__text" data-reveal>
+        <p class="section-label section-label--light">Vous ne savez pas par o&ugrave; commencer&nbsp;?</p>
+        <h2>Parlons de votre<br>projet en 5 minutes</h2>
+        <p>Un ing&eacute;nieur AITEC &eacute;value vos besoins &mdash; sans engagement.</p>
+      </div>
+      <div class="contact-cta__links" data-reveal>
+        <a href="contact.html" class="btn btn--white">Demander un devis</a>
+        <a href="tel:+213658029033" class="btn btn--outline-light">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+          +213 658 029 033
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="AITEC Solutions" class="footer__logo" onerror="this.outerHTML='<span class=&quot;logo-text&quot;>AITEC</span>'" />
+        <p>Le partenaire technologique<br>tout-en-un de l&rsquo;Alg&eacute;rie.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5zM20 19h-3v-5.6c0-3.37-4-3.11-4 0V19h-3V8h3v1.77c1.4-2.59 7-2.78 7 2.48V19z"/></svg></a>
+        </div>
+      </div>
+      <nav class="footer__nav">
+        <p class="footer__nav-title">Navigation</p>
+        <a href="index.html">Accueil</a><a href="services.html">Services</a>
+        <a href="about.html">&Agrave; propos</a><a href="portfolio.html">R&eacute;f&eacute;rences</a>
+        <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer__services">
+        <p class="footer__nav-title">Services</p>
+        <a href="services.html">IA &amp; Intelligence</a>
+        <a href="services.html">Infrastructure &amp; Serveurs</a>
+        <a href="services.html">Cloud &amp; Cybers&eacute;curit&eacute;</a>
+        <a href="services.html">CCTV &amp; Pointage</a>
+        <a href="services.html">ERP Odoo</a>
+        <a href="services.html">Marketing Digital</a>
+      </div>
+      <div class="footer__contact-info">
+        <p class="footer__nav-title">Contact</p>
+        <p><a href="mailto:contact@aitec.dz">contact@aitec.dz</a></p>
+        <p><a href="tel:+213658029033">+213 658 029 033</a></p>
+        <p>Alger, Alg&eacute;rie</p><p>Dim &ndash; Jeu &middot; 08H &ndash; 18H</p>
+      </div>
+    </div>
+    <div class="footer__bottom"><div class="container"><span>&copy; 2026 AITEC Solutions &mdash; Alger, Alg&eacute;rie &#127465;&#127487;</span></div></div>
+  </footer>
+
+  <!-- DRAWER OVERLAY -->
+  <div class="svc-overlay" id="svcOverlay"></div>
+
+  <!-- DRAWER PANEL -->
+  <aside class="svc-drawer" id="svcDrawer" role="dialog" aria-modal="true" aria-label="D&eacute;tail du service">
+    <div id="svcDrawerContent"></div>
+  </aside>
+
+  <script src="script.js?v=3"></script>
+  <script>
+  /* ══════════════════════════════════════════════════
+     SERVICE DATA — all 20 services
+  ══════════════════════════════════════════════════ */
+  var SERVICES = [
+    {
+      id: 'ai', num: '01', cat: 'it', accent: '#7B2D8B',
+      title: 'IA & Intelligence',
+      tagline: 'Automatisez, prévoyez, surpassez vos concurrents',
+      desc: 'Chatbots, analyse prédictive, automatisation de processus.',
+      pills: ['Chatbots', 'Analyse prédictive', 'RPA'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="12" rx="3"/><circle cx="9" cy="12" r="1.2" fill="currentColor"/><circle cx="15" cy="12" r="1.2" fill="currentColor"/><path d="M9.5 15.5h5"/><path d="M12 7V4.5"/><circle cx="12" cy="3.5" r="1.3"/></svg>',
+      longDesc: "L’intelligence artificielle n’est plus réservée aux grandes multinationales. AITEC Solutions démocratise l’IA pour les entreprises algériennes de toute taille : PME, administrations, hôtels et cliniques. Nous conçevons et intégrons des solutions IA sur mesure qui s’adaptent à vos processus existants, sans révolution majeure de votre infrastructure.",
+      features: [
+        'Chatbots et assistants virtuels multi-langues (arabe, français, anglais)',
+        'Reconnaissance faciale pour sécurité et pointage',
+        'Analyse prédictive des stocks, ventes et demandes client',
+        'Automatisation de processus répétitifs (RPA) : facturation, relances, rapports',
+        'Vision par ordinateur pour contrôle qualité ou comptage de flux',
+        'Tableaux de bord BI avec données en temps réel',
+        'Intégration avec vos systèmes existants (ERP, CRM, API)',
+        'Formation de vos équipes à l’utilisation des outils IA'
+      ],
+      targets: ['PME & Startups', 'Hôtels & Tourisme', 'Cliniques & Santé', 'Industrie & Logistique'],
+      brands: ['OpenAI GPT', 'Rasa', 'TensorFlow', 'Power BI', 'Azure AI', 'Meta LLaMA'],
+      img: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'infra', num: '02', cat: 'it', accent: '#5AAA2A',
+      title: 'Infrastructure & Serveurs',
+      tagline: 'Réseaux, serveurs et maintenance sans interruption',
+      desc: 'Déploiement, virtualisation VMware/Hyper-V, monitoring 24/7.',
+      pills: ['VMware', 'Câblage structuré', 'Monitoring'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="6" rx="2"/><rect x="3" y="13" width="18" height="6" rx="2"/><circle cx="7" cy="6" r="1" fill="currentColor"/><circle cx="7" cy="16" r="1" fill="currentColor"/><path d="M11 6h7"/><path d="M11 16h7"/></svg>',
+      longDesc: "Une infrastructure IT fiable est le système nerveux de votre entreprise. AITEC conçoit, déploie et maintient des réseaux et serveurs adaptés à votre taille, votre croissance et vos contraintes budgétaires. De la petite agence à la grande entreprise multi-sites, nous garantissons une disponibilité maximale grâce à un monitoring proactif 24/7.",
+      features: [
+        'Conception et installation de réseaux LAN/WAN/Wi-Fi entreprise',
+        'Déploiement de serveurs physiques et virtuels (VMware, Hyper-V)',
+        'Câblage structuré Cat6/Fibre optique certifié',
+        'Systèmes NAS/SAN pour stockage et sauvegarde',
+        'Monitoring 24/7 avec alertes proactives',
+        'Maintenance préventive et interventions sur site sous 4h à Alger',
+        'Gestion des patches et mises à jour sécurisées',
+        'Documentation technique complète livrée'
+      ],
+      targets: ['Entreprises multi-sites', 'PME & Bureaux', 'Hôtels & Restaurants', 'Administrations'],
+      brands: ['Cisco', 'HPE', 'Dell PowerEdge', 'VMware', 'Ubiquiti', 'Synology'],
+      img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'web', num: '03', cat: 'it', accent: '#1B75BC',
+      title: 'Web & Développement Mobile',
+      tagline: 'Du site vitrine à l’app mobile — livré dans les délais',
+      desc: 'Sites vitrines, e-commerce, applications iOS & Android sur mesure.',
+      pills: ['React / Next.js', 'Flutter', 'E-commerce'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><circle cx="5.5" cy="6.5" r="1" fill="currentColor"/><circle cx="8.5" cy="6.5" r="1" fill="currentColor"/><path d="M6 13h12"/><path d="M6 17h8"/></svg>',
+      longDesc: "Votre présence digitale est votre vitrine 24h/24. Chez AITEC, chaque projet web ou mobile est conçu pour convertir vos visiteurs en clients : design soigné, performances optimisées, et expérience utilisateur pensée pour le marché algérien. Nous livrons des projets clés-en-main, du design à la mise en ligne.",
+      features: [
+        'Sites vitrines, portfolios et landing pages optimisés SEO',
+        'Boutiques e-commerce WooCommerce et solutions custom',
+        'Applications mobiles iOS et Android (Flutter/React Native)',
+        'Systèmes de gestion de contenu (WordPress, Strapi, custom CMS)',
+        'Intégrations API : paiement, SMS, cartographie, ERP',
+        'Progressive Web Apps (PWA) pour expérience mobile native',
+        'Tableaux de bord et espaces client en ligne',
+        'Maintenance, mises à jour et support technique inclus'
+      ],
+      targets: ['PME & Commerce', 'Hôtels & Tourisme', 'Startups', 'Administrations'],
+      brands: ['React / Next.js', 'Flutter', 'WordPress', 'Node.js', 'Laravel', 'Figma'],
+      img: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'cloud', num: '04', cat: 'it', accent: '#ED1C24',
+      title: 'Cloud & Cybersécurité',
+      tagline: 'Migrez, protégez, répondez aux incidents 24/7',
+      desc: 'Migration AWS/Azure, firewall, audits et réponse aux incidents.',
+      pills: ['AWS / Azure', 'Fortinet', 'Audit sécurité'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5L3 7v5C3 17.2 7 21.5 12 23c5-1.5 9-5.8 9-11V7z"/><polyline points="9 12 11 14 15 10"/></svg>',
+      longDesc: "La cybersécurité n’est plus optionnelle. Les entreprises algériennes sont de plus en plus ciblées par des attaques sophistiquées. AITEC vous offre une protection périmétrique complète : de la migration cloud sécurisée à la surveillance continue, en passant par les audits et la formation de vos équipes.",
+      features: [
+        'Migration infrastructure vers AWS, Azure ou cloud privé on-premise',
+        'Configuration et gestion de firewall Fortinet, Sophos, Palo Alto',
+        'VPN d’entreprise sécurisé et accès distant',
+        'Audits de sécurité et tests de pénétration (pentesting)',
+        'SIEM et surveillance des événements de sécurité en temps réel',
+        'Plan de reprise après sinistre (PRA/PCA)',
+        'Antivirus, EDR et protection des endpoints',
+        'Formation cybersécurité pour vos collaborateurs'
+      ],
+      targets: ['Banques & Finance', 'Santé & Cliniques', 'Administrations', 'Grandes entreprises'],
+      brands: ['Fortinet', 'Sophos', 'AWS', 'Microsoft Azure', 'Kaspersky', 'Palo Alto'],
+      img: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'erp', num: '05', cat: 'it', accent: '#875A7B',
+      title: 'ERP Odoo',
+      tagline: 'Centralisez tous vos métiers en une seule plateforme',
+      desc: 'Implémentation, personnalisation et formation Odoo complète.',
+      pills: ['Odoo 17', 'Compta & RH', 'BI & Rapports'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="8" height="8" rx="1.5"/><rect x="14" y="3" width="8" height="8" rx="1.5"/><rect x="2" y="13" width="8" height="8" rx="1.5"/><rect x="14" y="13" width="8" height="8" rx="1.5"/></svg>',
+      longDesc: "Odoo est le système ERP le plus déployé en Algérie. AITEC est partenaire officiel Odoo : nous maîtrisons l’intégralité des modules et assurons un déploiement sur mesure, une migration propre de vos données existantes, et une formation adaptée à vos équipes. Votre ERP doit travailler pour vous, pas l’inverse.",
+      features: [
+        'Modules Comptabilité, Facturation et TVA conformément à la législation algérienne',
+        'Gestion des stocks, des achats et de la logistique',
+        'RH : paie, congés, recrutement, notes de frais',
+        'CRM et pipeline de vente intégré',
+        'Tableaux de bord BI et rapports personnalisés',
+        'Migration propre depuis votre système actuel',
+        'Formation complète de vos utilisateurs finaux',
+        'Support et maintenance post-déploiement inclus'
+      ],
+      targets: ['PME Industrielles', 'Commerce & Distribution', 'Services & Consulting', 'Hôtellerie'],
+      brands: ['Odoo Community', 'Odoo Enterprise', 'PostgreSQL', 'Python'],
+      img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'hosting', num: '06', cat: 'it', accent: '#0369A1',
+      title: 'Hébergement Web & VPS',
+      tagline: 'Infrastructure fiable pour votre présence en ligne',
+      desc: 'Hébergement partagé, VPS, domaines et certificats SSL.',
+      pills: ['VPS', 'SSL / HTTPS', 'Sauvegardes auto'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M2 12h20"/><path d="M12 3a15 15 0 0 1 4 9 15 15 0 0 1-4 9 15 15 0 0 1-4-9 15 15 0 0 1 4-9z"/></svg>',
+      longDesc: "Un site lent ou inaccessible fait fuir vos clients. AITEC propose des solutions d’hébergement adaptées à chaque besoin : de l’hébergement mutualisé économique pour les petits sites, au serveur VPS dédié haute performance pour les applications critiques. Nous assurons la gestion technique complète pour vous laisser vous concentrer sur votre métier.",
+      features: [
+        'Hébergement mutualisé avec cPanel et migration incluse',
+        'Serveurs VPS Linux/Windows configurés et sécurisés',
+        'Enregistrement et gestion de noms de domaine (.dz, .com, .net...)',
+        'Certificats SSL Let\'s Encrypt et certificats payants',
+        'Sauvegardes automatisées quotidiennes',
+        'CDN pour accélération mondiale du contenu',
+        'Monitoring uptime et alertes instantanées',
+        'Messagerie professionnelle @votredomaine.dz'
+      ],
+      targets: ['PME & Commerces', 'Agences web', 'Associations', 'Particuliers pro'],
+      brands: ['cPanel', 'Nginx', 'Apache', 'Let\'s Encrypt', 'Cloudflare', 'Ubuntu'],
+      img: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'crm', num: '07', cat: 'it', accent: '#0E7490',
+      title: 'CRM & Helpdesk',
+      tagline: 'Centralisez vos relations clients et automatisez le support',
+      desc: 'Déploiement CRM, ticketing et automatisation des relances.',
+      pills: ['Odoo CRM', 'Ticketing', 'Automatisation'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      longDesc: "Perdre un client parce qu’une relance a été oubliée ou qu’une réclamation n’a pas été traitée à temps, ça n’arrive pas avec un bon CRM. AITEC déploie et configure les meilleurs outils de gestion de la relation client, adaptés à votre taille et votre secteur.",
+      features: [
+        'Déploiement Odoo CRM, HubSpot ou solutions custom',
+        'Pipeline de vente visuel avec scoring des opportunités',
+        'Système de tickets helpdesk multicanaaux (email, chat, téléphone)',
+        'Automatisation des relances et des workflows commerciaux',
+        'Intégration téléphonie (CTI) et email',
+        'Rapports d’activité commerciale et tableaux de bord',
+        'Application mobile pour les commerciaux terrain',
+        'Formation et accompagnement à l’adoption'
+      ],
+      targets: ['Forces de vente', 'Service client', 'E-commerce', 'B2B Entreprises'],
+      brands: ['Odoo CRM', 'HubSpot', 'Freshdesk', 'Zoho', 'Salesforce'],
+      img: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'cctv', num: '08', cat: 'installation', accent: '#0F766E',
+      title: 'Vidéosurveillance CCTV',
+      tagline: 'Caméras HD/4K installées et configurées par nos techniciens',
+      desc: 'Caméras IP, enregistreurs DVR/NVR, accès mobile à distance.',
+      pills: ['Hikvision', 'DVR / NVR', 'Accès mobile'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="12" height="8" rx="2"/><circle cx="8" cy="12" r="2.5"/><circle cx="8" cy="12" r="1" fill="currentColor" stroke="none"/><path d="M14 10l5-3v10l-5-3"/><path d="M5 16v3"/><path d="M3 19h4"/></svg>',
+      longDesc: "La sécurité physique de vos locaux commence par une bonne vidéosurveillance. AITEC installe des systèmes de CCTV professionnels adaptés à tous les environnements : bureaux, entrepôts, commerces, hôtels et résidences. Installation soignée, caméras discrètes et accès à distance depuis votre smartphone.",
+      features: [
+        'Caméras IP extérieures et intérieures Full HD / 4K',
+        'Caméras domes, bullet, PTZ et panoramiques',
+        'Enregistreurs NVR avec stockage HDD intégré',
+        'Vision nocturne infrarouge jusqu’à 60m',
+        'Détection de mouvement et alertes push mobile',
+        'Accès à distance depuis smartphone / tablette',
+        'IA embarquée : détection de personnes, plaques et intrusions',
+        'SAV et remplacement de matériel sous garantie'
+      ],
+      targets: ['Commerce & GMS', 'Hôtels & Restaurants', 'Bureaux & Entrepôts', 'Résidences privées'],
+      brands: ['Hikvision', 'Dahua', 'Axis', 'Uniview', 'Sony'],
+      img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'pointage', num: '09', cat: 'installation', accent: '#B45309',
+      title: 'Système de Pointage',
+      tagline: 'Présences automatisées, paie simplifiée',
+      desc: 'Terminaux biométriques RFID, logiciel RH, livraison sur site.',
+      pills: ['Empreinte digitale', 'RFID', 'ZKTeco'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="1" width="16" height="22" rx="2"/><rect x="6" y="3" width="12" height="7" rx="1"/><path d="M8 6h8M9 8.5h6"/><circle cx="12" cy="16.5" r=".5" fill="currentColor" stroke="none"/><path d="M11 17.5 Q12 15.5 13 17.5"/><path d="M10 18.5 Q12 14.5 14 18.5"/><path d="M9 19.5 Q12 13.5 15 19.5"/><circle cx="12" cy="21.5" r=".7" fill="currentColor" stroke="none"/></svg>',
+      longDesc: "Fini les feuilles de présence manuelles et les erreurs de paie. AITEC installe des systèmes de pointage biométriques fiables qui gèrent automatiquement les horaires, les retards, les heures supplémentaires et génèrent les données prêtes pour votre logiciel de paie.",
+      features: [
+        'Terminaux empreinte digitale, reconnaissance faciale et RFID',
+        'Badges et cartes employés personnalisés',
+        'Logiciel RH avec gestion des planning et congés',
+        'Rapports de présence automatisés et exportables',
+        'Intégration avec logiciels de paie (Sage, Odoo, Excel)',
+        'Gestion multi-sites depuis un seul tableau de bord',
+        'Application mobile pour consultation par les employés',
+        'Installation et formation sur site incluses'
+      ],
+      targets: ['Entreprises & PME', 'Administrations', 'Usines & BTP', 'Cliniques & Hôpitaux'],
+      brands: ['ZKTeco', 'Dahua', 'Anviz', 'HikVision', 'BioStar'],
+      img: 'https://images.unsplash.com/photo-1614064641938-2de790375d00?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'pos', num: '10', cat: 'installation', accent: '#0284C7',
+      title: 'Installation POS',
+      tagline: 'Caisses tactiles et TPE pour tous vos points de vente',
+      desc: 'Caisses enregistreuses, imprimantes tickets, logiciel caisse.',
+      pills: ['Tactile', 'Multi-magasins', 'SAV inclus'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h2"/><path d="M10 15h6"/><path d="M8 20h8"/><line x1="12" y1="18" x2="12" y2="20"/></svg>',
+      longDesc: "Une caisse enregistreuse lente ou qui tombe en panne en plein rush, c’est un cauchemar. AITEC livre et installe des systèmes POS complets, stables et intuitifs pour restaurants, boutiques, pharmacies, stations-service et grandes surfaces. Tout est configuré avant livraison : vos articles, vos catégories, vos imprimantes.",
+      features: [
+        'Caisses tactiles Android et Windows robustes',
+        'Logiciels spécialisés restaurants, boutiques, pharmacies et GMS',
+        'Imprimantes thermiques de tickets et étiquettes',
+        'Tiroirs-caisse et lecteurs de codes-barres',
+        'Gestion des stocks intégrée en temps réel',
+        'Tableau de bord des ventes accessible depuis mobile',
+        'Gestion multi-points de vente depuis un serveur central',
+        'Formation du personnel et SAV illimité en année 1'
+      ],
+      targets: ['Restaurants & Fast-food', 'Boutiques & GMS', 'Pharmacies', 'Stations-service'],
+      brands: ['Sunmi', 'PAX', 'Ingenico', 'Epson', 'Zebra'],
+      img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'access', num: '11', cat: 'installation', accent: '#DC2626',
+      title: 'Contrôle d\'Accès',
+      tagline: 'Sécurisez physiquement vos locaux et gérez les droits',
+      desc: 'Portiques biométriques, badges RFID, électroserrrures.',
+      pills: ['Biométrie', 'RFID', 'Journal d\'accès'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1.5" fill="currentColor"/></svg>',
+      longDesc: "Qui entre dans vos locaux, à quelle heure et dans quelle zone ? Le contrôle d’accès vous répond avec précision. AITEC installe des systèmes de contrôle d’accès évolutifs pour les entreprises sensibles, les serveurs rooms, les entrepôts et les établissements de santé.",
+      features: [
+        'Lecteurs biométriques (empreinte, face) et badges RFID',
+        'Électroserrrures, gaches électriques et portiques motorisés',
+        'Gestion des droits d’accès par zone, horaire et profil',
+        'Journal complet des entrées/sorties consultable à distance',
+        'Alarme en cas de tentative d’accès non autorisé',
+        'Intégration avec la vidéosurveillance CCTV',
+        'Gestion des visiteurs temporaires et prestataires',
+        'Intégration avec le système de pointage RH'
+      ],
+      targets: ['Data centers & Serveurs', 'Entrepôts & Industrie', 'Cliniques & Santé', 'Banques & Finance'],
+      brands: ['ZKTeco', 'HID Global', 'Dahua', 'Suprema', 'Bosch'],
+      img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'fire', num: '12', cat: 'installation', accent: '#EA580C',
+      title: 'Détection Incendie',
+      tagline: 'Conformité aux normes et protection de vos biens',
+      desc: 'Détecteurs, centrales d\'alarme, sprinklers — certifié conform.',
+      pills: ['Détecteurs fumée', 'Sprinklers', 'Certification'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 4.5-4 6.5-4 11a4 4 0 0 0 8 0c0-4.5-4-6.5-4-11z"/><path d="M12 12c0 2-1.5 3-1.5 4.5a1.5 1.5 0 0 0 3 0C13.5 15 12 14 12 12z" fill="currentColor" stroke="none"/></svg>',
+      longDesc: "La prévention incendie est une obligation légale en Algérie. AITEC installe des systèmes de détection et d’extinction conformes aux normes en vigueur et vous remet un rapport de conformité pour vos assurances et l’inspection du travail.",
+      features: [
+        'Détecteurs de fumée, chaleur et monoxyde de carbone',
+        'Centrales d’alarme incendie adressables et conventionnelles',
+        'Sirènes, flashs et systèmes d’évacuation sonore',
+        'Robinets incendie armés (RIA) et extincteurs',
+        'Systèmes sprinklers pour grandes surfaces et entrepôts',
+        'Télésurveillance et alerte automatique des pompiers',
+        'Maintenance périodique et vérification réglementaire',
+        'Rapport de conformité pour assurances et administrations'
+      ],
+      targets: ['Industrie & Entrepôts', 'Commerce & GMS', 'Hôtels & Restaurants', 'Bureaux & Résidences'],
+      brands: ['Hochiki', 'Notifier', 'Apollo', 'Siemens', 'Bosch'],
+      img: 'https://images.unsplash.com/photo-1534274867514-d5b47ef89ed7?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'signage', num: '13', cat: 'installation', accent: '#8B5CF6',
+      title: 'Affichage Dynamique',
+      tagline: 'Écrans publicitaires gérés à distance en temps réel',
+      desc: 'Écrans LED/LCD, totem interactif, CMS cloud multi-zones.',
+      pills: ['CMS cloud', 'Multi-écrans', 'Totem interactif'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><rect x="5" y="6" width="6" height="5" rx="1"/><path d="M14 8h4"/><path d="M14 12h4"/></svg>',
+      longDesc: "Un écran qui affiche le bon message au bon moment, c’est de la publicité qui travaille à votre place. AITEC installe des solutions d’affichage dynamique clés-en-main : de l’écran simple en boutique au réseau d’écrans multi-sites géré depuis un tableau de bord cloud.",
+      features: [
+        'Écrans LED et LCD intérieurs et extérieurs (Full HD, 4K)',
+        'Totems interactifs tactiles pour accueil et self-service',
+        'Logiciel CMS cloud pour création et planification de contenu',
+        'Gestion de zones et plages horaires par écran',
+        'Intégration flux RSS, météo, réseaux sociaux',
+        'Application mobile pour mise à jour instantanée',
+        'Monitoring à distance de chaque écran',
+        'Installation et formation incluses'
+      ],
+      targets: ['Hôtels & Restaurants', 'Commerce & GMS', 'Banques & Agences', 'Espaces publics'],
+      brands: ['Samsung', 'LG', 'Philips', 'BrightSign', 'Scala'],
+      img: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'queue', num: '14', cat: 'installation', accent: '#059669',
+      title: 'Gestion File d\'Attente',
+      tagline: 'Flux client optimisé, satisfaction améliorée',
+      desc: 'Bornes d\'accueil, tickets électroniques, écrans d\'appel.',
+      pills: ['Bornes tactiles', 'Tickets électroniques', 'Dashboard live'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="7" r="2"/><circle cx="12" cy="7" r="2"/><circle cx="18" cy="7" r="2"/><path d="M4 12h16"/><path d="M6 12v7"/><path d="M12 12v7"/><path d="M18 12v7"/></svg>',
+      longDesc: "Une file d’attente désorganisée crée de la frustration et nuit à votre image. AITEC installe des systèmes de gestion de flux complets, de la borne d’accueil à l’écran d’appel, pour banques, administrations, cliniques et agences gouvernementales.",
+      features: [
+        'Bornes tactiles d’accueil multi-services en arabe/français',
+        'Tickets électroniques avec numéro et estimation d’attente',
+        'Réservation en ligne et prise de rendez-vous',
+        'Écrans d’appel en salle d’attente',
+        'Système de guidage sonore (appel vocal du numéro)',
+        'Dashboard manager en temps réel : affluence, temps d\'attente',
+        'Statistiques journalières, hebdomadaires et mensuelles',
+        'Alertes automatiques si file dépasse un seuil'
+      ],
+      targets: ['Banques & Assurances', 'Administrations', 'Cliniques & Hôpitaux', 'Agences télécom'],
+      brands: ['Qmatic', 'SEDCO', 'Wavetec', 'XOVIS', 'Q-nomy'],
+      img: 'https://images.unsplash.com/photo-1556155092-490a1ba16284?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'licences', num: '15', cat: 'licences', accent: '#0891B2',
+      title: 'Licences Professionnelles',
+      tagline: 'Revendeur agréé des plus grandes marques logicielles',
+      desc: 'Microsoft, Adobe, Kaspersky, VMware — activation rapide.',
+      pills: ['Microsoft 365', 'Adobe CC', 'Antivirus'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15" r="4.5"/><path d="M11.5 11.5l9-9"/><path d="M18.5 4l2 2"/><path d="M15.5 7l2 2"/></svg>',
+      longDesc: "Utiliser des logiciels non licenciés expose votre entreprise à des sanctions légales et des risques de sécurité majeurs. AITEC est revendeur officiel agréé des principales marques : activation rapide, prix compétitifs et gestion de votre parc logiciel.",
+      features: [
+        'Microsoft 365 Business et Enterprise (tous plans)',
+        'Windows Server et licences CAL',
+        'Adobe Creative Cloud, Acrobat et Sign',
+        'Kaspersky, ESET, Sophos et Bitdefender (volume)',
+        'VMware vSphere, Workstation et Horizon',
+        'Oracle Database et Java SE',
+        'AutoCAD et logiciels Autodesk',
+        'Gestion et audit de votre parc logiciel'
+      ],
+      targets: ['Toutes entreprises', 'Cabinets & Studios', 'Industrie & BTP', 'Administrations'],
+      brands: ['Microsoft', 'Adobe', 'Kaspersky', 'VMware', 'Oracle', 'Autodesk'],
+      img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'streaming', num: '16', cat: 'licences', accent: '#F43F5E',
+      title: 'Abonnements Streaming',
+      tagline: 'Plateformes de divertissement activées en quelques minutes',
+      desc: 'Netflix, Spotify, Disney+, Shahid — livraison instantanée.',
+      pills: ['Netflix', 'Spotify', 'Shahid / beIN'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.8 1 6.46 2.63"/><polyline points="21 3 21 9 15 9"/><polygon points="10 9.5 10 14.5 16 12" fill="currentColor" stroke="none"/></svg>',
+      longDesc: "Vous souhaitez un abonnement Netflix, Spotify ou beIN Sports sans les complications de paiement international ? AITEC gère tout pour vous : activation instantanée, paiement en dinar algérien et support si problème.",
+      features: [
+        'Netflix (Standard, Premium, avec et sans pub)',
+        'Spotify Premium individuel, duo et famille',
+        'Disney+, Apple TV+ et Prime Video',
+        'YouTube Premium sans publicité',
+        'Shahid VIP, beIN Sports Connect',
+        'Deezer, Anghami et services musicaux arabes',
+        'Activation sous 30 minutes par email ou WhatsApp',
+        'Renouvellement automatique disponible'
+      ],
+      targets: ['Particuliers', 'Familles', 'Hôtels & Loisirs', 'Salons de beauté'],
+      brands: ['Netflix', 'Spotify', 'Disney+', 'Shahid', 'beIN Sports', 'YouTube Premium'],
+      img: 'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'iptv', num: '17', cat: 'divertissement', accent: '#F7941D',
+      title: 'IPTV & Électronique',
+      tagline: '+10 000 chaînes HD installées sur site pour hôtels et entreprises',
+      desc: 'Licences IPTV, VOD arabe/intérnational, serveurs stables.',
+      pills: ['+10k chaînes', 'VOD 4K', 'Hôtels'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2.5"/><polygon points="10 9 10 14 15.5 11.5" fill="currentColor" stroke="none"/><path d="M8 20h8"/><line x1="12" y1="18" x2="12" y2="20"/></svg>',
+      longDesc: "L’IPTV professionnel change l’expérience de vos clients. AITEC fournit des licences stables avec +10 000 chaînes HD/4K et un catalogue VOD complet en arabe, français et anglais. Pour hôtels, nous intégrons le système directement dans les téléviseurs des chambres.",
+      features: [
+        '+10 000 chaînes TV internationales en HD et 4K',
+        'Chaînes algériennes, arabes, françaises, sport et actualités',
+        'VOD : films et séries en arabe, français et anglais',
+        'Bouquets sport : beIN, Canal+, Sky Sports',
+        'Serveurs redondants avec uptime garanti 99.5%',
+        'Compatible Smart TV, boitiers Android, MAG, Enigma',
+        'Installation matérielle dans les chambres hôtel',
+        'Support technique 7j/7'
+      ],
+      targets: ['Hôtels & Résidences', 'Restaurants & Cafés', 'Salons & Loisirs', 'Particuliers'],
+      brands: ['MAG', 'Formuler', 'Dreamlink', 'Enigma2', 'Android TV'],
+      img: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'gaming', num: '18', cat: 'divertissement', accent: '#7C3AED',
+      title: 'Jeux Vidéo & Gaming',
+      tagline: 'Jeux PC et console livrés digitalement en quelques minutes',
+      desc: 'PSN, Xbox, Steam, Epic Games et monnaies virtuelles.',
+      pills: ['PSN / Xbox', 'Steam', 'Livraison instantée'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12a3 3 0 0 1 3 3l-1.5 6A2 2 0 0 1 17.56 19H6.44A2 2 0 0 1 4.5 17L3 11a3 3 0 0 1 3-3z"/><line x1="7" y1="13" x2="11" y2="13"/><line x1="9" y1="11" x2="9" y2="15"/><circle cx="15" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="17" cy="13.5" r="1" fill="currentColor" stroke="none"/></svg>',
+      longDesc: "Les achats de jeux et de crédit en ligne restent difficiles en Algérie. AITEC simplifie tout : commandez par WhatsApp, recevez vos codes ou jeux par email en quelques minutes, payez en espèces ou virement local.",
+      features: [
+        'Cartes PSN PlayStation Network (5, 10, 20, 50 USD/EUR)',
+        'Cartes Xbox et Microsoft Points',
+        'Jeux Steam, Epic Games et GOG (toutes régions)',
+        'V-Bucks (Fortnite), Robux (Roblox) et monnaies in-game',
+        'Abonnements PS Plus et Xbox Game Pass',
+        'Cartes cadeau iTunes, Google Play et App Store',
+        'Livraison instantanée par email / WhatsApp',
+        'SAV et remplacement si code défectueux'
+      ],
+      targets: ['Gamers particuliers', 'Jeunes & Étudiants', 'Parents', 'Cyber-cafés'],
+      brands: ['PlayStation', 'Xbox', 'Steam', 'Epic Games', 'Nintendo', 'Riot Games'],
+      img: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'marketing', num: '19', cat: 'marketing', accent: '#D946EF',
+      title: 'Marketing Digital',
+      tagline: 'Visibilité, acquisition client et notoriété en Algérie',
+      desc: 'Réseaux sociaux, Google & Meta Ads, création de contenu.',
+      pills: ['Meta Ads', 'Google Ads', 'Contenu & Design'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>',
+      longDesc: "Avoir un beau site ou un bon produit ne suffit plus — vos clients doivent vous trouver. L’équipe marketing d’AITEC crée et gère votre présence digitale complète : des réseaux sociaux aux campagnes payantes, en passant par le contenu et l’identité visuelle.",
+      features: [
+        'Gestion complète Facebook, Instagram et LinkedIn',
+        'Création de visuels, stories et vidéos courtes',
+        'Campagnes Meta Ads (Facebook/Instagram) ciblées Algérie',
+        'Google Ads Search, Display et YouTube',
+        'SEO : audit, optimisation et suivi de positionnement',
+        'Email marketing et newsletters',
+        'Charte graphique, logo et identité visuelle',
+        'Rapports mensuels de performance'
+      ],
+      targets: ['PME & Commerces', 'Restaurants & Hôtels', 'Cliniques & Santé', 'Startups'],
+      brands: ['Meta Business', 'Google Ads', 'Canva Pro', 'Mailchimp', 'SEMrush'],
+      img: 'https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=500&fit=crop&q=70'
+    },
+    {
+      id: 'sms', num: '20', cat: 'marketing', accent: '#F59E0B',
+      title: 'SMS Marketing Pro',
+      tagline: '98% de taux d\'ouverture — le canal le plus direct',
+      desc: 'Envoi en masse, OTP, API HTTPS et rapports de livraison.',
+      pills: ['Envoi en masse', 'OTP / Auth', 'API HTTPS'],
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8"/><path d="M8 13h6"/></svg>',
+      longDesc: "Le SMS reste le canal de communication le plus lu au monde : 98% des messages sont ouverts dans les 3 premières minutes. AITEC propose une plateforme d’envoi SMS robuste avec API HTTPS pour l’intégration dans vos systèmes, et des tarifs compétitifs pour les envois en volume.",
+      features: [
+        'Envoi de SMS en masse à votre base clients',
+        'Sender ID personnalisé (nom de votre entreprise)',
+        'SMS OTP pour double authentification',
+        'API HTTPS avec documentation complète',
+        'Librairies PHP, Python, JavaScript disponibles',
+        'Rapports de livraison en temps réel',
+        'Segmentation et personnalisation des messages',
+        'Conformité RGPD et opt-out automatique'
+      ],
+      targets: ['E-commerce', 'Banques & Finance', 'Santé & Cliniques', 'Toutes entreprises'],
+      brands: ['Twilio', 'Nexmo', 'InfoBip', 'OVH SMS', 'Djezzy Pro'],
+      img: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&fit=crop&q=70'
+    }
+  ];
+
+  /* ══════════════════════════════════════════════════
+     RENDER TILES
+  ══════════════════════════════════════════════════ */
+  var grid = document.getElementById('tilesGrid');
+
+  SERVICES.forEach(function(s) {
+    var tile = document.createElement('div');
+    tile.className = 'tile';
+    tile.dataset.cat = s.cat;
+    tile.style.setProperty('--accent', s.accent);
+    tile.setAttribute('role', 'button');
+    tile.setAttribute('tabindex', '0');
+    tile.setAttribute('aria-label', 'En savoir plus sur ' + s.title);
+
+    tile.innerHTML =
+      '<div class="tile__head">' +
+        '<div class="tile__num">' + s.num + '</div>' +
+        '<div class="tile__icon">' + s.icon + '</div>' +
+        '<h3>' + s.title + '</h3>' +
+      '</div>' +
+      '<div class="tile__body">' +
+        '<p class="tile__desc">' + s.tagline + '</p>' +
+        '<div class="tile__pills">' +
+          s.pills.map(function(p){ return '<span class="tile__pill">' + p + '</span>'; }).join('') +
+        '</div>' +
+        '<span class="tile__link">Voir les d&eacute;tails ' +
+          '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>' +
+        '</span>' +
+      '</div>';
+
+    /* ── Apply photo background to tile header ── */
+    if (s.img) {
+      var hex = s.accent.replace('#', '');
+      var rr = parseInt(hex.substring(0, 2), 16);
+      var gg = parseInt(hex.substring(2, 4), 16);
+      var bb = parseInt(hex.substring(4, 6), 16);
+      var headEl = tile.querySelector('.tile__head');
+      headEl.style.backgroundImage =
+        'linear-gradient(135deg,rgba(' + rr + ',' + gg + ',' + bb + ',0.80) 0%,rgba(0,0,0,0.62) 100%),' +
+        'url(' + s.img + ')';
+      headEl.style.backgroundSize = 'auto,cover';
+      headEl.style.backgroundPosition = 'center,center';
+      headEl.style.backgroundRepeat = 'no-repeat,no-repeat';
+    }
+
+    tile.addEventListener('click', function(){ openDrawer(s); });
+    tile.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') openDrawer(s); });
+    grid.appendChild(tile);
+  });
+
+  /* ══════════════════════════════════════════════════
+     CATEGORY FILTER
+  ══════════════════════════════════════════════════ */
+  var catBtns = document.querySelectorAll('.cat-btn');
+  var tiles   = document.querySelectorAll('.tile');
+
+  catBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var cat = btn.dataset.cat;
+      catBtns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      tiles.forEach(function(t){
+        t.classList.toggle('hidden', cat !== 'all' && t.dataset.cat !== cat);
+      });
+    });
+  });
+
+  /* ══════════════════════════════════════════════════
+     DRAWER
+  ══════════════════════════════════════════════════ */
+  var overlay = document.getElementById('svcOverlay');
+  var drawer  = document.getElementById('svcDrawer');
+  var content = document.getElementById('svcDrawerContent');
+  var scrollY = 0;
+
+  function openDrawer(s) {
+    drawer.style.setProperty('--drawer-accent', s.accent);
+
+    /* Build drawer header background (gradient + photo) */
+    var dHex = s.accent.replace('#', '');
+    var dR = parseInt(dHex.substring(0, 2), 16);
+    var dG = parseInt(dHex.substring(2, 4), 16);
+    var dB = parseInt(dHex.substring(4, 6), 16);
+    var drawerBg = s.img
+      ? 'linear-gradient(135deg,rgba(' + dR + ',' + dG + ',' + dB + ',0.82) 0%,rgba(0,0,0,0.62) 100%),url(' + s.img + ') center/cover no-repeat'
+      : 'linear-gradient(135deg,' + s.accent + ' 0%,color-mix(in srgb,' + s.accent + ' 75%,#000) 100%)';
+
+    var featHTML = s.features.map(function(f) {
+      return '<li>' +
+        '<span class="drawer__feat-ico" style="background:color-mix(in srgb,' + s.accent + ' 13%,#fff);color:' + s.accent + '">' +
+          '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>' +
+        '</span>' + f + '</li>';
+    }).join('');
+
+    var targetHTML = s.targets.map(function(t) {
+      return '<span class="drawer__target">' +
+        '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8" opacity=".4"/></svg>' +
+        t + '</span>';
+    }).join('');
+
+    var brandHTML = s.brands.map(function(b) {
+      return '<span class="drawer__brand">' + b + '</span>';
+    }).join('');
+
+    content.innerHTML =
+      '<div class="drawer__head" style="background:' + drawerBg + '">' +
+        '<button class="drawer__close" id="drawerClose" aria-label="Fermer">&times;</button>' +
+        '<div class="drawer__head-icon">' + s.icon.replace('width="28" height="28"','width="32" height="32"') + '</div>' +
+        '<h2>' + s.title + '</h2>' +
+        '<p>' + s.tagline + '</p>' +
+      '</div>' +
+      '<div class="drawer__body">' +
+        '<div class="drawer__section">' +
+          '<p class="drawer__desc">' + s.longDesc + '</p>' +
+        '</div>' +
+        '<div class="drawer__section">' +
+          '<p class="drawer__section-title">Ce qui est inclus</p>' +
+          '<ul class="drawer__features">' + featHTML + '</ul>' +
+        '</div>' +
+        '<div class="drawer__section">' +
+          '<p class="drawer__section-title">Pour qui</p>' +
+          '<div class="drawer__targets">' + targetHTML + '</div>' +
+        '</div>' +
+        '<div class="drawer__section">' +
+          '<p class="drawer__section-title">Technologies & marques</p>' +
+          '<div class="drawer__brands">' + brandHTML + '</div>' +
+        '</div>' +
+        '<div class="drawer__ctas">' +
+          '<a href="contact.html" class="drawer__cta-primary">Demander un devis</a>' +
+          '<a href="tel:+213658029033" class="drawer__cta-secondary">Appel gratuit</a>' +
+        '</div>' +
+      '</div>';
+
+    // Lock body scroll
+    scrollY = window.scrollY;
+    document.body.style.overflow = 'hidden';
+
+    overlay.classList.add('open');
+    drawer.classList.add('open');
+    drawer.scrollTop = 0;
+    drawer.focus();
+
+    document.getElementById('drawerClose').addEventListener('click', closeDrawer);
+  }
+
+  function closeDrawer() {
+    overlay.classList.remove('open');
+    drawer.classList.remove('open');
+    document.body.style.overflow = '';
+    window.scrollTo(0, scrollY);
+  }
+
+  overlay.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeDrawer(); });
+  </script>
+</body>
+</html>

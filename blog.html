@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog &amp; Actualit&eacute;s &mdash; AITEC Solutions</title>
+  <meta name="description" content="D&eacute;couvrez les derni&egrave;res actualit&eacute;s IT, conseils cybers&eacute;curit&eacute;, tendances cloud et nouveaut&eacute;s AITEC Solutions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=28" />
+</head>
+<body>
+
+  <div class="page-blobs" aria-hidden="true">
+    <div class="pb pb--1"></div><div class="pb pb--2"></div>
+    <div class="pb pb--3"></div><div class="pb pb--4"></div>
+    <div class="pb pb--5"></div><div class="pb pb--6"></div>
+    <div class="pb pb--7"></div><div class="pb pb--8"></div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__brand">
+        <img src="assets/logo.png" alt="AITEC Solutions" class="nav__logo" onerror="this.outerHTML='<span class=&quot;logo-text&quot;>AITEC</span>'" />
+      </a>
+      <nav class="nav__links" id="navMenu">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">&Agrave; propos</a>
+        <a href="portfolio.html">R&eacute;f&eacute;rences</a>
+        <a href="blog.html" class="nav-active">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__right">
+        <a href="https://wa.me/213658029033" target="_blank" rel="noopener" class="btn btn--whatsapp">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+          WhatsApp
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__blob page-hero__blob--1"></div>
+    <div class="page-hero__blob page-hero__blob--2"></div>
+    <div class="container">
+      <div class="page-hero__breadcrumb">
+        <a href="index.html">Accueil</a><span>&rsaquo;</span><span>Blog</span>
+      </div>
+      <p class="section-label">Conseils &amp; Actualit&eacute;s</p>
+      <h1>Le blog IT d&rsquo;AITEC</h1>
+      <p>Tendances technologiques, conseils pratiques et actualit&eacute;s de votre partenaire num&eacute;rique alg&eacute;rien.</p>
+    </div>
+  </section>
+
+  <!-- BLOG SECTION -->
+  <section class="blog-section">
+    <div class="container">
+
+      <!-- Category filters -->
+      <div class="page-filters" id="blogFilters">
+        <button class="page-filter active" data-filter="all">Tout</button>
+        <button class="page-filter" data-filter="ia">IA &amp; Tech</button>
+        <button class="page-filter" data-filter="cyber">Cybers&eacute;curit&eacute;</button>
+        <button class="page-filter" data-filter="infra">Infrastructure</button>
+        <button class="page-filter" data-filter="cloud">Cloud</button>
+        <button class="page-filter" data-filter="aitec">Actualit&eacute;s AITEC</button>
+      </div>
+
+      <!-- Articles grid -->
+      <div class="blog-grid" id="blogGrid">
+
+        <!-- Article 1 — IA & Tech -->
+        <article class="article-card" data-cat="ia" data-reveal>
+          <div class="article-card__img">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=700&q=80" alt="Intelligence artificielle en entreprise" loading="lazy" />
+          </div>
+          <div class="article-card__body">
+            <div class="article-meta">
+              <span class="article-cat" style="background:color-mix(in srgb,#7B2D8B 12%,#fff);color:#7B2D8B">IA &amp; Tech</span>
+              <span class="article-date">12 mai 2026</span>
+            </div>
+            <h3>Comment l&rsquo;IA transforme la gestion des entreprises alg&eacute;riennes</h3>
+            <p>De la d&eacute;tection d&rsquo;anomalies financi&egrave;res &agrave; la pr&eacute;diction des stocks, d&eacute;couvrez comment les PME alg&eacute;riennes commencent &agrave; tirer profit des outils d&rsquo;intelligence artificielle accessibles et abordables.</p>
+            <a href="#" class="article-read-more">Lire l&rsquo;article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 2 — Cybersécurité -->
+        <article class="article-card" data-cat="cyber" data-reveal>
+          <div class="article-card__img">
+            <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=700&q=80" alt="Cybers&eacute;curit&eacute; entreprise" loading="lazy" />
+          </div>
+          <div class="article-card__body">
+            <div class="article-meta">
+              <span class="article-cat" style="background:color-mix(in srgb,#ED1C24 12%,#fff);color:#ED1C24">Cybers&eacute;curit&eacute;</span>
+              <span class="article-date">28 avril 2026</span>
+            </div>
+            <h3>5 attaques cyber les plus fr&eacute;quentes en Alg&eacute;rie &mdash; et comment s&rsquo;en prot&eacute;ger</h3>
+            <p>Phishing, ransomware, attaques par force brute&hellip; Les menaces informatiques ne font pas d&rsquo;exception pour les entreprises alg&eacute;riennes. Voici les 5 vecteurs d&rsquo;attaque les plus r&eacute;pandus et les mesures concr&egrave;tes &agrave; adopter d&egrave;s maintenant.</p>
+            <a href="#" class="article-read-more">Lire l&rsquo;article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 3 — Cloud -->
+        <article class="article-card" data-cat="cloud" data-reveal>
+          <div class="article-card__img">
+            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=700&q=80" alt="Cloud computing infrastructure" loading="lazy" />
+          </div>
+          <div class="article-card__body">
+            <div class="article-meta">
+              <span class="article-cat" style="background:color-mix(in srgb,#1B75BC 12%,#fff);color:#1B75BC">Cloud</span>
+              <span class="article-date">15 avril 2026</span>
+            </div>
+            <h3>Cloud hybride vs Cloud public&nbsp;: lequel choisir pour votre entreprise&nbsp;?</h3>
+            <p>AWS, Azure, cloud priv&eacute; ou hybride&nbsp;? Ce guide comparatif aide les d&eacute;cideurs IT alg&eacute;riens &agrave; choisir la solution cloud adapt&eacute;e &agrave; leurs contraintes l&eacute;gales, budg&eacute;taires et op&eacute;rationnelles.</p>
+            <a href="#" class="article-read-more">Lire l&rsquo;article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 4 — Infrastructure -->
+        <article class="article-card" data-cat="infra" data-reveal>
+          <div class="article-card__img">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=80" alt="Infrastructure r&eacute;seau serveurs" loading="lazy" />
+          </div>
+          <div class="article-card__body">
+            <div class="article-meta">
+              <span class="article-cat" style="background:color-mix(in srgb,#5AAA2A 12%,#fff);color:#5AAA2A">Infrastructure</span>
+              <span class="article-date">3 avril 2026</span>
+            </div>
+            <h3>Wi-Fi d&rsquo;entreprise&nbsp;: les erreurs &agrave; &eacute;viter dans les h&ocirc;tels et centres d&rsquo;affaires</h3>
+            <p>Un r&eacute;seau Wi-Fi mal configur&eacute; co&ucirc;te cher en termes de performance, de s&eacute;curit&eacute; et d&rsquo;image. Voici les 7 erreurs les plus communes que nous rencontrons lors de nos audits r&eacute;seau en Alg&eacute;rie.</p>
+            <a href="#" class="article-read-more">Lire l&rsquo;article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 5 — Actualités AITEC -->
+        <article class="article-card" data-cat="aitec" data-reveal>
+          <div class="article-card__img">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=700&q=80" alt="&Eacute;quipe AITEC Solutions" loading="lazy" />
+          </div>
+          <div class="article-card__body">
+            <div class="article-meta">
+              <span class="article-cat" style="background:color-mix(in srgb,#F7941D 12%,#fff);color:#F7941D">Actualit&eacute;s AITEC</span>
+              <span class="article-date">20 mars 2026</span>
+            </div>
+            <h3>AITEC certifi&eacute;e Microsoft Solutions Partner 2026</h3>
+            <p>Nous sommes fiers d&rsquo;annoncer le renouvellement de notre certification Microsoft Solutions Partner pour l&rsquo;ann&eacute;e 2026, consolidant notre expertise en d&eacute;ploiement Azure, Microsoft 365 et Dynamics 365 en Alg&eacute;rie.</p>
+            <a href="#" class="article-read-more">Lire l&rsquo;article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 6 — Cybersécurité -->
+        <article class="article-card" data-cat="cyber" data-reveal>
+          <div class="article-card__img">
+            <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=700&q=80" alt="Contr&ocirc;le acc&egrave;s biom&eacute;trique CCTV" loading="lazy" />
+          </div>
+          <div class="article-card__body">
+            <div class="article-meta">
+              <span class="article-cat" style="background:color-mix(in srgb,#ED1C24 12%,#fff);color:#ED1C24">Cybers&eacute;curit&eacute;</span>
+              <span class="article-date">8 mars 2026</span>
+            </div>
+            <h3>Contr&ocirc;le d&rsquo;acc&egrave;s biom&eacute;trique&nbsp;: pourquoi les pointeuses modernes vont bien au-del&agrave; de la pr&eacute;sence</h3>
+            <p>Les syst&egrave;mes biom&eacute;triques nouvelle g&eacute;n&eacute;ration ne g&egrave;rent plus seulement les horaires. Coupl&eacute;s &agrave; une CCTV intelligente et un VMS centralis&eacute;, ils deviennent un outil de s&eacute;curit&eacute; p&eacute;rim&eacute;trique complet pour vos locaux.</p>
+            <a href="#" class="article-read-more">Lire l&rsquo;article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 7 — IA & Tech -->
+        <article class="article-card" data-cat="ia" data-reveal>
+          <div class="article-card__img">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=700&q=80" alt="Odoo ERP automatisation" loading="lazy" />
+          </div>
+          <div class="article-card__body">
+            <div class="article-meta">
+              <span class="article-cat" style="background:color-mix(in srgb,#7B2D8B 12%,#fff);color:#7B2D8B">IA &amp; Tech</span>
+              <span class="article-date">22 f&eacute;vrier 2026</span>
+            </div>
+            <h3>Odoo 17 + IA&nbsp;: automatisez vos processus m&eacute;tier sans coder</h3>
+            <p>La derni&egrave;re version d&rsquo;Odoo int&egrave;gre des modules d&rsquo;IA pour la pr&eacute;diction de la demande, l&rsquo;automatisation des relances clients et la g&eacute;n&eacute;ration de rapports. Voici ce que cela change concr&egrave;tement pour les PME alg&eacute;riennes.</p>
+            <a href="#" class="article-read-more">Lire l&rsquo;article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 8 — Infrastructure -->
+        <article class="article-card" data-cat="infra" data-reveal>
+          <div class="article-card__img">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80" alt="Maintenance pr&eacute;ventive informatique" loading="lazy" />
+          </div>
+          <div class="article-card__body">
+            <div class="article-meta">
+              <span class="article-cat" style="background:color-mix(in srgb,#5AAA2A 12%,#fff);color:#5AAA2A">Infrastructure</span>
+              <span class="article-date">10 f&eacute;vrier 2026</span>
+            </div>
+            <h3>Maintenance pr&eacute;ventive ou curative&nbsp;? Ce que le TCO r&eacute;v&egrave;le vraiment</h3>
+            <p>Les pannes informatiques co&ucirc;tent en moyenne 3 &agrave; 5 fois plus cher que la maintenance pr&eacute;ventive. Analyse du co&ucirc;t total de possession (TCO) de votre parc informatique et conseils pour optimiser votre budget IT annuel.</p>
+            <a href="#" class="article-read-more">Lire l&rsquo;article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 9 — Actualités AITEC -->
+        <article class="article-card" data-cat="aitec" data-reveal>
+          <div class="article-card__img">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=80" alt="AITEC &eacute;v&eacute;nement Alger" loading="lazy" />
+          </div>
+          <div class="article-card__body">
+            <div class="article-meta">
+              <span class="article-cat" style="background:color-mix(in srgb,#F7941D 12%,#fff);color:#F7941D">Actualit&eacute;s AITEC</span>
+              <span class="article-date">28 janvier 2026</span>
+            </div>
+            <h3>Retour sur notre participation au salon Algiers Tech Summit 2026</h3>
+            <p>AITEC Solutions &eacute;tait pr&eacute;sente au salon technologique le plus important d&rsquo;Alg&eacute;rie. Rencontres, d&eacute;monstrations live de nos solutions IPTV et IA, et signature de nouveaux partenariats &mdash; voici le bilan complet.</p>
+            <a href="#" class="article-read-more">Lire l&rsquo;article &rarr;</a>
+          </div>
+        </article>
+
+      </div><!-- /blog-grid -->
+    </div>
+  </section>
+
+  <!-- NEWSLETTER CTA -->
+  <section style="padding: 0 0 80px;">
+    <div class="container">
+      <div style="background: linear-gradient(135deg, color-mix(in srgb,#7B2D8B 8%,#fff) 0%, color-mix(in srgb,#1B75BC 8%,#fff) 100%); border-radius: 24px; padding: 56px 48px; display: flex; align-items: center; justify-content: space-between; gap: 48px; flex-wrap: wrap;" data-reveal>
+        <div>
+          <p class="section-label">Newsletter</p>
+          <h2 style="font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; margin: 0 0 12px; color: var(--c-ink);">Restez &agrave; jour sur l&rsquo;IT en Alg&eacute;rie</h2>
+          <p style="font-size: 16px; color: var(--c-muted); margin: 0; max-width: 420px;">Un email mensuel, pas de spam. Les meilleures ressources IT s&eacute;lectionn&eacute;es par nos ing&eacute;nieurs.</p>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; min-width: 300px; flex: 1; max-width: 480px;">
+          <input type="email" placeholder="votre@email.com" style="flex: 1; min-width: 200px; padding: 14px 18px; border: 1.5px solid var(--c-line); border-radius: 50px; font-family: var(--ff-body); font-size: 15px; outline: none; color: var(--c-ink); background: #fff;" />
+          <button class="btn btn--navy" style="white-space: nowrap; border-radius: 50px;">S&rsquo;abonner</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="contact-cta">
+    <div class="container contact-cta__inner">
+      <div class="contact-cta__blob" aria-hidden="true"></div>
+      <div class="contact-cta__text" data-reveal>
+        <p class="section-label section-label--light">Travaillons ensemble</p>
+        <h2>Un projet IT en t&ecirc;te&nbsp;?<br>Parlons-en.</h2>
+        <p>Nos ing&eacute;nieurs r&eacute;pondent sous 24h &mdash; sans engagement.</p>
+      </div>
+      <div class="contact-cta__links" data-reveal>
+        <a href="contact.html" class="btn btn--white">Demander un devis</a>
+        <a href="tel:+213658029033" class="btn btn--outline-light">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+          +213 658 029 033
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="AITEC Solutions" class="footer__logo" onerror="this.outerHTML='<span class=&quot;logo-text&quot;>AITEC</span>'" />
+        <p>Le partenaire technologique<br>tout-en-un de l&rsquo;Alg&eacute;rie.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5zM20 19h-3v-5.6c0-3.37-4-3.11-4 0V19h-3V8h3v1.77c1.4-2.59 7-2.78 7 2.48V19z"/></svg></a>
+        </div>
+      </div>
+      <nav class="footer__nav">
+        <p class="footer__nav-title">Navigation</p>
+        <a href="index.html">Accueil</a><a href="services.html">Services</a>
+        <a href="about.html">&Agrave; propos</a><a href="portfolio.html">R&eacute;f&eacute;rences</a>
+        <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer__services">
+        <p class="footer__nav-title">Services</p>
+        <a href="contact.html">IA &amp; Intelligence</a><a href="contact.html">Infrastructure &amp; Serveurs</a>
+        <a href="contact.html">Web &amp; Mobile</a><a href="contact.html">Cloud &amp; Cybers&eacute;curit&eacute;</a>
+        <a href="contact.html">CCTV &amp; Pointage</a><a href="contact.html">ERP Odoo</a>
+        <a href="contact.html">Licences Pro</a><a href="contact.html">Marketing Digital</a>
+      </div>
+      <div class="footer__contact-info">
+        <p class="footer__nav-title">Contact</p>
+        <p><a href="mailto:contact@aitec.dz">contact@aitec.dz</a></p>
+        <p><a href="tel:+213658029033">+213 658 029 033</a></p>
+        <p>Alger, Alg&eacute;rie</p><p>Dim &ndash; Jeu &middot; 08H &ndash; 18H</p>
+      </div>
+    </div>
+    <div class="footer__bottom"><div class="container"><span>&copy; 2026 AITEC Solutions &mdash; Alger, Alg&eacute;rie &#127465;&#127487;</span></div></div>
+  </footer>
+
+  <script src="script.js?v=3"></script>
+  <script>
+    // Blog category filter
+    (function () {
+      var filters = document.querySelectorAll('#blogFilters .page-filter');
+      var cards   = document.querySelectorAll('#blogGrid .article-card[data-cat]');
+      if (!filters.length || !cards.length) return;
+      function applyFilter(cat) {
+        cards.forEach(function (card) {
+          card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+        });
+      }
+      filters.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filters.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          applyFilter(btn.dataset.filter);
+        });
+      });
+      applyFilter('all');
+    })();
+  </script>
+</body>
+</html>

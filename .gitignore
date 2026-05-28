@@ -1,0 +1,9 @@
+node_modules/
+package-lock.json
+package.json
+make_handout.js
+patch_imgs.py
+AITEC_Handout.docx
+*.py
+.claude/
+.superpowers/

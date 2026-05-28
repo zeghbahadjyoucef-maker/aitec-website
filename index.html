@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AITEC Solutions — Alger</title>
+  <meta name="description" content="Infrastructure IT, intelligence artificielle, développement web, cloud et sécurité. Votre partenaire technologique en Algérie." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=29" />
+</head>
+<body>
+
+  <!-- ============ GLOBAL BACKGROUND BLOBS ============ -->
+  <div class="page-blobs" aria-hidden="true">
+    <div class="pb pb--1"></div>
+    <div class="pb pb--2"></div>
+    <div class="pb pb--3"></div>
+    <div class="pb pb--4"></div>
+    <div class="pb pb--5"></div>
+    <div class="pb pb--6"></div>
+    <div class="pb pb--7"></div>
+    <div class="pb pb--8"></div>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="nav__brand">
+        <img src="assets/logo.png" alt="AITEC Solutions" class="nav__logo" onerror="this.outerHTML='<span class=&quot;logo-text&quot;>AITEC</span>'" />
+      </a>
+      <nav class="nav__links" id="navMenu">
+        <a href="#home">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">À propos</a>
+        <a href="portfolio.html">Références</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__right">
+        <a href="https://wa.me/213658029033" target="_blank" rel="noopener" class="btn btn--whatsapp">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+          WhatsApp
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
+    <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
+    <div class="hero__blob hero__blob--3" aria-hidden="true"></div>
+
+    <div class="container hero__split">
+      <div class="hero__left">
+        <p class="hero__eyebrow">Boostez votre entreprise</p>
+        <h1>Solutions IT <em>complètes</em><br>pour votre entreprise</h1>
+        <p class="hero__desc">De l'intelligence artificielle à la cybersécurité, du développement web aux réseaux d'entreprise — AITEC est le partenaire technologique tout-en-un de l'Algérie.</p>
+        <div class="hero__ctas">
+          <a href="services.html" class="btn btn--navy">Voir nos services</a>
+          <a href="tel:+213000000000" class="btn btn--ghost">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+            +213 XX XX XX XX
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__right">
+        <div class="hero__img-wrap">
+          <div class="hero__accent-dot" aria-hidden="true"></div>
+          <div class="hero__accent-ring" aria-hidden="true"></div>
+          <div class="hero__img-blob">
+            <img src="assets/hero.jpg" alt="Expert AITEC Solutions" />
+          </div>
+
+          <div class="float-card float-card--tl">
+            <div class="float-card__ico" style="--fc:#7B2D8B">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 9 12 13 16 20 8"/><polyline points="16 8 20 8 20 12"/></svg>
+            </div>
+            <div>
+              <div class="float-card__val">250+</div>
+              <div class="float-card__lbl">Projets réalisés</div>
+            </div>
+          </div>
+
+          <div class="float-card float-card--br">
+            <div class="float-card__ico" style="--fc:#5AAA2A">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="float-card__val">180+</div>
+              <div class="float-card__lbl">Clients satisfaits</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURE STRIP ============ -->
+  <section class="feature-strip">
+    <div class="container">
+      <div class="feature-strip__inner">
+
+        <div class="feature-strip__text" data-reveal>
+          <p class="section-label">Nos solutions</p>
+          <h2>Nous créons des<br><em>expériences digitales</em><br>qui transforment</h2>
+          <p>De l'IA à la cybersécurité, AITEC vous accompagne à chaque étape de votre transformation numérique.</p>
+        </div>
+
+        <div class="fs-card" data-reveal style="--fs-color:#7B2D8B">
+          <div class="fs-card__icon">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="17" r="2"/><circle cx="19" cy="17" r="2"/><circle cx="12" cy="13" r="3"/><line x1="12" y1="7" x2="12" y2="10"/><line x1="7" y1="16" x2="9.5" y2="14.2"/><line x1="17" y1="16" x2="14.5" y2="14.2"/></svg>
+          </div>
+          <h3>IA &amp; Intelligence</h3>
+          <p>Chatbots, reconnaissance faciale, analyse prédictive, automatisation de processus et intégration d'outils IA — conseil, développement et déploiement sur site.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </div>
+
+        <div class="fs-card" data-reveal style="--fs-color:#1B75BC">
+          <div class="fs-card__icon">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3c2.5 4.5 2.5 13.5 0 18"/><path d="M12 3c-2.5 4.5-2.5 13.5 0 18"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M4.5 8h15"/><path d="M4.5 16h15"/></svg>
+          </div>
+          <h3>Web &amp; Développement Mobile</h3>
+          <p>Du site vitrine à l'application mobile complexe — performant, bien conçu, livré dans les délais.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARTNERS ============ -->
+  <section class="partners">
+    <p class="partners__label">Partenaire certifié par les leaders technologiques mondiaux</p>
+    <div class="partners__marquee">
+      <div class="partners__track">
+        <span class="partner-logo">Microsoft</span>
+        <span class="partner-logo">Cisco</span>
+        <span class="partner-logo">AWS</span>
+        <span class="partner-logo">VMware</span>
+        <span class="partner-logo">Oracle</span>
+        <span class="partner-logo">Fortinet</span>
+        <span class="partner-logo">Kaspersky</span>
+        <span class="partner-logo">Sophos</span>
+        <span class="partner-logo">HPE</span>
+        <span class="partner-logo">Dell</span>
+        <span class="partner-logo">Huawei</span>
+        <span class="partner-logo">Adobe</span>
+        <span class="partner-logo">Odoo</span>
+        <span class="partner-logo">Hikvision</span>
+        <span class="partner-logo">ZKTeco</span>
+        <span class="partner-logo">Ubiquiti</span>
+        <span class="partner-logo">Lenovo</span>
+        <span class="partner-logo">Samsung</span>
+        <span class="partner-logo">Palo Alto</span>
+        <span class="partner-logo">Juniper</span>
+        <span class="partner-logo">Dahua</span>
+        <span class="partner-logo">Sony</span>
+        <!-- duplicate for seamless loop -->
+        <span class="partner-logo">Microsoft</span>
+        <span class="partner-logo">Cisco</span>
+        <span class="partner-logo">AWS</span>
+        <span class="partner-logo">VMware</span>
+        <span class="partner-logo">Oracle</span>
+        <span class="partner-logo">Fortinet</span>
+        <span class="partner-logo">Kaspersky</span>
+        <span class="partner-logo">Sophos</span>
+        <span class="partner-logo">HPE</span>
+        <span class="partner-logo">Dell</span>
+        <span class="partner-logo">Huawei</span>
+        <span class="partner-logo">Adobe</span>
+        <span class="partner-logo">Odoo</span>
+        <span class="partner-logo">Hikvision</span>
+        <span class="partner-logo">ZKTeco</span>
+        <span class="partner-logo">Ubiquiti</span>
+        <span class="partner-logo">Lenovo</span>
+        <span class="partner-logo">Samsung</span>
+        <span class="partner-logo">Palo Alto</span>
+        <span class="partner-logo">Juniper</span>
+        <span class="partner-logo">Dahua</span>
+        <span class="partner-logo">Sony</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="section-label">Ce que nous faisons</p>
+        <h2>Une expertise couvrant tous vos besoins</h2>
+        <p>12 services, une seule équipe, un seul interlocuteur.</p>
+      </div>
+
+      <!-- Category filter tabs -->
+      <div class="svc-filters" id="svcFilters">
+        <button class="svc-filter active" data-filter="all">Tout</button>
+        <button class="svc-filter" data-filter="it" style="--fc:#1B75BC">IT &amp; Développement</button>
+        <button class="svc-filter" data-filter="installation" style="--fc:#0F766E">Installation</button>
+        <button class="svc-filter" data-filter="licences" style="--fc:#0891B2">Licences &amp; Abonnements</button>
+        <button class="svc-filter" data-filter="divertissement" style="--fc:#7C3AED">Divertissement</button>
+        <button class="svc-filter" data-filter="marketing" style="--fc:#D946EF">Marketing</button>
+      </div>
+
+      <div class="svc-grid" id="svcGrid">
+
+        <article class="svc-card" data-reveal data-cat="it" style="--accent:#7B2D8B;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="12" rx="3"/><circle cx="9" cy="12" r="1.2" fill="currentColor"/><circle cx="15" cy="12" r="1.2" fill="currentColor"/><path d="M9.5 15.5h5"/><path d="M12 7V4.5"/><circle cx="12" cy="3.5" r="1.3"/></svg></div>
+          <h3>IA &amp; Intelligence</h3>
+          <p>Chatbots, reconnaissance faciale, analyse prédictive, automatisation de processus et intégration d'outils IA.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="it" style="--accent:#5AAA2A;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="6" rx="2"/><rect x="3" y="13" width="18" height="6" rx="2"/><circle cx="7" cy="6" r="1" fill="currentColor"/><circle cx="7" cy="16" r="1" fill="currentColor"/><path d="M11 6h7"/><path d="M11 16h7"/></svg></div>
+          <h3>Infrastructure &amp; Serveurs</h3>
+          <p>Déploiement, virtualisation VMware/Hyper-V, monitoring 24/7 et câblage structuré.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="it" style="--accent:#1B75BC;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><circle cx="5.5" cy="6.5" r="1" fill="currentColor"/><circle cx="8.5" cy="6.5" r="1" fill="currentColor"/><path d="M6 13h12"/><path d="M6 17h8"/></svg></div>
+          <h3>Web &amp; Développement Mobile</h3>
+          <p>Du site vitrine à l'application mobile complexe — performant, bien conçu, livré dans les délais.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="it" style="--accent:#ED1C24;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5L3 7v5C3 17.2 7 21.5 12 23c5-1.5 9-5.8 9-11V7z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+          <h3>Cloud &amp; Cybersécurité</h3>
+          <p>Migration AWS/Azure, firewall Fortinet/Sophos, audits de sécurité, SIEM et réponse aux incidents — périmètre renforcé.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="it" style="--accent:#875A7B;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="8" height="8" rx="1.5"/><rect x="14" y="3" width="8" height="8" rx="1.5"/><rect x="2" y="13" width="8" height="8" rx="1.5"/><rect x="14" y="13" width="8" height="8" rx="1.5"/></svg></div>
+          <h3>ERP Odoo</h3>
+          <p>Implémentation et personnalisation Odoo — comptabilité, stocks, RH, ventes, et tableaux de bord BI intégrés.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="installation" style="--accent:#0F766E;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><!-- camera body --><rect x="2" y="8" width="12" height="8" rx="2"/><!-- lens --><circle cx="8" cy="12" r="2.5"/><!-- lens inner dot --><circle cx="8" cy="12" r="1" fill="currentColor" stroke="none"/><!-- camera head/mount --><path d="M14 10l5-3v10l-5-3"/><!-- IR dots --><circle cx="18" cy="7" r=".6" fill="currentColor" stroke="none"/><circle cx="20" cy="7" r=".6" fill="currentColor" stroke="none"/><circle cx="22" cy="7" r=".6" fill="currentColor" stroke="none"/><!-- mount pole --><path d="M5 16v3"/><path d="M3 19h4"/></svg></div>
+          <h3>Vidéosurveillance CCTV</h3>
+          <p>Installation de caméras IP/analogiques, enregistreurs DVR/NVR, câblage et configuration sur site.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="installation" style="--accent:#B45309;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><!-- device body --><rect x="4" y="1" width="16" height="22" rx="2"/><!-- screen --><rect x="6" y="3" width="12" height="7" rx="1"/><!-- screen content lines --><path d="M8 6h8M9 8.5h6"/><!-- fingerprint center dot --><circle cx="12" cy="16.5" r=".5" fill="currentColor" stroke="none"/><!-- fingerprint arches --><path d="M11 17.5 Q12 15.5 13 17.5"/><path d="M10 18.5 Q12 14.5 14 18.5"/><path d="M9 19.5 Q12 13.5 15 19.5"/><!-- status LED --><circle cx="12" cy="21.5" r=".7" fill="currentColor" stroke="none"/></svg></div>
+          <h3>Système de Pointage</h3>
+          <p>Vente et installation de terminaux biométriques &amp; RFID, badges, logiciel RH — livré et configuré sur site.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="installation" style="--accent:#0284C7;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h2"/><path d="M10 15h6"/><path d="M8 20h8"/><line x1="12" y1="18" x2="12" y2="20"/></svg></div>
+          <h3>Installation POS</h3>
+          <p>Vente et installation de caisses enregistreuses tactiles, terminaux de paiement, logiciels de caisse — pour commerces, restaurants et grandes surfaces.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="licences" style="--accent:#0891B2;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15" r="4.5"/><path d="M11.5 11.5l9-9"/><path d="M18.5 4l2 2"/><path d="M15.5 7l2 2"/></svg></div>
+          <h3>Licences Pro</h3>
+          <p>Revendeur agréé Microsoft 365, Adobe, Oracle, VMware, Kaspersky &amp; Sophos — activation, gestion et conformité pour votre parc informatique.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="licences" style="--accent:#F43F5E;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.8 1 6.46 2.63"/><polyline points="21 3 21 9 15 9"/><polygon points="10 9.5 10 14.5 16 12" fill="currentColor" stroke="none"/></svg></div>
+          <h3>Abonnements</h3>
+          <p>Netflix, Spotify, Disney+, Shahid, IPTV — abonnements streaming activés instantanément pour particuliers et hôtels.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="divertissement" style="--accent:#F7941D;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2.5"/><polygon points="10 9 10 14 15.5 11.5" fill="currentColor" stroke="none"/><path d="M8 20h8"/><line x1="12" y1="18" x2="12" y2="20"/></svg></div>
+          <h3>IPTV &amp; Électronique</h3>
+          <p>Licences IPTV professionnelles, matériel installé, support continu pour hôtels et entreprises.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="divertissement" style="--accent:#7C3AED;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><!-- controller body --><path d="M6 8h12a3 3 0 0 1 3 3l-1.5 6A2 2 0 0 1 17.56 19H6.44A2 2 0 0 1 4.5 17L3 11a3 3 0 0 1 3-3z"/><!-- left dpad horizontal --><line x1="7" y1="13" x2="11" y2="13"/><!-- left dpad vertical --><line x1="9" y1="11" x2="9" y2="15"/><!-- right buttons --><circle cx="15" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="17" cy="13.5" r="1" fill="currentColor" stroke="none"/><!-- thumbstick hints --><circle cx="13" cy="15" r="1.2"/><!-- center line --><path d="M12 8v2"/></svg></div>
+          <h3>Jeux Vidéo</h3>
+          <p>Jeux PC et console, cartes de recharge PSN, Xbox &amp; Steam — livraison digitale immédiate.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="marketing" style="--accent:#D946EF;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></div>
+          <h3>Marketing Digital</h3>
+          <p>Réseaux sociaux, création de contenu, Meta &amp; Google Ads, identité visuelle et stratégie de communication.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <!-- ── NEW from competitor research ── -->
+
+        <article class="svc-card" data-reveal data-cat="it" style="--accent:#0369A1;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M2 12h20"/><path d="M12 3a15 15 0 0 1 4 9 15 15 0 0 1-4 9 15 15 0 0 1-4-9 15 15 0 0 1 4-9z"/></svg></div>
+          <h3>Hébergement Web &amp; VPS</h3>
+          <p>Hébergement partagé, VPS, noms de domaine et certificats SSL — infrastructure fiable pour votre présence en ligne.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="it" style="--accent:#0E7490;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>CRM &amp; Helpdesk</h3>
+          <p>Déploiement CRM (Odoo, Salesforce, HubSpot), gestion des tickets, call center et support client intégrés.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="installation" style="--accent:#DC2626;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1.5" fill="currentColor"/></svg></div>
+          <h3>Contrôle d'Accès</h3>
+          <p>Systèmes biométriques, badges RFID, portiques et électroserrures — sécurisation physique pour entreprises et sites sensibles.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="installation" style="--accent:#EA580C;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 4.5-4 6.5-4 11a4 4 0 0 0 8 0c0-4.5-4-6.5-4-11z"/><path d="M12 12c0 2-1.5 3-1.5 4.5a1.5 1.5 0 0 0 3 0C13.5 15 12 14 12 12z" fill="currentColor" stroke="none"/></svg></div>
+          <h3>Détection Incendie</h3>
+          <p>Installation de systèmes d'alarme, détecteurs de fumée, centrales d'alarme et sprinklers — conformes aux normes en vigueur.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="installation" style="--accent:#8B5CF6;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><rect x="5" y="6" width="6" height="5" rx="1"/><path d="M14 8h4"/><path d="M14 12h4"/></svg></div>
+          <h3>Affichage Dynamique</h3>
+          <p>Écrans publicitaires, totems interactifs et panneaux numériques — contenu géré à distance pour commerces, hôtels et espaces publics.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="installation" style="--accent:#059669;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="7" r="2"/><circle cx="12" cy="7" r="2"/><circle cx="18" cy="7" r="2"/><path d="M4 12h16"/><path d="M6 12v7"/><path d="M12 12v7"/><path d="M18 12v7"/></svg></div>
+          <h3>Gestion File d'Attente</h3>
+          <p>Bornes d'accueil, tickets électroniques, écrans d'appel — pour banques, administrations, cliniques et agences.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+        <article class="svc-card" data-reveal data-cat="marketing" style="--accent:#F59E0B;">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8"/><path d="M8 13h6"/></svg></div>
+          <h3>SMS Marketing Pro</h3>
+          <p>Campagnes SMS en masse, notifications, OTP et API HTTPS — touchez vos clients instantanément avec 98% de taux d'ouverture.</p>
+          <a href="#contact" class="learn-more">En savoir plus </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="container about__grid">
+      <div class="about__visual" data-reveal>
+        <!-- warm blob behind photo -->
+        <div class="about__bg-blob" aria-hidden="true"></div>
+
+        <!-- photo -->
+        <div class="about__blob">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=80" alt="Jeune équipe AITEC" />
+        </div>
+
+        <!-- floating stat cards -->
+        <div class="about__fc about__fc--tl">
+          <div class="about__fc-ico" style="background:color-mix(in srgb,#7B2D8B 12%,#fff);color:#7B2D8B">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 9 12 13 16 20 8"/><polyline points="16 8 20 8 20 12"/></svg>
+          </div>
+          <div><div class="about__fc-val">250+</div><div class="about__fc-lbl">Projets réalisés</div></div>
+        </div>
+
+        <div class="about__fc about__fc--br">
+          <div class="about__fc-ico" style="background:color-mix(in srgb,#5AAA2A 12%,#fff);color:#5AAA2A">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div><div class="about__fc-val">180+</div><div class="about__fc-lbl">Clients satisfaits</div></div>
+        </div>
+
+        <!-- decorative accents -->
+        <div class="about__dot about__dot--orange" aria-hidden="true"></div>
+        <div class="about__dot about__dot--ring" aria-hidden="true"></div>
+      </div>
+
+      <div class="about__body">
+        <p class="section-label">À propos d'AITEC</p>
+        <h2>Tout ce dont votre entreprise a besoin, en un seul endroit</h2>
+        <p>Fondée à Alger en 2014, AITEC Solutions est votre partenaire technologique global — IA, infrastructure, web &amp; mobile, CCTV, pointage, IPTV, licences et abonnements. Une seule adresse pour toutes vos problématiques IT.</p>
+        <ul class="about__checks">
+          <li>
+            <div class="about__check-ico"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>10 domaines d'expertise couverts</strong><p>IA, sécurité, web, CCTV, pointage et bien plus.</p></div>
+          </li>
+          <li>
+            <div class="about__check-ico"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Vente, installation &amp; support inclus</strong><p>Matériel livré et configuré sur site par nos techniciens.</p></div>
+          </li>
+          <li>
+            <div class="about__check-ico"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Basés à Alger, disponibles partout</strong><p>Interventions rapides dans les 58 wilayas.</p></div>
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn--navy">Parler à un expert</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS BAR ============ -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-bar__grid">
+        <div class="stat-item" data-reveal>
+          <div class="stat-item__ico">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <div class="stat-item__num"><span data-count="20">0</span></div>
+          <div class="stat-item__lbl">Services disponibles</div>
+        </div>
+        <div class="stat-item" data-reveal>
+          <div class="stat-item__ico">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="stat-item__num"><span data-count="24">0</span>/7</div>
+          <div class="stat-item__lbl">Support disponible</div>
+        </div>
+        <div class="stat-item" data-reveal>
+          <div class="stat-item__ico">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </div>
+          <div class="stat-item__num">100%</div>
+          <div class="stat-item__lbl">Équipe locale — Alger</div>
+        </div>
+        <div class="stat-item" data-reveal>
+          <div class="stat-item__ico">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="stat-item__num"><span data-count="1">0</span> an</div>
+          <div class="stat-item__lbl">Garantie sur chaque projet</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="temoignages" id="temoignages">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="section-label">Témoignages</p>
+        <h2>Ce que disent nos clients</h2>
+      </div>
+      <div class="testi-grid">
+
+        <blockquote class="testi-card" data-reveal>
+          <p>"AITEC a migré toute notre infrastructure en trois semaines, zéro interruption. L'équipe est restée joignable à chaque étape — c'est rare."</p>
+          <footer>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Mohamed Larbi" class="testi-avatar" />
+            <div class="testi-meta">
+              <strong>Mohamed Larbi</strong>
+              <span>Directeur IT, Sonatrach Digital</span>
+            </div>
+          </footer>
+        </blockquote>
+
+        <blockquote class="testi-card" data-reveal>
+          <p>"De la migration cloud aux audits de sécurité continus, AITEC livre à chaque étape. Leur présence locale fait toute la différence à notre échelle."</p>
+          <footer>
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Nadia Mansouri" class="testi-avatar" />
+            <div class="testi-meta">
+              <strong>Nadia Mansouri</strong>
+              <span>Responsable Digital, Banque Nationale d'Algérie</span>
+            </div>
+          </footer>
+        </blockquote>
+
+        <blockquote class="testi-card" data-reveal>
+          <p>"Leur solution IPTV a équipé 400 chambres en moins de deux semaines. Fiable, bien intégrée, et le support ne dort jamais."</p>
+          <footer>
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Riad Bensalem" class="testi-avatar" />
+            <div class="testi-meta">
+              <strong>Riad Bensalem</strong>
+              <span>DSI, Hôtel El Aurassi</span>
+            </div>
+          </footer>
+        </blockquote>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY US ============ -->
+  <section class="why-us">
+    <div class="container">
+      <div class="why-us__inner">
+        <div class="why-us__left" data-reveal>
+          <p class="section-label">Pourquoi nous</p>
+          <h2>Pourquoi choisir<br>AITEC Solutions ?</h2>
+          <p>Des ingénieurs certifiés, une équipe locale et un service réactif — nous sommes le partenaire IT que vous méritez.</p>
+        </div>
+        <div class="why-us__grid">
+          <div class="why-item" data-reveal style="--wi:#7B2D8B">
+            <div class="why-item__icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v6a4 4 0 0 1-8 0V4z"/><path d="M4 4h4"/><path d="M16 4h4"/><path d="M4 5c0 3 1 5 4 5.8"/><path d="M20 5c0 3-1 5-4 5.8"/><line x1="12" y1="14" x2="12" y2="18"/><path d="M8 18h8"/></svg></div>
+            <div class="why-item__text"><h3>Qualité certifiée</h3><p>Ingénieurs certifiés Microsoft, Cisco et AWS sur chaque projet.</p></div>
+          </div>
+          <div class="why-item" data-reveal style="--wi:#1B75BC">
+            <div class="why-item__icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor" opacity="0.15"/><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+            <div class="why-item__text"><h3>Rapidité d'exécution</h3><p>Délais respectés, livraisons en sprint, disponibilité 24/7.</p></div>
+          </div>
+          <div class="why-item" data-reveal style="--wi:#5AAA2A">
+            <div class="why-item__icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="why-item__text"><h3>Basés à Alger, disponibles partout</h3><p>Notre équipe se déplace chez vous — installation, dépannage et suivi en personne, pas à distance.</p></div>
+          </div>
+          <div class="why-item" data-reveal style="--wi:#F7941D">
+            <div class="why-item__icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+            <div class="why-item__text"><h3>Solutions intégrées</h3><p>Un seul interlocuteur pour tous vos besoins IT, de bout en bout.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW WE WORK ============ -->
+  <section class="process" id="processus">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="section-label">Comment ça marche</p>
+        <h2>De votre besoin à la solution<br>en 4 étapes simples</h2>
+        <p>Un processus clair, sans surprise — du premier contact jusqu'au support.</p>
+      </div>
+      <div class="process-grid">
+
+        <div class="process-step" data-reveal>
+          <div class="process-step__num">01</div>
+          <div class="process-step__icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h3>Consultation gratuite</h3>
+          <p>Contactez-nous par téléphone, WhatsApp ou email. On écoute vos besoins et on répond à toutes vos questions — sans engagement.</p>
+          <div class="process-step__connector"></div>
+        </div>
+
+        <div class="process-step" data-reveal>
+          <div class="process-step__num">02</div>
+          <div class="process-step__icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          </div>
+          <h3>Analyse &amp; devis</h3>
+          <p>On analyse votre situation en détail et on vous propose une solution sur mesure avec un devis clair, détaillé et sans frais cachés.</p>
+          <div class="process-step__connector"></div>
+        </div>
+
+        <div class="process-step" data-reveal>
+          <div class="process-step__num">03</div>
+          <div class="process-step__icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
+          </div>
+          <h3>Déploiement &amp; installation</h3>
+          <p>Nos techniciens interviennent sur site à Alger ou à distance. Installation soignée, configuration complète et tests avant livraison.</p>
+          <div class="process-step__connector"></div>
+        </div>
+
+        <div class="process-step" data-reveal>
+          <div class="process-step__num">04</div>
+          <div class="process-step__icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h3>Support &amp; garantie</h3>
+          <p>Après livraison, on reste disponibles. Support technique réactif, garantie 1 an sur chaque projet et maintenance planifiée si besoin.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact-cta" id="contact">
+    <div class="container contact-cta__inner">
+      <div class="contact-cta__blob" aria-hidden="true"></div>
+      <div class="contact-cta__text" data-reveal>
+        <p class="section-label section-label--light">Contactez-nous</p>
+        <h2>Prêt à démarrer<br>votre projet ?</h2>
+        <p>Parlez à un ingénieur AITEC — nous répondons sous 24h.</p>
+      </div>
+      <div class="contact-cta__links" data-reveal>
+        <a href="mailto:contact@aitec.dz" class="btn btn--white">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          contact@aitec.dz
+        </a>
+        <a href="tel:+213000000000" class="btn btn--outline-light">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+          +213 XX XX XX XX
+        </a>
+        <p class="contact-cta__hours">Dimanche – Jeudi &nbsp;·&nbsp; 08H00 – 18H00 &nbsp;·&nbsp; Alger</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="AITEC Solutions" class="footer__logo" onerror="this.outerHTML='<span class=&quot;logo-text&quot;>AITEC</span>'" />
+        <p>Le partenaire technologique<br>tout-en-un de l'Algérie.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5zM20 19h-3v-5.6c0-3.37-4-3.11-4 0V19h-3V8h3v1.77c1.4-2.59 7-2.78 7 2.48V19z"/></svg></a>
+        </div>
+      </div>
+      <nav class="footer__nav">
+        <p class="footer__nav-title">Navigation</p>
+        <a href="#home">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="#about">À propos</a>
+        <a href="#temoignages">Témoignages</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer__services">
+        <p class="footer__nav-title">Services</p>
+        <a href="#contact">IA &amp; Intelligence</a>
+        <a href="#contact">Infrastructure &amp; Serveurs</a>
+        <a href="#contact">Web &amp; Mobile</a>
+        <a href="#contact">IPTV &amp; Électronique</a>
+        <a href="#contact">Cloud &amp; Sécurité</a>
+        <a href="#contact">Licences Logicielles</a>
+        <a href="#contact">Abonnements</a>
+        <a href="#contact">Jeux Vidéo</a>
+        <a href="#contact">Vidéosurveillance CCTV</a>
+        <a href="#contact">Système de Pointage</a>
+        <a href="#contact">Installation POS</a>
+        <a href="#contact">ERP Odoo</a>
+        <a href="#contact">Marketing Digital</a>
+      </div>
+      <div class="footer__contact-info">
+        <p class="footer__nav-title">Contact</p>
+        <p><a href="mailto:contact@aitec.dz">contact@aitec.dz</a></p>
+        <p><a href="tel:+213000000000">+213 XX XX XX XX</a></p>
+        <p>Alger, Algérie</p>
+        <p>Dim – Jeu · 08H – 18H</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <span>© 2026 AITEC Solutions — Alger, Algérie 🇩🇿</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=3"></script>
+</body>
+</html>
+
