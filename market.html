@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AITEC Market | Licences, Streaming &amp; Gaming</title>
+  <meta name="description" content="Achetez licences logicielles, abonnements streaming, cartes gaming et IPTV. Livraison instantanée par WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=29" />
+  <style>
+  /* ── Market filter bar ── */
+  .mkt-bar {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    justify-content: center; margin-bottom: 48px;
+  }
+  .mkt-btn {
+    padding: 10px 22px; border-radius: 50px;
+    border: 1.5px solid var(--c-line);
+    background: #fff; color: var(--c-muted);
+    font-family: var(--ff-body); font-size: 13.5px; font-weight: 600;
+    cursor: pointer; transition: all .22s;
+    display: flex; align-items: center; gap: 7px;
+  }
+  .mkt-btn:hover { border-color: var(--jc); color: var(--jc); background: color-mix(in srgb, var(--jc) 6%, #fff); }
+  .mkt-btn.active { background: var(--jc); border-color: var(--jc); color: #fff; box-shadow: 0 4px 16px -4px color-mix(in srgb, var(--jc) 50%, transparent); }
+
+  /* ── Product grid ── */
+  .mkt-section { padding: 48px 0 100px; }
+  .mkt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 22px;
+  }
+
+  /* ── Product card ── */
+  .prod-card {
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 2px 18px -4px rgba(15,27,45,0.09), 0 0 0 1px rgba(15,27,45,0.04);
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: transform .28s cubic-bezier(.34,1.46,.64,1), box-shadow .25s;
+  }
+  .prod-card.hidden { display: none; }
+  .prod-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 22px 48px -10px color-mix(in srgb, var(--pc) 28%, transparent), 0 0 0 1.5px color-mix(in srgb, var(--pc) 25%, transparent);
+  }
+  .prod-card__img {
+    height: 140px; overflow: hidden; position: relative;
+  }
+  .prod-card__img img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .4s ease;
+  }
+  .prod-card:hover .prod-card__img img { transform: scale(1.06); }
+  .prod-card__badge {
+    position: absolute; top: 10px; left: 10px;
+    padding: 3px 10px; border-radius: 50px;
+    font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+    background: var(--pc); color: #fff;
+  }
+  .prod-card__body {
+    padding: 16px 18px 20px;
+    display: flex; flex-direction: column; flex: 1;
+  }
+  .prod-card__name {
+    font-size: 15px; font-weight: 700; color: var(--c-ink);
+    margin: 0 0 6px;
+  }
+  .prod-card__desc {
+    font-size: 12.5px; color: var(--c-muted); line-height: 1.6;
+    margin: 0 0 12px; flex: 1;
+  }
+  .prod-card__variants {
+    display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px;
+  }
+  .prod-variant {
+    font-size: 11px; font-weight: 600;
+    padding: 3px 9px; border-radius: 50px;
+    background: color-mix(in srgb, var(--pc) 10%, #fff);
+    color: var(--pc);
+    border: 1px solid color-mix(in srgb, var(--pc) 18%, transparent);
+  }
+  .prod-card__footer {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  }
+  .prod-price {
+    font-size: 13px; font-weight: 700; color: var(--c-ink);
+  }
+  .prod-price span { font-size: 11px; color: var(--c-muted); font-weight: 500; }
+  .prod-order {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 9px 16px; border-radius: 50px;
+    background: var(--pc); color: #fff;
+    font-family: var(--ff-body); font-size: 12.5px; font-weight: 700;
+    text-decoration: none;
+    transition: filter .2s, transform .2s;
+  }
+  .prod-order:hover { filter: brightness(1.1); transform: scale(1.03); }
+
+  /* ── Hero badge ── */
+  .market-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, #7B2D8B, #1B75BC);
+    color: #fff; padding: 6px 18px; border-radius: 50px;
+    font-size: 13px; font-weight: 700; margin-bottom: 16px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .mkt-grid { grid-template-columns: repeat(2, 1fr); }
+    .prod-card__img { height: 110px; }
+  }
+  @media (max-width: 380px) {
+    .mkt-grid { grid-template-columns: 1fr; }
+  }
+  </style>
+</head>
+<body>
+
+  <div class="page-blobs" aria-hidden="true">
+    <div class="pb pb--1"></div><div class="pb pb--2"></div>
+    <div class="pb pb--3"></div><div class="pb pb--4"></div>
+    <div class="pb pb--5"></div><div class="pb pb--6"></div>
+    <div class="pb pb--7"></div><div class="pb pb--8"></div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__brand">
+        <img src="assets/logo.png" alt="AITEC Solutions" class="nav__logo" onerror="this.outerHTML='<span class=&quot;logo-text&quot;>AITEC</span>'" />
+      </a>
+      <nav class="nav__links" id="navMenu">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="market.html" class="nav-active">Market</a>
+        <a href="portfolio.html">R&eacute;f&eacute;rences</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">&Agrave; propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__right">
+        <a href="https://wa.me/213658029033" target="_blank" rel="noopener" class="btn btn--whatsapp">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+          WhatsApp
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__blob page-hero__blob--1"></div>
+    <div class="page-hero__blob page-hero__blob--2"></div>
+    <div class="container">
+      <div class="page-hero__breadcrumb">
+        <a href="index.html">Accueil</a><span>&rsaquo;</span><span>Market</span>
+      </div>
+      <div class="market-badge">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+        AITEC Market
+      </div>
+      <h1>Licences, Streaming<br>&amp; Gaming</h1>
+      <p>Commandez en quelques secondes par WhatsApp. Livraison instantan&eacute;e par email.</p>
+    </div>
+  </section>
+
+  <!-- MARKET SECTION -->
+  <section class="mkt-section">
+    <div class="container">
+
+      <!-- Filter bar -->
+      <div class="mkt-bar" id="mktBar">
+        <button class="mkt-btn active" data-cat="all" style="--jc:#1B75BC">Tout voir</button>
+        <button class="mkt-btn" data-cat="streaming" style="--jc:#F43F5E">Streaming</button>
+        <button class="mkt-btn" data-cat="licences" style="--jc:#0891B2">Licences</button>
+        <button class="mkt-btn" data-cat="gaming" style="--jc:#7C3AED">Gaming</button>
+        <button class="mkt-btn" data-cat="iptv" style="--jc:#F7941D">IPTV</button>
+      </div>
+
+      <!-- Product grid -->
+      <div class="mkt-grid" id="mktGrid">
+
+        <!-- ═══ STREAMING ═══ -->
+        <div class="prod-card" data-cat="streaming" style="--pc:#E50914">
+          <div class="prod-card__img">
+            <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=500&fit=crop&q=70" alt="Netflix" loading="lazy" />
+            <span class="prod-card__badge">Streaming</span>
+          </div>
+          <div class="prod-card__body">
+            <h3 class="prod-card__name">Netflix</h3>
+            <p class="prod-card__desc">Acc&egrave;s illimit&eacute; &agrave; des milliers de films et s&eacute;ries. Activation imm&eacute;diate.</p>
+            <div class="prod-card__variants">
+              <span class="prod-variant">Standard</span>
+              <span class="prod-variant">Premium</span>
+              <span class="prod-variant">Avec pub</span>
+            </div>
+            <div class="prod-card__footer">
+              <p class="prod-price">Prix sur demande</p>
+              <a href="https://wa.me/213658029033?text=Bonjour%2C%20je%20voudrais%20commander%20un%20abonnement%20Netflix" target="_blank" class="prod-order">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+                Commander
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-cat="streaming" style="--pc:#1DB954">
+          <div class="prod-card__img">
+            <img src="https://images.unsplash.com/photo-1611339555312-e607c8352fd7?w=500&fit=crop&q=70" alt="Spotify" loading="lazy" />
+            <span class="prod-card__badge">Streaming</span>
+          </div>
+          <div class="prod-card__body">
+            <h3 class="prod-card__name">Spotify Premium</h3>
+            <p class="prod-card__desc">Musique sans pub, &eacute;coute hors ligne et qualit&eacute; son maximale.</p>
+            <div class="prod-card__variants">
+              <span class="prod-variant">Individuel</span>
+              <span class="prod-variant">Duo</span>
+              <span class="prod-variant">Famille</span>
+            </div>
+            <div class="prod-card__footer">
+              <p class="prod-price">Prix sur demande</p>
+              <a href="https://wa.me/213658029033?text=Bonjour%2C%20je%20voudrais%20commander%20Spotify%20Premium" target="_blank" class="prod-order">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+                Commander
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-cat="streaming" style="--pc:#113CCF">
+          <div class="prod-card__img">
+            <img src="https://images.unsplash.com/photo-1659301254614-8d6a9d46f26a?w=500&fit=crop&q=70" alt="Disney+" loading="lazy" />
+            <span class="prod-card__badge">Streaming</span>
+          </div>
+          <div class="prod-card__body">
+            <h3 class="prod-card__name">Disney+</h3>
+            <p class="prod-card__desc">Disney, Marvel, Star Wars, Pixar et National Geographic en illimit&eacute;.</p>
+            <div class="prod-card__variants">
+              <span class="prod-variant">Mensuel</span>
+              <span class="prod-variant">Annuel</span>
+            </div>
+            <div class="prod-card__footer">
+              <p class="prod-price">Prix sur demande</p>
+              <a href="https://wa.me/213658029033?text=Bonjour%2C%20je%20voudrais%20commander%20Disney%2B" target="_blank" class="prod-order">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+                Commander
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-cat="streaming" style="--pc:#00C850">
+          <div class="prod-card__img">
+            <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=500&fit=crop&q=70" alt="Shahid" loading="lazy" />
+            <span class="prod-card__badge">Streaming</span>
+          </div>
+          <div class="prod-card__body">
+            <h3 class="prod-card__name">Shahid VIP</h3>
+            <p class="prod-card__desc">Contenu arabe exclusif, s&eacute;ries, films et sport. Meilleure plateforme arabe.</p>
+            <div class="prod-card__variants">
+              <span class="prod-variant">1 mois</span>
+              <span class="prod-variant">3 mois</span>
+              <span class="prod-variant">1 an</span>
+            </div>
+            <div class="prod-card__footer">
+              <p class="prod-price">Prix sur demande</p>
+              <a href="https://wa.me/213658029033?text=Bonjour%2C%20je%20voudrais%20commander%20Shahid%20VIP" target="_blank" class="prod-order">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+                Commander
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-cat="streaming" style="--pc:#FF0000">
+          <div class="prod-card__img">
+            <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=500&fit=crop&q=70" alt="YouTube Premium" loading="lazy" />
+            <span class="prod-card__badge">Streaming</span>
+          </div>
+          <div class="prod-card__body">
+            <h3 class="prod-card__name">YouTube Premium</h3>
+            <p class="prod-card__desc">YouTube sans pub, lecture en arri&egrave;re-plan et acc&egrave;s YouTube Music.</p>
+            <div class="prod-card__variants">
+              <span class="prod-variant">Individuel</span>
+              <span class="prod-variant">Famille</span>
+            </div>
+            <div class="prod-card__footer">
+              <p class="prod-price">Prix sur demande</p>
+              <a href="https://wa.me/213658029033?text=Bonjour%2C%20je%20voudrais%20commander%20YouTube%20Premium" target="_blank" class="prod-order">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+                Commander
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ LICENCES ═══ -->
+        <div class="prod-card" data-cat="licences" style="--pc:#0078D4">
+          <div class="prod-card__img">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=500&fit=crop&q=70" alt="Microsoft 365" loading="lazy" />
+            <span class="prod-card__badge">Licence</span>
+          </div>
+          <div class="prod-card__body">
+            <h3 class="prod-card__name">Microsoft 365</h3>
+            <p class="prod-card__desc">Word, Excel, PowerPoint, Teams, Outlook et 1 To OneDrive inclus.</p>
+            <div class="prod-card__variants">
+              <span class="prod-variant">Personnel</span>
+              <span class="prod-variant">Business Basic</span>
+              <span class="prod-variant">Business Standard</span>
+            </div>
+            <div class="prod-card__footer">
+              <p class="prod-price">Prix sur demande</p>
+              <a href="https://wa.me/213658029033?text=Bonjour%2C%20je%20voudrais%20une%20licence%20Microsoft%20365" target="_blank" class="prod-order">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+                Commander
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-cat="licences" style="--pc:#FF0000">
+          <div class="prod-card__img">
+            <img src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=500&fit=crop&q=70" alt="Adobe Creative Cloud" loading="lazy" />
+            <span class="prod-card__badge">Licence</span>
+          </div>
+          <div class="prod-card__body">
+            <h3 class="prod-card__name">Adobe Creative Cloud</h3>
+            <p class="prod-card__desc">Photoshop, Illustrator, Premiere Pro, After Effects et toutes les apps Adobe.</p>
+            <div class="prod-card__variants">
+              <span class="prod-variant">All Apps</span>
+              <span class="prod-variant">Acrobat Pro</span>
+              <span class="prod-variant">Lightroom</span>
+            </div>
+            <div class="prod-card__footer">
+              <p class="prod-price">Prix sur demande</p>
+              <a href="https://wa.me/213658029033?text=Bonjour%2C%20je%20voudrais%20une%20licence%20Adobe%20Creative%20Cloud" target="_blank" class="prod-order">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+                Commander
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-cat="licences" style="--pc:#006C51">
+          <div class="prod-card__img">
+            <img src="https://images.unsplash.com/photo-1614064641938-2de790375d00?w=500&fit=crop&q=70" alt="Antivirus" loading="lazy" />
+            <span class="prod-card__badge">Licence</span>
+          </div>
+          <div class="prod-card__body">
+            <h3 class="prod-card__name">Antivirus Pro</h3>
+            <p class="prod-card__desc">Protection en temps r&eacute;el, anti-ransomware et contr&ocirc;le parental. Multi-appareils.</p>
+            <div class="prod-card__variants">
+              <span class="prod-variant">Kaspersky</span>
+              <span class="prod-variant">ESET</span>
+              <span class="prod-variant">Bitdefender</span>
+            </div>
+            <div class="prod-card__footer">
+              <p class="prod-price">Prix sur demande</p>
+              <a href="https://wa.me/213658029033?text=Bonjour%2C%20je%20voudrais%20une%20licence%20antivirus" target="_blank" class="prod-order">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+                Commander
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ GAMING ═══ -->
+        <div class="prod-card" data-cat="gaming" style="--pc:#00439C">
+          <div class="prod-card__img">
+            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=500&fit=crop&q=70" alt="PSN PlayStation" loading="lazy" />
+            <span class="prod-card__badge">Gaming</span>
+          </div>
+          <div class="prod-card__body">
+            <h3 class="prod-card__name">Cartes PSN PlayStation</h3>
+            <p class="prod-card__desc">Rechargez votre wallet PlayStation et achetez vos jeux et DLC pr&eacute;f&eacute;r&eacute;s.</p>
+            <div class="prod-card__variants">
+              <span class="prod-variant">5 USD</span>
+              <span class="prod-variant">10 USD</span>
+              <span class="prod-variant">20 USD</span>
+              <span class="prod-variant">50 USD</span>
+            </div>
+            <div class="prod-card__footer">
+              <p class="prod-price">Prix sur demande</p>
+              <a href="https://wa.me/213658029033?text=Bonjour%2C%20je%20voudrais%20une%20carte%20PSN%20PlayStation" target="_blank" class="prod-order">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+                Commander
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-cat="gaming" style="--pc:#107C10">
+          <div class="prod-card__img">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&fit=crop&q=70" alt="Xbox" loading="lazy" />
+            <span class="prod-card__badge">Gaming</span>
+          </div>
+          <div class="prod-card__body">
+            <h3 class="prod-card__name">Xbox &amp; Game Pass</h3>
+            <p class="prod-card__desc">Cartes cadeaux Xbox et abonnements Game Pass Ultimate pour jouer &agrave; des centaines de jeux.</p>
+            <div class="prod-card__variants">
+              <span class="prod-variant">Cartes Xbox</span>
+              <span class="prod-variant">Game Pass 1 mois</span>
+              <span class="prod-variant">Game Pass 3 mois</span>
+            </div>
+            <div class="prod-card__footer">
+              <p class="prod-price">Prix sur demande</p>
+              <a href="https://wa.me/213658029033?text=Bonjour%2C%20je%20voudrais%20une%20carte%20Xbox%20ou%20Game%20Pass" target="_blank" class="prod-order">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+                Commander
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-cat="gaming" style="--pc:#1B2838">
+          <div class="prod-card__img">
+            <img src="https://images.unsplash.com/photo-1601370690183-1c7796ecec61?w=500&fit=crop&q=70" alt="Steam" loading="lazy" />
+            <span class="prod-card__badge">Gaming</span>
+          </div>
+          <div class="prod-card__body">
+            <h3 class="prod-card__name">Steam &amp; PC Games</h3>
+            <p class="prod-card__desc">Cartes Steam, jeux Epic Games, GOG et V-Bucks Fortnite. Livraison imm&eacute;diate.</p>
+            <div class="prod-card__variants">
+              <span class="prod-variant">Steam Wallet</span>
+              <span class="prod-variant">Epic Games</span>
+              <span class="prod-variant">V-Bucks</span>
+              <span class="prod-variant">Robux</span>
+            </div>
+            <div class="prod-card__footer">
+              <p class="prod-price">Prix sur demande</p>
+              <a href="https://wa.me/213658029033?text=Bonjour%2C%20je%20voudrais%20une%20carte%20Steam%20ou%20des%20V-Bucks" target="_blank" class="prod-order">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+                Commander
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ IPTV ═══ -->
+        <div class="prod-card" data-cat="iptv" style="--pc:#F7941D">
+          <div class="prod-card__img">
+            <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=500&fit=crop&q=70" alt="IPTV" loading="lazy" />
+            <span class="prod-card__badge">IPTV</span>
+          </div>
+          <div class="prod-card__body">
+            <h3 class="prod-card__name">Abonnement IPTV</h3>
+            <p class="prod-card__desc">+10 000 cha&icirc;nes HD/4K, VOD arabe &amp; international. Compatible Smart TV, MAG, Android.</p>
+            <div class="prod-card__variants">
+              <span class="prod-variant">1 mois</span>
+              <span class="prod-variant">3 mois</span>
+              <span class="prod-variant">6 mois</span>
+              <span class="prod-variant">1 an</span>
+            </div>
+            <div class="prod-card__footer">
+              <p class="prod-price">Prix sur demande</p>
+              <a href="https://wa.me/213658029033?text=Bonjour%2C%20je%20voudrais%20un%20abonnement%20IPTV" target="_blank" class="prod-order">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+                Commander
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /mkt-grid -->
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="contact-cta">
+    <div class="container contact-cta__inner">
+      <div class="contact-cta__blob" aria-hidden="true"></div>
+      <div class="contact-cta__text" data-reveal>
+        <p class="section-label section-label--light">Livraison instantan&eacute;e</p>
+        <h2>Commandez par<br>WhatsApp en 1 minute</h2>
+        <p>Envoyez-nous un message, on vous confirme et vous livrez par email sous 30 minutes.</p>
+      </div>
+      <div class="contact-cta__links" data-reveal>
+        <a href="https://wa.me/213658029033?text=Bonjour%2C%20je%20voudrais%20passer%20une%20commande%20sur%20AITEC%20Market" target="_blank" class="btn btn--white">Commander sur WhatsApp</a>
+        <a href="contact.html" class="btn btn--outline-light">Autre demande</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="AITEC Solutions" class="footer__logo" onerror="this.outerHTML='<span class=&quot;logo-text&quot;>AITEC</span>'" />
+        <p>Le partenaire technologique<br>tout-en-un.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5zM20 19h-3v-5.6c0-3.37-4-3.11-4 0V19h-3V8h3v1.77c1.4-2.59 7-2.78 7 2.48V19z"/></svg></a>
+        </div>
+      </div>
+      <nav class="footer__nav">
+        <p class="footer__nav-title">Navigation</p>
+        <a href="index.html">Accueil</a><a href="services.html">Services</a>
+        <a href="market.html">Market</a><a href="portfolio.html">R&eacute;f&eacute;rences</a>
+        <a href="blog.html">Blog</a><a href="about.html">&Agrave; propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer__services">
+        <p class="footer__nav-title">Market</p>
+        <a href="market.html">Streaming</a>
+        <a href="market.html">Licences logicielles</a>
+        <a href="market.html">Gaming &amp; Cartes</a>
+        <a href="market.html">IPTV</a>
+      </div>
+      <div class="footer__contact-info">
+        <p class="footer__nav-title">Contact</p>
+        <p><a href="mailto:contact@aitec.dz">contact@aitec.dz</a></p>
+        <p><a href="tel:+213658029033">+213 658 029 033</a></p>
+        <p>Alger</p>
+        <p>Dim &ndash; Jeu &middot; 08H &ndash; 18H</p>
+      </div>
+    </div>
+    <div class="footer__bottom"><div class="container"><span>&copy; 2026 AITEC Solutions</span></div></div>
+  </footer>
+
+  <script src="script.js?v=3"></script>
+  <script>
+  (function () {
+    var btns  = document.querySelectorAll('#mktBar .mkt-btn');
+    var cards = document.querySelectorAll('#mktGrid .prod-card');
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        btns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var cat = btn.dataset.cat;
+        cards.forEach(function (c) {
+          c.classList.toggle('hidden', cat !== 'all' && c.dataset.cat !== cat);
+        });
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
