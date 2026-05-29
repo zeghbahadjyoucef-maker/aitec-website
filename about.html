@@ -47,17 +47,24 @@
   }
   .cat-card__name { color: #fff; font-size: 15px; font-weight: 700; margin: 0 0 3px; }
   .cat-card__count { color: rgba(255,255,255,0.72); font-size: 12px; font-weight: 500; margin: 0; }
-  .cat-card__body { padding: 16px 18px 20px; display: flex; flex-direction: column; flex: 1; }
-  .cat-svc-pills { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
-  .cat-svc-pill {
-    font-size: 11px; font-weight: 600;
-    padding: 4px 10px; border-radius: 50px;
-    background: color-mix(in srgb, var(--cc) 9%, #fff);
-    color: var(--cc);
-    border: 1px solid color-mix(in srgb, var(--cc) 16%, transparent);
+  .cat-card__body { padding: 14px 18px 18px; display: flex; flex-direction: column; flex: 1; }
+  .cat-svc-list { list-style: none; margin: 0 0 14px; padding: 0; flex: 1; }
+  .cat-svc-list li {
+    display: flex; align-items: center; gap: 9px;
+    padding: 6px 0;
+    font-size: 12.5px; font-weight: 500; color: var(--c-text);
+    border-bottom: 1px solid var(--c-line);
+    line-height: 1.3;
+  }
+  .cat-svc-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .cat-svc-list li::before {
+    content: '';
+    width: 7px; height: 7px; border-radius: 2px;
+    background: var(--cc); flex-shrink: 0;
+    opacity: .85;
   }
   .cat-card__cta {
-    margin-top: 14px; font-size: 12.5px; font-weight: 700;
+    margin-top: 12px; font-size: 12.5px; font-weight: 700;
     color: var(--cc); display: flex; align-items: center; gap: 5px;
     transition: gap .18s;
   }
@@ -154,15 +161,15 @@
             </div>
           </div>
           <div class="cat-card__body">
-            <div class="cat-svc-pills">
-              <span class="cat-svc-pill">IA &amp; Intelligence</span>
-              <span class="cat-svc-pill">Infrastructure &amp; Serveurs</span>
-              <span class="cat-svc-pill">Web &amp; Mobile</span>
-              <span class="cat-svc-pill">Cloud &amp; Cybers&eacute;curit&eacute;</span>
-              <span class="cat-svc-pill">ERP Odoo</span>
-              <span class="cat-svc-pill">H&eacute;bergement Web &amp; VPS</span>
-              <span class="cat-svc-pill">CRM &amp; Helpdesk</span>
-            </div>
+            <ul class="cat-svc-list">
+              <li>IA &amp; Intelligence</li>
+              <li>Infrastructure &amp; Serveurs</li>
+              <li>Web &amp; Mobile</li>
+              <li>Cloud &amp; Cybers&eacute;curit&eacute;</li>
+              <li>ERP Odoo</li>
+              <li>H&eacute;bergement Web &amp; VPS</li>
+              <li>CRM &amp; Helpdesk</li>
+            </ul>
             <span class="cat-card__cta">Voir les services <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
@@ -179,16 +186,16 @@
             </div>
           </div>
           <div class="cat-card__body">
-            <div class="cat-svc-pills">
-              <span class="cat-svc-pill">Vid&eacute;osurveillance CCTV</span>
-              <span class="cat-svc-pill">Syst&egrave;me de Pointage</span>
-              <span class="cat-svc-pill">Installation POS</span>
-              <span class="cat-svc-pill">Contr&ocirc;le d&rsquo;Acc&egrave;s</span>
-              <span class="cat-svc-pill">D&eacute;tection Incendie</span>
-              <span class="cat-svc-pill">Affichage Dynamique</span>
-              <span class="cat-svc-pill">File d&rsquo;Attente</span>
-              <span class="cat-svc-pill">Standard T&eacute;l&eacute;phonique</span>
-            </div>
+            <ul class="cat-svc-list">
+              <li>Vid&eacute;osurveillance CCTV</li>
+              <li>Syst&egrave;me de Pointage</li>
+              <li>Installation POS</li>
+              <li>Contr&ocirc;le d&rsquo;Acc&egrave;s</li>
+              <li>D&eacute;tection Incendie</li>
+              <li>Affichage Dynamique</li>
+              <li>File d&rsquo;Attente</li>
+              <li>Standard T&eacute;l&eacute;phonique</li>
+            </ul>
             <span class="cat-card__cta">Voir les services <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
@@ -205,10 +212,10 @@
             </div>
           </div>
           <div class="cat-card__body">
-            <div class="cat-svc-pills">
-              <span class="cat-svc-pill">Licences Professionnelles</span>
-              <span class="cat-svc-pill">Abonnements Streaming</span>
-            </div>
+            <ul class="cat-svc-list">
+              <li>Licences Professionnelles</li>
+              <li>Abonnements Streaming</li>
+            </ul>
             <span class="cat-card__cta">Voir les services <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
@@ -225,10 +232,10 @@
             </div>
           </div>
           <div class="cat-card__body">
-            <div class="cat-svc-pills">
-              <span class="cat-svc-pill">IPTV &amp; &Eacute;lectronique</span>
-              <span class="cat-svc-pill">Jeux Vid&eacute;o &amp; Gaming</span>
-            </div>
+            <ul class="cat-svc-list">
+              <li>IPTV &amp; &Eacute;lectronique</li>
+              <li>Jeux Vid&eacute;o &amp; Gaming</li>
+            </ul>
             <span class="cat-card__cta">Voir les services <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
@@ -245,9 +252,9 @@
             </div>
           </div>
           <div class="cat-card__body">
-            <div class="cat-svc-pills">
-              <span class="cat-svc-pill">Marketing Digital</span>
-            </div>
+            <ul class="cat-svc-list">
+              <li>Marketing Digital</li>
+            </ul>
             <span class="cat-card__cta">Voir les services <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
