@@ -1086,7 +1086,7 @@ body::after {
 .contact-info-card__ico {
   width: 44px; height: 44px;
   border-radius: 12px;
-  background: var(--c-ink) !important;
+  background: var(--c-ink);
   flex-shrink: 0;
   display: flex; align-items: center; justify-content: center; color: #fff;
 }
