@@ -172,11 +172,12 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 16px); }
 }
 .nav__logo { max-height: 44px; }
 .logo-text { font-family: var(--ff-head); font-weight: 700; font-size: 22px; color: var(--c-ink); }
-.nav__links { display: flex; gap: 36px; }
+.nav__links { display: flex; gap: 26px; }
 .nav__links a {
   font-family: var(--ff-body);
-  font-size: 20px; font-weight: 600;
+  font-size: 15px; font-weight: 600;
   color: var(--c-text);
+  white-space: nowrap;
   transition: color .2s;
   position: relative; padding-bottom: 2px;
 }
