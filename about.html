@@ -9,6 +9,60 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css?v=29" />
+  <style>
+  .cat-showcase {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 52px;
+  }
+  @media (max-width: 960px) { .cat-showcase { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .cat-showcase { grid-template-columns: 1fr; } }
+
+  .cat-card {
+    border-radius: 18px;
+    border: 1.5px solid var(--c-line);
+    background: #fff;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex; flex-direction: column;
+    transition: box-shadow .25s, transform .25s, border-color .25s;
+    box-shadow: 0 2px 14px -4px rgba(15,27,45,0.08);
+  }
+  .cat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 44px -8px color-mix(in srgb, var(--cc) 24%, transparent);
+    border-color: var(--cc);
+  }
+  .cat-card__head {
+    background: linear-gradient(135deg, var(--cc) 0%, color-mix(in srgb, var(--cc) 72%, #000) 100%);
+    padding: 20px 22px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .cat-card__ico {
+    width: 46px; height: 46px; border-radius: 12px;
+    background: rgba(255,255,255,0.22);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; flex-shrink: 0;
+  }
+  .cat-card__name { color: #fff; font-size: 15px; font-weight: 700; margin: 0 0 3px; }
+  .cat-card__count { color: rgba(255,255,255,0.72); font-size: 12px; font-weight: 500; margin: 0; }
+  .cat-card__body { padding: 16px 18px 20px; display: flex; flex-direction: column; flex: 1; }
+  .cat-svc-pills { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
+  .cat-svc-pill {
+    font-size: 11px; font-weight: 600;
+    padding: 4px 10px; border-radius: 50px;
+    background: color-mix(in srgb, var(--cc) 9%, #fff);
+    color: var(--cc);
+    border: 1px solid color-mix(in srgb, var(--cc) 16%, transparent);
+  }
+  .cat-card__cta {
+    margin-top: 14px; font-size: 12.5px; font-weight: 700;
+    color: var(--cc); display: flex; align-items: center; gap: 5px;
+    transition: gap .18s;
+  }
+  .cat-card:hover .cat-card__cta { gap: 9px; }
+  </style>
 </head>
 <body>
 
@@ -76,70 +130,127 @@
     </div>
   </section>
 
-  <!-- CERTIFICATIONS & SECTORS -->
+  <!-- SERVICE CATEGORIES -->
   <section class="about-certif">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="section-label">Compétences techniques</p>
-        <h2>Expertise &amp; Technologies</h2>
-        <p>Des équipes spécialisées dans les domaines clés de l'informatique d'entreprise, prêtes à intervenir sur votre infrastructure.</p>
+        <p class="section-label">Ce que nous faisons</p>
+        <h2>Nos cat&eacute;gories de services</h2>
+        <p>20 expertises r&eacute;parties en 5 domaines pour r&eacute;pondre &agrave; l&rsquo;ensemble de vos besoins IT et technologiques.</p>
       </div>
 
-      <div class="certif-grid">
-        <div class="certif-card" data-reveal style="--cc:#1B75BC">
-          <div class="certif-card__icon" style="background:linear-gradient(135deg,#1B75BC,#50a0e8)">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="9" height="9" rx="2"/><rect x="13" y="2" width="9" height="9" rx="2"/><rect x="2" y="13" width="9" height="9" rx="2"/><rect x="13" y="13" width="9" height="9" rx="2"/></svg>
-          </div>
-          <div class="certif-card__body">
-            <h3>Systèmes &amp; Réseaux</h3>
-            <p>Administration de serveurs Windows/Linux, déploiement de switches, routeurs, Wi-Fi d'entreprise et VPN site-à-site.</p>
-            <div class="certif-tags"><span>Windows Server</span><span>Linux</span><span>VPN</span></div>
-          </div>
-        </div>
+      <div class="cat-showcase">
 
-        <div class="certif-card" data-reveal style="--cc:#0891B2">
-          <div class="certif-card__icon" style="background:linear-gradient(135deg,#0891B2,#38bdf8)">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+        <!-- IT & Développement -->
+        <a href="services.html" class="cat-card" data-reveal style="--cc:#1B75BC">
+          <div class="cat-card__head">
+            <div class="cat-card__ico">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div>
+              <p class="cat-card__name">IT &amp; D&eacute;veloppement</p>
+              <p class="cat-card__count">7 services</p>
+            </div>
           </div>
-          <div class="certif-card__body">
-            <h3>Cloud &amp; Virtualisation</h3>
-            <p>Migration vers le cloud, déploiement VMware/Hyper-V, sauvegarde et plan de reprise d'activité (PRA).</p>
-            <div class="certif-tags"><span>VMware</span><span>Cloud</span><span>Backup</span></div>
+          <div class="cat-card__body">
+            <div class="cat-svc-pills">
+              <span class="cat-svc-pill">IA &amp; Intelligence</span>
+              <span class="cat-svc-pill">Infrastructure &amp; Serveurs</span>
+              <span class="cat-svc-pill">Web &amp; Mobile</span>
+              <span class="cat-svc-pill">Cloud &amp; Cybers&eacute;curit&eacute;</span>
+              <span class="cat-svc-pill">ERP Odoo</span>
+              <span class="cat-svc-pill">H&eacute;bergement Web &amp; VPS</span>
+              <span class="cat-svc-pill">CRM &amp; Helpdesk</span>
+            </div>
+            <span class="cat-card__cta">Voir les services <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
-        </div>
+        </a>
 
-        <div class="certif-card" data-reveal style="--cc:#F7941D">
-          <div class="certif-card__icon" style="background:linear-gradient(135deg,#F7941D,#ffc165)">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <!-- Installation -->
+        <a href="services.html" class="cat-card" data-reveal style="--cc:#0F766E">
+          <div class="cat-card__head">
+            <div class="cat-card__ico">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <div>
+              <p class="cat-card__name">Installation</p>
+              <p class="cat-card__count">8 services</p>
+            </div>
           </div>
-          <div class="certif-card__body">
-            <h3>Développement sur mesure</h3>
-            <p>Applications web et mobiles, sites vitrine et e-commerce, APIs REST et intégrations métier personnalisées.</p>
-            <div class="certif-tags"><span>React</span><span>Node.js</span><span>WordPress</span></div>
+          <div class="cat-card__body">
+            <div class="cat-svc-pills">
+              <span class="cat-svc-pill">Vid&eacute;osurveillance CCTV</span>
+              <span class="cat-svc-pill">Syst&egrave;me de Pointage</span>
+              <span class="cat-svc-pill">Installation POS</span>
+              <span class="cat-svc-pill">Contr&ocirc;le d&rsquo;Acc&egrave;s</span>
+              <span class="cat-svc-pill">D&eacute;tection Incendie</span>
+              <span class="cat-svc-pill">Affichage Dynamique</span>
+              <span class="cat-svc-pill">File d&rsquo;Attente</span>
+              <span class="cat-svc-pill">Standard T&eacute;l&eacute;phonique</span>
+            </div>
+            <span class="cat-card__cta">Voir les services <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
-        </div>
+        </a>
 
-        <div class="certif-card" data-reveal style="--cc:#ED1C24">
-          <div class="certif-card__icon" style="background:linear-gradient(135deg,#ED1C24,#f5706a)">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        <!-- Licences & Abonnements -->
+        <a href="services.html" class="cat-card" data-reveal style="--cc:#0891B2">
+          <div class="cat-card__head">
+            <div class="cat-card__ico">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M11.5 11.5l9-9"/><path d="M18.5 4l2 2"/><path d="M15.5 7l2 2"/></svg>
+            </div>
+            <div>
+              <p class="cat-card__name">Licences &amp; Abonnements</p>
+              <p class="cat-card__count">2 services</p>
+            </div>
           </div>
-          <div class="certif-card__body">
-            <h3>Cybersécurité</h3>
-            <p>Pare-feux, antivirus d'entreprise, audits de sécurité, contrôle d'accès et supervision réseau continue.</p>
-            <div class="certif-tags"><span>Firewall</span><span>Antivirus</span><span>Audit</span></div>
+          <div class="cat-card__body">
+            <div class="cat-svc-pills">
+              <span class="cat-svc-pill">Licences Professionnelles</span>
+              <span class="cat-svc-pill">Abonnements Streaming</span>
+            </div>
+            <span class="cat-card__cta">Voir les services <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
-        </div>
+        </a>
 
-        <div class="certif-card" data-reveal style="--cc:#7B2D8B">
-          <div class="certif-card__icon" style="background:linear-gradient(135deg,#7B2D8B,#b260c2)">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h6M9 12h6M9 15h4"/><path d="M6 9h.01M6 12h.01M6 15h.01"/></svg>
+        <!-- Divertissement -->
+        <a href="services.html" class="cat-card" data-reveal style="--cc:#7C3AED">
+          <div class="cat-card__head">
+            <div class="cat-card__ico">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><polygon points="10 9 10 14 15.5 11.5" fill="currentColor" stroke="none"/></svg>
+            </div>
+            <div>
+              <p class="cat-card__name">Divertissement</p>
+              <p class="cat-card__count">2 services</p>
+            </div>
           </div>
-          <div class="certif-card__body">
-            <h3>ERP &amp; Solutions Métier</h3>
-            <p>Déploiement et personnalisation d'ERP, CRM, gestion des stocks, comptabilité et tableaux de bord BI.</p>
-            <div class="certif-tags"><span>ERP</span><span>CRM</span><span>BI</span></div>
+          <div class="cat-card__body">
+            <div class="cat-svc-pills">
+              <span class="cat-svc-pill">IPTV &amp; &Eacute;lectronique</span>
+              <span class="cat-svc-pill">Jeux Vid&eacute;o &amp; Gaming</span>
+            </div>
+            <span class="cat-card__cta">Voir les services <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
-        </div>
+        </a>
+
+        <!-- Marketing -->
+        <a href="services.html" class="cat-card" data-reveal style="--cc:#D946EF">
+          <div class="cat-card__head">
+            <div class="cat-card__ico">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+            </div>
+            <div>
+              <p class="cat-card__name">Marketing Digital</p>
+              <p class="cat-card__count">1 service</p>
+            </div>
+          </div>
+          <div class="cat-card__body">
+            <div class="cat-svc-pills">
+              <span class="cat-svc-pill">Marketing Digital</span>
+            </div>
+            <span class="cat-card__cta">Voir les services <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </a>
+
       </div>
 
       <div class="sector-block" data-reveal>
