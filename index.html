@@ -63,12 +63,10 @@
   }
   .tile__body { padding: 18px 22px 22px; display: flex; flex-direction: column; flex: 1; }
   .tile__desc { font-size: 13.5px; color: var(--c-muted); line-height: 1.65; margin: 0 0 14px; flex: 1; }
-  .tile__pills { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 16px; }
-  .tile__pill {
-    font-size: 11px; font-weight: 600; padding: 4px 11px; border-radius: 50px;
-    background: color-mix(in srgb, var(--accent) 10%, #fff);
-    color: var(--accent);
-    border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  .tile__tags {
+    font-size: 11.5px; font-weight: 600; margin: 0 0 14px;
+    color: color-mix(in srgb, var(--accent) 75%, #555);
+    letter-spacing: 0.01em; line-height: 1.5;
   }
   .tile__link {
     display: inline-flex; align-items: center; gap: 6px;
@@ -272,7 +270,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Automatisez, prévoyez, surpassez vos concurrents</p>
-            <div class="tile__pills"><span class="tile__pill">Chatbots</span><span class="tile__pill">Analyse prédictive</span><span class="tile__pill">RPA</span></div>
+            <p class="tile__tags">Chatbots &middot; Analyse prédictive &middot; RPA</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -285,7 +283,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Réseaux, serveurs et maintenance sans interruption</p>
-            <div class="tile__pills"><span class="tile__pill">VMware</span><span class="tile__pill">Câblage structuré</span><span class="tile__pill">Monitoring</span></div>
+            <p class="tile__tags">VMware &middot; Câblage structuré &middot; Monitoring</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -298,7 +296,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Du site vitrine à l'app mobile, livré dans les délais</p>
-            <div class="tile__pills"><span class="tile__pill">React / Next.js</span><span class="tile__pill">Flutter</span><span class="tile__pill">E-commerce</span></div>
+            <p class="tile__tags">React / Next.js &middot; Flutter &middot; E-commerce</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -311,7 +309,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Migrez, protégez, répondez aux incidents 24/7</p>
-            <div class="tile__pills"><span class="tile__pill">AWS / Azure</span><span class="tile__pill">Fortinet</span><span class="tile__pill">Audit sécurité</span></div>
+            <p class="tile__tags">AWS / Azure &middot; Fortinet &middot; Audit sécurité</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -324,7 +322,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Centralisez tous vos métiers en une seule plateforme</p>
-            <div class="tile__pills"><span class="tile__pill">Odoo 17</span><span class="tile__pill">Compta &amp; RH</span><span class="tile__pill">BI &amp; Rapports</span></div>
+            <p class="tile__tags">Odoo 17 &middot; Compta &amp; RH &middot; BI &amp; Rapports</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -337,7 +335,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Caméras HD/4K installées et configurées par nos techniciens</p>
-            <div class="tile__pills"><span class="tile__pill">Hikvision</span><span class="tile__pill">DVR / NVR</span><span class="tile__pill">Accès mobile</span></div>
+            <p class="tile__tags">Hikvision &middot; DVR / NVR &middot; Accès mobile</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -350,7 +348,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Présences automatisées, paie simplifiée</p>
-            <div class="tile__pills"><span class="tile__pill">Empreinte digitale</span><span class="tile__pill">RFID</span><span class="tile__pill">ZKTeco</span></div>
+            <p class="tile__tags">Empreinte digitale &middot; RFID &middot; ZKTeco</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -363,7 +361,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Caisses tactiles et TPE pour tous vos points de vente</p>
-            <div class="tile__pills"><span class="tile__pill">Tactile</span><span class="tile__pill">Multi-magasins</span><span class="tile__pill">SAV inclus</span></div>
+            <p class="tile__tags">Tactile &middot; Multi-magasins &middot; SAV inclus</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -376,7 +374,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Revendeur agréé des plus grandes marques logicielles</p>
-            <div class="tile__pills"><span class="tile__pill">Microsoft 365</span><span class="tile__pill">Adobe CC</span><span class="tile__pill">Antivirus</span></div>
+            <p class="tile__tags">Microsoft 365 &middot; Adobe CC &middot; Antivirus</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -389,7 +387,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Plateformes de divertissement activées en quelques minutes</p>
-            <div class="tile__pills"><span class="tile__pill">Netflix</span><span class="tile__pill">Spotify</span><span class="tile__pill">Shahid / beIN</span></div>
+            <p class="tile__tags">Netflix &middot; Spotify &middot; Shahid / beIN</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -402,7 +400,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">+10 000 chaînes HD installées sur site pour hôtels et entreprises</p>
-            <div class="tile__pills"><span class="tile__pill">+10k chaînes</span><span class="tile__pill">VOD 4K</span><span class="tile__pill">Hôtels</span></div>
+            <p class="tile__tags">+10k chaînes &middot; VOD 4K &middot; Hôtels</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -415,7 +413,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Jeux PC et console livrés digitalement en quelques minutes</p>
-            <div class="tile__pills"><span class="tile__pill">PSN / Xbox</span><span class="tile__pill">Steam</span><span class="tile__pill">Livraison instantanée</span></div>
+            <p class="tile__tags">PSN / Xbox &middot; Steam &middot; Livraison instantanée</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -428,7 +426,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Visibilité, acquisition client et notoriété</p>
-            <div class="tile__pills"><span class="tile__pill">Meta Ads</span><span class="tile__pill">Google Ads</span><span class="tile__pill">Contenu &amp; Design</span></div>
+            <p class="tile__tags">Meta Ads &middot; Google Ads &middot; Contenu &amp; Design</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -441,7 +439,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Infrastructure fiable pour votre présence en ligne</p>
-            <div class="tile__pills"><span class="tile__pill">VPS</span><span class="tile__pill">SSL / HTTPS</span><span class="tile__pill">Sauvegardes auto</span></div>
+            <p class="tile__tags">VPS &middot; SSL / HTTPS &middot; Sauvegardes auto</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -454,7 +452,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Centralisez vos relations clients et automatisez le support</p>
-            <div class="tile__pills"><span class="tile__pill">Odoo CRM</span><span class="tile__pill">Ticketing</span><span class="tile__pill">Automatisation</span></div>
+            <p class="tile__tags">Odoo CRM &middot; Ticketing &middot; Automatisation</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -467,7 +465,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Sécurisez physiquement vos locaux et gérez les droits</p>
-            <div class="tile__pills"><span class="tile__pill">Biométrie</span><span class="tile__pill">RFID</span><span class="tile__pill">Journal d'accès</span></div>
+            <p class="tile__tags">Biométrie &middot; RFID &middot; Journal d'accès</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -480,7 +478,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Conformité aux normes et protection de vos biens</p>
-            <div class="tile__pills"><span class="tile__pill">Détecteurs fumée</span><span class="tile__pill">Sprinklers</span><span class="tile__pill">Certification</span></div>
+            <p class="tile__tags">Détecteurs fumée &middot; Sprinklers &middot; Certification</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -493,7 +491,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Écrans publicitaires gérés à distance en temps réel</p>
-            <div class="tile__pills"><span class="tile__pill">CMS cloud</span><span class="tile__pill">Multi-écrans</span><span class="tile__pill">Totem interactif</span></div>
+            <p class="tile__tags">CMS cloud &middot; Multi-écrans &middot; Totem interactif</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -506,7 +504,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">Flux client optimisé, satisfaction améliorée</p>
-            <div class="tile__pills"><span class="tile__pill">Bornes tactiles</span><span class="tile__pill">Tickets électroniques</span><span class="tile__pill">Dashboard live</span></div>
+            <p class="tile__tags">Bornes tactiles &middot; Tickets électroniques &middot; Dashboard live</p>
             <a href="services.html" class="tile__link">Voir les détails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
@@ -519,7 +517,7 @@
           </div>
           <div class="tile__body">
             <p class="tile__desc">IPBX, VoIP et extensions SIP pour vos communications</p>
-            <div class="tile__pills"><span class="tile__pill">IPBX</span><span class="tile__pill">VoIP / SIP</span><span class="tile__pill">Cloud PBX</span></div>
+            <p class="tile__tags">IPBX &middot; VoIP / SIP &middot; Cloud PBX</p>
             <a href="services.html" class="tile__link">Voir les d&eacute;tails <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
