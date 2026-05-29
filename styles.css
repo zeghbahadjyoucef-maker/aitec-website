@@ -629,6 +629,53 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 16px); }
 }
 .testi-card span { font-size: 12px; color: var(--c-muted); }
 
+/* ---------- 11b. Market Teaser ---------- */
+.market-teaser {
+  padding: 80px 0;
+}
+.market-teaser__inner {
+  background: linear-gradient(135deg, #7B2D8B 0%, #1B75BC 60%, #0ea5e9 100%);
+  border-radius: 28px;
+  padding: 64px 72px;
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+}
+.market-teaser__inner::before {
+  content: '';
+  position: absolute; top: -80px; right: -80px;
+  width: 320px; height: 320px; border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+}
+.market-teaser__inner::after {
+  content: '';
+  position: absolute; bottom: -60px; left: 40%;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+}
+.market-teaser__text { position: relative; z-index: 1; max-width: 560px; }
+.market-teaser__text h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800; color: #fff; margin: 8px 0 16px; line-height: 1.1;
+}
+.market-teaser__text p {
+  font-size: 16px; color: rgba(255,255,255,0.82);
+  line-height: 1.7; margin: 0 0 24px;
+}
+.market-teaser__cats {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;
+}
+.market-teaser__cats span {
+  background: rgba(255,255,255,0.15);
+  color: #fff; font-size: 13px; font-weight: 600;
+  padding: 8px 18px; border-radius: 50px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+@media (max-width: 768px) {
+  .market-teaser__inner { padding: 40px 32px; }
+  .market-teaser__text h2 { font-size: 1.8rem; }
+}
+
 /* ---------- 12. Contact CTA ---------- */
 .contact-cta {
   padding: 100px 0;
