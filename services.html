@@ -977,7 +977,6 @@
   var overlay = document.getElementById('svcOverlay');
   var drawer  = document.getElementById('svcDrawer');
   var content = document.getElementById('svcDrawerContent');
-  var scrollY = 0;
 
   function openDrawer(s) {
     drawer.style.setProperty('--drawer-accent', s.accent);
@@ -1037,10 +1036,6 @@
         '</div>' +
       '</div>';
 
-    // Lock body scroll
-    scrollY = window.scrollY;
-    document.body.style.overflow = 'hidden';
-
     overlay.classList.add('open');
     drawer.classList.add('open');
     drawer.scrollTop = 0;
@@ -1052,8 +1047,6 @@
   function closeDrawer() {
     overlay.classList.remove('open');
     drawer.classList.remove('open');
-    document.body.style.overflow = '';
-    window.scrollTo(0, scrollY);
   }
 
   overlay.addEventListener('click', closeDrawer);
