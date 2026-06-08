@@ -131,7 +131,7 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 16px); }
   color: var(--c-blue);
   margin: 0 0 12px;
 }
-.section-label--light { color: rgba(255,255,255,0.45); }
+.section-label--light { color: rgba(255,255,255,0.7); }
 
 /* ---------- 5. Section head ---------- */
 .section-head {
@@ -632,29 +632,43 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 16px); }
 /* ---------- 11b. Market Teaser ---------- */
 .market-teaser { padding: 0 0 80px; }
 .market-teaser__inner {
-  background: var(--c-ink);
+  background: linear-gradient(135deg, #7B2D8B 0%, #1B75BC 52%, #F7941D 100%);
   border-radius: 24px;
   padding: 60px 68px;
   display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  box-shadow:
+    0 0 80px -10px rgba(123,45,139,0.55),
+    0 0 80px -10px rgba(247,148,29,0.35),
+    0 24px 60px -12px rgba(27,117,188,0.4);
 }
-.market-teaser__text { max-width: 580px; }
+.market-teaser__inner::before {
+  content: '';
+  position: absolute; top: -60%; left: -10%;
+  width: 55%; height: 220%;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.13) 0%, transparent 65%);
+  pointer-events: none;
+}
+.market-teaser__text { max-width: 580px; position: relative; z-index: 1; }
 .market-teaser__text h2 {
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   font-weight: 800; color: #fff; margin: 8px 0 14px; line-height: 1.15;
 }
 .market-teaser__text p {
-  font-size: 15.5px; color: rgba(255,255,255,0.65);
+  font-size: 15.5px; color: rgba(255,255,255,0.75);
   line-height: 1.7; margin: 0 0 28px;
 }
 .market-teaser__cats {
   display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;
 }
 .market-teaser__cats span {
-  color: rgba(255,255,255,0.7); font-size: 12.5px; font-weight: 600;
+  color: rgba(255,255,255,0.9); font-size: 12.5px; font-weight: 700;
   padding: 6px 16px;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
   border-radius: 8px;
-  letter-spacing: 0.04em; text-transform: uppercase;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
 }
 @media (max-width: 768px) {
   .market-teaser__inner { padding: 40px 28px; }
