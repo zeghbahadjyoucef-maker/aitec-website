@@ -1243,8 +1243,9 @@ body::after {
 .certif-tags { display: flex; flex-wrap: wrap; gap: 5px; }
 .certif-tags span {
   font-size: 10px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.06em; padding: 3px 9px; border-radius: 100px;
-  background: color-mix(in srgb, var(--cc) 10%, #fff);
+  letter-spacing: 0.08em; padding: 1px 0 1px 8px;
+  border-left: 2px solid var(--cc);
+  background: transparent;
   color: var(--cc);
 }
 
@@ -1256,14 +1257,15 @@ body::after {
 }
 .sector-tags { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
 .sector-tag {
-  padding: 10px 22px; border-radius: 100px; font-size: 14px; font-weight: 600;
-  background: color-mix(in srgb, var(--st) 10%, #fff);
+  padding: 2px 0 2px 10px; font-size: 14px; font-weight: 600;
+  background: transparent;
   color: var(--st);
-  border: 1.5px solid color-mix(in srgb, var(--st) 20%, transparent);
-  transition: background .22s, transform .22s;
+  border: none;
+  border-left: 2px solid var(--st);
+  transition: opacity .2s;
   cursor: default;
 }
-.sector-tag:hover { background: color-mix(in srgb, var(--st) 18%, #fff); transform: translateY(-2px); }
+.sector-tag:hover { opacity: 0.75; }
 
 /* ── Portfolio page ── */
 .portfolio-section { padding: 48px 0 100px; }
@@ -1280,9 +1282,10 @@ body::after {
 .project-card:hover .project-card__img img { transform: scale(1.06); }
 .project-card__body { padding: 24px 26px 28px; }
 .project-tag {
-  display: inline-block; padding: 4px 13px; border-radius: 100px;
+  display: inline-block; padding: 1px 0 1px 9px;
   font-size: 11px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.08em; margin-bottom: 13px;
+  letter-spacing: 0.09em; margin-bottom: 13px;
+  border-left: 2px solid currentColor; background: transparent !important;
 }
 .project-card__body h3 { font-size: 18px; font-weight: 700; margin: 0 0 9px; color: var(--c-ink); }
 .project-card__body .result {
@@ -1290,8 +1293,10 @@ body::after {
 }
 .project-tags-row { display: flex; flex-wrap: wrap; gap: 6px; }
 .svc-pill {
-  font-size: 11px; padding: 3px 11px; border-radius: 100px;
-  background: var(--c-soft); color: var(--c-muted); font-weight: 600;
+  font-size: 11px; font-weight: 600;
+  color: var(--c-muted); background: transparent;
+  padding: 1px 0 1px 7px;
+  border-left: 1.5px solid var(--c-line);
 }
 
 /* ── Blog page ── */
@@ -1309,8 +1314,11 @@ body::after {
 .article-card__body { padding: 24px 26px 28px; flex: 1; display: flex; flex-direction: column; }
 .article-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 13px; flex-wrap: wrap; }
 .article-cat {
-  font-size: 10px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.1em; padding: 3px 11px; border-radius: 100px; white-space: nowrap;
+  font-size: 10px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 0.12em; padding: 1px 0 1px 8px;
+  border-left: 2px solid currentColor;
+  background: transparent !important;
+  white-space: nowrap;
 }
 .article-date { font-size: 12px; color: var(--c-muted); }
 .article-card__body h3 {
