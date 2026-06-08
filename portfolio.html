@@ -64,8 +64,18 @@
   <section class="portfolio-section">
     <div class="container">
 
-      <!-- Filter tabs -->
-      <div class="page-filters" id="portfolioFilters">
+      <!-- Under update notice -->
+      <div style="text-align:center;padding:80px 24px 100px;display:flex;flex-direction:column;align-items:center;gap:24px;">
+        <div style="width:72px;height:72px;border-radius:20px;background:color-mix(in srgb,#1B75BC 10%,#fff);display:flex;align-items:center;justify-content:center;margin-bottom:8px;">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#1B75BC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h2 style="font-size:clamp(22px,4vw,32px);font-weight:800;color:var(--c-ink);margin:0;">Page en cours de mise à jour</h2>
+        <p style="color:var(--c-muted);font-size:16px;max-width:420px;line-height:1.7;margin:0;">Nos références sont en cours de préparation. Revenez très bientôt pour découvrir nos réalisations.</p>
+        <a href="contact.html" style="margin-top:8px;display:inline-flex;align-items:center;gap:8px;background:#1B75BC;color:#fff;font-weight:600;font-size:15px;padding:12px 28px;border-radius:10px;text-decoration:none;">Nous contacter</a>
+      </div>
+
+      <!-- Filter tabs (hidden) -->
+      <div class="page-filters" id="portfolioFilters" style="display:none;">
         <button class="page-filter active" data-filter="all">Tous les projets</button>
         <button class="page-filter" data-filter="entreprise">Entreprise</button>
         <button class="page-filter" data-filter="hotel">Hôtel & Tourisme</button>
