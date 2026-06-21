@@ -92,35 +92,102 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 16px); }
   font-family: var(--ff-body);
   font-size: 14px; font-weight: 700;
   padding: 13px 26px;
-  border-radius: var(--r-xl);
+  border-radius: 8px;
   transition: transform .2s, box-shadow .2s;
   white-space: nowrap; cursor: pointer; border: 0;
+  position: relative; overflow: hidden;
+  text-decoration: none;
 }
 .btn:hover { transform: translateY(-2px); }
+
+/* ── Split-tab: extra right padding + shared ::after ── */
+.btn--navy,
+.btn--white,
+.btn--ghost,
+.btn--whatsapp,
+.btn--outline-light { padding-right: 62px; }
+
+.btn--navy::after,
+.btn--white::after,
+.btn--ghost::after,
+.btn--whatsapp::after,
+.btn--outline-light::after {
+  content: '';
+  position: absolute; right: 0; top: 0; bottom: 0; width: 46px;
+  background-position: center; background-repeat: no-repeat; background-size: 16px;
+  pointer-events: none;
+}
+
+/* Navy (dark) → dark overlay tab + white chevron */
 .btn--navy {
   background: var(--c-navy); color: #fff;
   box-shadow: 0 6px 20px rgba(15,27,45,0.22);
 }
+.btn--navy::after {
+  background-color: rgba(0,0,0,0.25);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");
+  border-left: 1px solid rgba(255,255,255,0.14);
+}
 .btn--navy:hover { box-shadow: 0 12px 28px rgba(15,27,45,0.28); }
+
+/* Ghost → blue tab + white chevron */
 .btn--ghost {
   background: #fff; color: var(--c-ink);
   box-shadow: var(--shadow-card);
   border: 1.5px solid var(--c-line);
 }
-.btn--ghost:hover { border-color: var(--c-navy); }
+.btn--ghost::after {
+  background-color: var(--c-blue);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");
+}
+.btn--ghost:hover { border-color: var(--c-blue); }
+
+/* White → brand-blue tab + white chevron */
 .btn--white {
   background: #fff; color: var(--c-navy);
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
+.btn--white::after {
+  background-color: var(--c-blue);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");
+}
+
+/* White-orange → white body + orange tab */
+.btn--white-orange {
+  background: #fff; color: var(--c-navy);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.14);
+}
+.btn--white-orange::after {
+  background-color: #F7941D;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");
+}
+.btn--white-orange:hover { box-shadow: 0 10px 28px rgba(247,148,29,0.3); }
+
+/* Outline-light → frosted tab + white chevron */
 .btn--outline-light {
-  background: transparent; color: rgba(255,255,255,0.8);
-  border: 1.5px solid rgba(255,255,255,0.25);
+  background: transparent; color: rgba(255,255,255,0.85);
+  border: 1.5px solid rgba(255,255,255,0.28);
+}
+.btn--outline-light::after {
+  background-color: rgba(255,255,255,0.14);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");
+  border-left: 1px solid rgba(255,255,255,0.2);
 }
 .btn--outline-light:hover { border-color: rgba(255,255,255,0.7); color: #fff; }
+
+/* WhatsApp → dark-green tab + WA icon */
 .btn--whatsapp {
+  border-radius: 50px;
   background: #3aaa6e; color: #fff;
-  box-shadow: 0 2px 6px rgba(58,170,110,0.20);
+  box-shadow: 0 2px 6px rgba(58,170,110,0.22);
 }
+.btn--whatsapp::after {
+  background-color: rgba(0,0,0,0.2);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z'/%3E%3Cpath d='M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z'/%3E%3C/svg%3E");
+  border-left: 1px solid rgba(255,255,255,0.18);
+  background-size: 18px;
+}
+.btn--whatsapp svg { display: none; }
 .btn--whatsapp:hover { background: #2d9060; box-shadow: 0 4px 12px rgba(58,170,110,0.30); }
 
 /* ---------- 4. Section labels ---------- */

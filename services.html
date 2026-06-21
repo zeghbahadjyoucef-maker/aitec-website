@@ -3,12 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/assets/logo.png" />
+  <link rel="apple-touch-icon" href="/assets/logo.png" />
   <title>Nos Services | AITEC Solutions</title>
-  <meta name="description" content="20 expertises IT : IA, infrastructure, cloud, CCTV, pointage, IPTV, licences et marketing digital | AITEC Solutions." />
+  <meta name="description" content="15 expertises IT en Algérie : IA, infrastructure réseau, cloud, CCTV, contrôle d'accès, IPTV, licences logicielles et marketing digital | AITEC Solutions." />
+  <link rel="canonical" href="https://aitecsolution.net/services.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="AITEC Solutions" />
+  <meta name="theme-color" content="#1B75BC" />
+  <meta name="geo.region" content="DZ-16" />
+  <meta name="geo.placename" content="Alger, Algérie" />
+  <link rel="manifest" href="/manifest.json" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_DZ" />
+  <meta property="og:site_name" content="AITEC Solutions" />
+  <meta property="og:url" content="https://aitecsolution.net/services.html" />
+  <meta property="og:title" content="Nos Services IT — IA, Réseau, Cloud &amp; Plus | AITEC Solutions" />
+  <meta property="og:description" content="15 expertises IT en Algérie : IA, infrastructure, cloud, CCTV, IPTV, licences et marketing digital." />
+  <meta property="og:image" content="https://aitecsolution.net/assets/hero.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nos Services IT — IA, Réseau, Cloud &amp; Plus | AITEC Solutions" />
+  <meta name="twitter:description" content="15 expertises IT en Algérie. Infrastructure, IA, cloud, CCTV et plus." />
+  <meta name="twitter:image" content="https://aitecsolution.net/assets/hero.jpg" />
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://aitecsolution.net/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://aitecsolution.net/services.html" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Services IT AITEC Solutions",
+        "provider": { "@id": "https://aitecsolution.net/#business" },
+        "areaServed": { "@type": "Country", "name": "Algeria" },
+        "description": "Infrastructure réseau, IA, développement web, cloud, cybersécurité, CCTV, IPTV et marketing digital en Algérie."
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=30" />
+  <link rel="stylesheet" href="styles.css?v=35" />
   <style>
   /* ═══════════════════════════════════════════════════
      SERVICES PAGE — complete design system
@@ -16,33 +62,37 @@
 
   /* ── Category filter bar ── */
   .cat-bar {
-    display: flex; flex-wrap: wrap; gap: 8px;
+    display: inline-flex; flex-wrap: wrap; gap: 4px;
     justify-content: center; margin-bottom: 52px;
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    border-radius: 50px;
+    padding: 5px;
   }
   .cat-btn {
     position: relative;
-    padding: 10px 22px; border-radius: 50px;
-    border: 1.5px solid var(--c-line);
-    background: #fff; color: var(--c-muted);
-    font-family: var(--ff-body); font-size: 13.5px; font-weight: 600;
-    cursor: pointer; transition: all .22s;
-    display: flex; align-items: center; gap: 7px;
+    padding: 9px 18px; border-radius: 50px;
+    border: none;
+    background: transparent; color: #64748B;
+    font-family: var(--ff-body); font-size: 13px; font-weight: 600;
+    cursor: pointer; transition: all .2s;
+    display: flex; align-items: center; gap: 6px;
   }
   .cat-btn__dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: currentColor; flex-shrink: 0; opacity: .5;
-    transition: opacity .22s;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #CBD5E1; flex-shrink: 0;
+    transition: background .2s, transform .2s;
   }
   .cat-btn:hover {
-    border-color: var(--jc); color: var(--jc);
-    background: color-mix(in srgb, var(--jc) 6%, #fff);
+    background: rgba(255,255,255,0.9);
+    color: var(--c-ink);
   }
-  .cat-btn:hover .cat-btn__dot { opacity: 1; }
+  .cat-btn:hover .cat-btn__dot { background: var(--jc); transform: scale(1.3); }
   .cat-btn.active {
-    background: var(--jc); border-color: var(--jc);
-    color: #fff; box-shadow: 0 4px 16px -4px color-mix(in srgb, var(--jc) 50%, transparent);
+    background: var(--jc); color: #fff;
+    box-shadow: 0 4px 18px -5px color-mix(in srgb, var(--jc) 65%, transparent);
   }
-  .cat-btn.active .cat-btn__dot { background: rgba(255,255,255,0.6); opacity: 1; }
+  .cat-btn.active .cat-btn__dot { background: rgba(255,255,255,0.75); }
 
   /* ── Tile grid ── */
   .tiles-section { padding: 48px 0 100px; }
@@ -317,7 +367,6 @@
       <nav class="nav__links" id="navMenu">
         <a href="index.html">Accueil</a>
         <a href="services.html" class="nav-active">Services</a>
-        <a href="market.html">Market</a>
         <a href="portfolio.html">R&eacute;f&eacute;rences</a>
         <a href="blog.html">Blog</a>
         <a href="about.html">&Agrave; propos</a>
@@ -343,7 +392,7 @@
       <div class="page-hero__breadcrumb">
         <a href="index.html">Accueil</a><span>&rsaquo;</span><span>Services</span>
       </div>
-      <p class="section-label">20 expertises, une seule adresse</p>
+      <p class="section-label">15 expertises, une seule adresse</p>
       <h1>Tout ce dont votre<br>entreprise a besoin</h1>
       <p>Cliquez sur un service pour d&eacute;couvrir le d&eacute;tail complet : technologies, ce qui est inclus et comment d&eacute;marrer.</p>
     </div>
@@ -356,19 +405,13 @@
       <!-- Category filter bar -->
       <div class="cat-bar" id="catBar">
         <button class="cat-btn active" data-cat="all" style="--jc:#1B75BC">
-          <span class="cat-btn__dot"></span>Tout (20)
+          <span class="cat-btn__dot"></span>Tout (15)
         </button>
         <button class="cat-btn" data-cat="it" style="--jc:#1B75BC">
           <span class="cat-btn__dot"></span>IT &amp; D&eacute;veloppement
         </button>
         <button class="cat-btn" data-cat="installation" style="--jc:#0F766E">
           <span class="cat-btn__dot"></span>Installation
-        </button>
-        <button class="cat-btn" data-cat="licences" style="--jc:#0891B2">
-          <span class="cat-btn__dot"></span>Licences
-        </button>
-        <button class="cat-btn" data-cat="divertissement" style="--jc:#7C3AED">
-          <span class="cat-btn__dot"></span>Divertissement
         </button>
         <button class="cat-btn" data-cat="marketing" style="--jc:#D946EF">
           <span class="cat-btn__dot"></span>Marketing
@@ -589,28 +632,6 @@
       img: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&fit=crop&q=70'
     },
     {
-      id: 'crm', num: '07', cat: 'it', accent: '#0E7490',
-      title: 'CRM & Helpdesk',
-      tagline: 'Centralisez vos relations clients et automatisez le support',
-      desc: 'Déploiement CRM, ticketing et automatisation des relances.',
-      pills: ['Odoo CRM', 'Ticketing', 'Automatisation'],
-      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
-      longDesc: "Perdre un client parce qu’une relance a été oubliée ou qu’une réclamation n’a pas été traitée à temps, ça n’arrive pas avec un bon CRM. AITEC déploie et configure les meilleurs outils de gestion de la relation client, adaptés à votre taille et votre secteur.",
-      features: [
-        'Déploiement Odoo CRM, HubSpot ou solutions custom',
-        'Pipeline de vente visuel avec scoring des opportunités',
-        'Système de tickets helpdesk multicanaaux (email, chat, téléphone)',
-        'Automatisation des relances et des workflows commerciaux',
-        'Intégration téléphonie (CTI) et email',
-        'Rapports d’activité commerciale et tableaux de bord',
-        'Application mobile pour les commerciaux terrain',
-        'Formation et accompagnement à l’adoption'
-      ],
-      targets: ['Forces de vente', 'Service client', 'E-commerce', 'B2B Entreprises'],
-      brands: ['Odoo CRM', 'HubSpot', 'Freshdesk', 'Zoho', 'Salesforce'],
-      img: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&fit=crop&q=70'
-    },
-    {
       id: 'cctv', num: '08', cat: 'installation', accent: '#0F766E',
       title: 'Vidéosurveillance CCTV',
       tagline: 'Caméras HD/4K installées et configurées par nos techniciens',
@@ -765,94 +786,6 @@
       img: 'https://images.unsplash.com/photo-1556155092-490a1ba16284?w=500&fit=crop&q=70'
     },
     {
-      id: 'licences', num: '15', cat: 'licences', accent: '#0891B2',
-      title: 'Licences Professionnelles',
-      tagline: 'Revendeur agréé des plus grandes marques logicielles',
-      desc: 'Microsoft, Adobe, Kaspersky, VMware, activation rapide.',
-      pills: ['Microsoft 365', 'Adobe CC', 'Antivirus'],
-      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15" r="4.5"/><path d="M11.5 11.5l9-9"/><path d="M18.5 4l2 2"/><path d="M15.5 7l2 2"/></svg>',
-      longDesc: "Utiliser des logiciels non licenciés expose votre entreprise à des sanctions légales et des risques de sécurité majeurs. AITEC est revendeur officiel agréé des principales marques : activation rapide, prix compétitifs et gestion de votre parc logiciel.",
-      features: [
-        'Microsoft 365 Business et Enterprise (tous plans)',
-        'Windows Server et licences CAL',
-        'Adobe Creative Cloud, Acrobat et Sign',
-        'Kaspersky, ESET, Sophos et Bitdefender (volume)',
-        'VMware vSphere, Workstation et Horizon',
-        'Oracle Database et Java SE',
-        'AutoCAD et logiciels Autodesk',
-        'Gestion et audit de votre parc logiciel'
-      ],
-      targets: ['Toutes entreprises', 'Cabinets & Studios', 'Industrie & BTP', 'Administrations'],
-      brands: ['Microsoft', 'Adobe', 'Kaspersky', 'VMware', 'Oracle', 'Autodesk'],
-      img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=500&fit=crop&q=70'
-    },
-    {
-      id: 'streaming', num: '16', cat: 'licences', accent: '#F43F5E',
-      title: 'Abonnements Streaming',
-      tagline: 'Plateformes de divertissement activées en quelques minutes',
-      desc: 'Netflix, Spotify, Disney+, Shahid, livraison instantanée.',
-      pills: ['Netflix', 'Spotify', 'Shahid / beIN'],
-      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.8 1 6.46 2.63"/><polyline points="21 3 21 9 15 9"/><polygon points="10 9.5 10 14.5 16 12" fill="currentColor" stroke="none"/></svg>',
-      longDesc: "Vous souhaitez un abonnement Netflix, Spotify ou beIN Sports sans les complications de paiement international ? AITEC gère tout pour vous : activation instantanée, paiement local et support si problème.",
-      features: [
-        'Netflix (Standard, Premium, avec et sans pub)',
-        'Spotify Premium individuel, duo et famille',
-        'Disney+, Apple TV+ et Prime Video',
-        'YouTube Premium sans publicité',
-        'Shahid VIP, beIN Sports Connect',
-        'Deezer, Anghami et services musicaux arabes',
-        'Activation sous 30 minutes par email ou WhatsApp',
-        'Renouvellement automatique disponible'
-      ],
-      targets: ['Particuliers', 'Familles', 'Hôtels & Loisirs', 'Salons de beauté'],
-      brands: ['Netflix', 'Spotify', 'Disney+', 'Shahid', 'beIN Sports', 'YouTube Premium'],
-      img: 'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=500&fit=crop&q=70'
-    },
-    {
-      id: 'iptv', num: '17', cat: 'divertissement', accent: '#F7941D',
-      title: 'IPTV & Box TV',
-      tagline: '+10 000 chaînes HD installées sur site pour hôtels et entreprises',
-      desc: 'Licences IPTV, VOD arabe/intérnational, serveurs stables.',
-      pills: ['+10k chaînes', 'VOD 4K', 'Hôtels'],
-      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2.5"/><polygon points="10 9 10 14 15.5 11.5" fill="currentColor" stroke="none"/><path d="M8 20h8"/><line x1="12" y1="18" x2="12" y2="20"/></svg>',
-      longDesc: "L’IPTV professionnel change l’expérience de vos clients. AITEC fournit des licences stables avec +10 000 chaînes HD/4K et un catalogue VOD complet en arabe, français et anglais. Pour hôtels, nous intégrons le système directement dans les téléviseurs des chambres.",
-      features: [
-        '+10 000 chaînes TV internationales en HD et 4K',
-        'Chaînes algériennes, arabes, françaises, sport et actualités',
-        'VOD : films et séries en arabe, français et anglais',
-        'Bouquets sport : beIN, Canal+, Sky Sports',
-        'Serveurs redondants avec uptime garanti 99.5%',
-        'Compatible Smart TV, boitiers Android, MAG, Enigma',
-        'Installation matérielle dans les chambres hôtel',
-        'Support technique 7j/7'
-      ],
-      targets: ['Hôtels & Résidences', 'Restaurants & Cafés', 'Salons & Loisirs', 'Particuliers'],
-      brands: ['MAG', 'Formuler', 'Dreamlink', 'Enigma2', 'Android TV'],
-      img: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=500&fit=crop&q=70'
-    },
-    {
-      id: 'gaming', num: '18', cat: 'divertissement', accent: '#7C3AED',
-      title: 'Jeux Vidéo & Gaming',
-      tagline: 'Jeux PC et console livrés digitalement en quelques minutes',
-      desc: 'PSN, Xbox, Steam, Epic Games et monnaies virtuelles.',
-      pills: ['PSN / Xbox', 'Steam', 'Livraison instantée'],
-      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12a3 3 0 0 1 3 3l-1.5 6A2 2 0 0 1 17.56 19H6.44A2 2 0 0 1 4.5 17L3 11a3 3 0 0 1 3-3z"/><line x1="7" y1="13" x2="11" y2="13"/><line x1="9" y1="11" x2="9" y2="15"/><circle cx="15" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="17" cy="13.5" r="1" fill="currentColor" stroke="none"/></svg>',
-      longDesc: "Les achats de jeux et de crédit en ligne peuvent être compliqués. AITEC simplifie tout : commandez par WhatsApp, recevez vos codes ou jeux par email en quelques minutes, payez en espèces ou virement local.",
-      features: [
-        'Cartes PSN PlayStation Network (5, 10, 20, 50 USD/EUR)',
-        'Cartes Xbox et Microsoft Points',
-        'Jeux Steam, Epic Games et GOG (toutes régions)',
-        'V-Bucks (Fortnite), Robux (Roblox) et monnaies in-game',
-        'Abonnements PS Plus et Xbox Game Pass',
-        'Cartes cadeau iTunes, Google Play et App Store',
-        'Livraison instantanée par email / WhatsApp',
-        'SAV et remplacement si code défectueux'
-      ],
-      targets: ['Gamers particuliers', 'Jeunes & Étudiants', 'Parents', 'Cyber-cafés'],
-      brands: ['PlayStation', 'Xbox', 'Steam', 'Epic Games', 'Nintendo', 'Riot Games'],
-      img: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&fit=crop&q=70'
-    },
-    {
       id: 'marketing', num: '19', cat: 'marketing', accent: '#D946EF',
       title: 'Marketing Digital',
       tagline: 'Visibilité, acquisition client et notoriété',
@@ -920,7 +853,6 @@
       '</div>' +
       '<div class="tile__body">' +
         '<p class="tile__desc">' + s.tagline + '</p>' +
-        '<p class="tile__tags">' + s.pills.join(' &middot; ') + '</p>' +
         '<span class="tile__link">Voir les d&eacute;tails</span>' +
       '</div>';
 

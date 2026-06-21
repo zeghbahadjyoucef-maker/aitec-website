@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/assets/logo.png" />
+  <link rel="apple-touch-icon" href="/assets/logo.png" />
+  <title>Page introuvable — AITEC Solutions</title>
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#1B75BC" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+  body { margin: 0; }
+  .error-page {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; text-align: center;
+    padding: 40px 24px;
+    background: var(--c-bg-soft, #F7F9FC);
+    font-family: var(--ff-body, 'Poppins', sans-serif);
+  }
+  .error-code {
+    font-size: clamp(80px, 18vw, 160px);
+    font-weight: 800;
+    line-height: 1;
+    background: linear-gradient(135deg, #1B75BC 0%, #7B2D8B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 16px;
+  }
+  .error-title {
+    font-size: clamp(22px, 4vw, 34px);
+    font-weight: 700;
+    color: #0F1B2D;
+    margin: 0 0 12px;
+  }
+  .error-desc {
+    font-size: 16px;
+    color: #6B7280;
+    max-width: 440px;
+    margin: 0 auto 36px;
+    line-height: 1.65;
+  }
+  .error-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #1B75BC; color: #fff;
+    font-family: inherit; font-size: 14px; font-weight: 700;
+    padding: 14px 32px; border-radius: 8px;
+    text-decoration: none;
+    transition: background .2s, transform .2s;
+  }
+  .error-link:hover { background: #1560a0; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+  <main class="error-page">
+    <p class="error-code" aria-label="Erreur 404">404</p>
+    <h1 class="error-title">Page introuvable</h1>
+    <p class="error-desc">La page que vous cherchez n&rsquo;existe pas ou a &eacute;t&eacute; d&eacute;plac&eacute;e. Pas de panique&nbsp;&mdash; retournez &agrave; l&rsquo;accueil pour continuer.</p>
+    <a href="/" class="error-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Retour &agrave; l&rsquo;accueil
+    </a>
+  </main>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "AITEC Solutions",
+  "short_name": "AITEC",
+  "description": "Informatique, IA & Digital en Algérie",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0F1B2D",
+  "theme_color": "#1B75BC",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/assets/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
