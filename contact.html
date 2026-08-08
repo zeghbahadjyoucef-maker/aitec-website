@@ -136,16 +136,6 @@
           </div>
 
           <div class="contact-info-card" data-reveal>
-            <div class="contact-info-card__ico" style="background:linear-gradient(135deg,#ED1C24,#f97316)">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div>
-              <h4>Email</h4>
-              <p><a href="mailto:contact@aitec.dz">contact@aitec.dz</a></p>
-            </div>
-          </div>
-
-          <div class="contact-info-card" data-reveal>
             <div class="contact-info-card__ico" style="background:linear-gradient(135deg,#7B2D8B,#c084fc)">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
@@ -180,8 +170,8 @@
       <!-- RIGHT: form -->
       <div class="contact-form-card" data-reveal>
         <h3>Demandez un devis gratuit</h3>
-        <p>Remplissez le formulaire, nous vous recontactons sous 24h.</p>
-        <form action="mailto:contact@aitec.dz" method="post" enctype="text/plain">
+        <p>Remplissez le formulaire, il s'ouvrira dans WhatsApp pour l'envoi.</p>
+        <form id="quoteForm">
           <div class="form-row">
             <div class="form-group">
               <label for="nom">Nom complet *</label>
@@ -230,8 +220,8 @@
           </div>
           <div class="form-submit">
             <button type="submit" class="btn btn--navy">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Envoyer la demande
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+              Envoyer via WhatsApp
             </button>
           </div>
         </form>
@@ -277,7 +267,6 @@
       </div>
       <div class="footer__contact-info">
         <p class="footer__nav-title">Contact</p>
-        <p><a href="mailto:contact@aitec.dz">contact@aitec.dz</a></p>
         <p><a href="tel:+213658029033">+213 658 029 033</a></p>
         <p>Alger</p>
         <p>Dim – Jeu · 08H – 18H</p>
@@ -291,6 +280,28 @@
   </footer>
 
   <script src="script.js?v=3"></script>
+  <script>
+    document.getElementById('quoteForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var nom = document.getElementById('nom').value.trim();
+      var telephone = document.getElementById('telephone').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var service = document.getElementById('service').value;
+      var message = document.getElementById('message').value.trim();
+
+      var lines = [
+        'Nouvelle demande de devis — AITEC Solutions',
+        'Nom : ' + nom,
+        'Téléphone : ' + telephone
+      ];
+      if (email) lines.push('Email : ' + email);
+      if (service) lines.push('Service : ' + service);
+      if (message) lines.push('Message : ' + message);
+
+      var text = encodeURIComponent(lines.join('\n'));
+      window.open('https://wa.me/213658029033?text=' + text, '_blank');
+    });
+  </script>
 </body>
 </html>
 
