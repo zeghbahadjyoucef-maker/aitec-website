@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5SVWJCX3X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-N5SVWJCX3X");
+  </script>
+
+  <!-- ==========================================================
+       GOOGLE ADSENSE
+       Replace ca-pub-XXXXXXXXXXXXXXXX with your publisher ID and
+       uncomment the block below once your AdSense account is approved.
+       The matching ad units further down the page must be uncommented too.
+  =========================================================== -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="apple-touch-icon" href="/assets/favicon.png" />
+  <title>Outils &amp; Services recommand&eacute;s | AITEC Solutions</title>
+  <meta name="description" content="Les outils et services que l'équipe AITEC Solutions utilise et recommande : hébergement, cybersécurité, logiciels professionnels et outils marketing." />
+  <link rel="canonical" href="https://aitecsolution.net/partenaires.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="AITEC Solutions" />
+  <meta name="theme-color" content="#1B75BC" />
+  <meta name="geo.region" content="DZ-16" />
+  <meta name="geo.placename" content="Alger, Algérie" />
+  <link rel="manifest" href="/manifest.json" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_DZ" />
+  <meta property="og:site_name" content="AITEC Solutions" />
+  <meta property="og:url" content="https://aitecsolution.net/partenaires.html" />
+  <meta property="og:title" content="Outils &amp; Services recommandés | AITEC Solutions" />
+  <meta property="og:description" content="Hébergement, cybersécurité, logiciels et outils marketing sélectionnés par les ingénieurs AITEC Solutions." />
+  <meta property="og:image" content="https://aitecsolution.net/assets/hero.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Outils &amp; Services recommandés | AITEC Solutions" />
+  <meta name="twitter:description" content="Les outils que nous utilisons au quotidien chez AITEC Solutions." />
+  <meta name="twitter:image" content="https://aitecsolution.net/assets/hero.jpg" />
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://aitecsolution.net/" },
+          { "@type": "ListItem", "position": 2, "name": "Outils recommandés", "item": "https://aitecsolution.net/partenaires.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=35" />
+  <style>
+  /* Affiliate disclosure banner */
+  .aff-notice {
+    display: flex; align-items: flex-start; gap: 12px;
+    max-width: 780px; margin: 0 auto 48px;
+    padding: 16px 20px;
+    border: 1.5px solid var(--c-line); border-radius: 14px;
+    background: #fff;
+    font-size: 13.5px; line-height: 1.6; color: var(--c-muted);
+  }
+  .aff-notice svg { flex-shrink: 0; color: #1B75BC; margin-top: 1px; }
+
+  /* Ad slot wrapper, keeps layout stable and clearly separated */
+  .ad-slot {
+    max-width: 980px; margin: 0 auto 56px;
+    padding: 0 4px; text-align: center;
+  }
+  .ad-slot:empty { display: none; }
+  .ad-slot__label {
+    font-size: 11px; letter-spacing: .09em; text-transform: uppercase;
+    font-weight: 600; color: var(--c-muted); opacity: .7;
+    margin: 0 0 8px;
+  }
+
+  /* Tool category block */
+  .tool-cat { margin-bottom: 64px; }
+  .tool-cat__head {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
+  }
+  .tool-cat__ico {
+    width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: color-mix(in srgb, var(--tc) 14%, #fff);
+    color: var(--tc);
+  }
+  .tool-cat__title { font-size: 20px; font-weight: 800; color: var(--c-ink); margin: 0 0 2px; }
+  .tool-cat__sub { font-size: 13.5px; color: var(--c-muted); margin: 0; }
+
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 900px) { .tool-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 580px) { .tool-grid { grid-template-columns: 1fr; } }
+
+  .tool-card {
+    display: flex; flex-direction: column;
+    padding: 24px 22px;
+    border: 1.5px solid var(--c-line); border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 2px 14px -4px rgba(15,27,45,0.07);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .tool-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--tc);
+    box-shadow: 0 18px 42px -10px color-mix(in srgb, var(--tc) 26%, transparent);
+  }
+  .tool-card__name {
+    font-size: 16px; font-weight: 700; color: var(--c-ink);
+    margin: 0 0 8px;
+  }
+  .tool-card__desc {
+    font-size: 13.5px; line-height: 1.65; color: var(--c-muted);
+    margin: 0 0 20px; flex: 1;
+  }
+  .tool-card__cta {
+    display: inline-flex; align-items: center; gap: 7px;
+    align-self: flex-start;
+    font-size: 13.5px; font-weight: 700; color: var(--tc);
+    text-decoration: none;
+    transition: gap .18s ease;
+  }
+  .tool-card__cta:hover { gap: 11px; }
+  .tool-card__cta:focus-visible { outline: 2px solid var(--tc); outline-offset: 3px; border-radius: 4px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tool-card, .tool-card__cta { transition: none; }
+    .tool-card:hover { transform: none; }
+  }
+  </style>
+</head>
+<body>
+
+  <div class="page-blobs" aria-hidden="true">
+    <div class="pb pb--1"></div><div class="pb pb--2"></div>
+    <div class="pb pb--3"></div><div class="pb pb--4"></div>
+    <div class="pb pb--5"></div><div class="pb pb--6"></div>
+    <div class="pb pb--7"></div><div class="pb pb--8"></div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__brand">
+        <img src="assets/logo.png" alt="AITEC Solutions" class="nav__logo" onerror="this.outerHTML='<span class=&quot;logo-text&quot;>AITEC</span>'" />
+      </a>
+      <nav class="nav__links" id="navMenu">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Références</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__right">
+        <a href="https://wa.me/213658029033" target="_blank" rel="noopener" class="btn btn--whatsapp">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.42A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18c-1.717 0-3.332-.45-4.73-1.24l-.34-.2-3.527 1.012.994-3.633-.218-.355A7.944 7.944 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+          WhatsApp
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__blob page-hero__blob--1"></div>
+    <div class="page-hero__blob page-hero__blob--2"></div>
+    <div class="container">
+      <div class="page-hero__breadcrumb">
+        <a href="index.html">Accueil</a><span>&rsaquo;</span><span>Outils recommandés</span>
+      </div>
+      <p class="section-label">Notre sélection</p>
+      <h1>Outils &amp; Services recommandés</h1>
+      <p>Les solutions que nos ingénieurs utilisent au quotidien et déploient chez nos clients.</p>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section class="portfolio-section">
+    <div class="container">
+
+      <!-- Affiliate disclosure -->
+      <div class="aff-notice" data-reveal>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>Transparence : certains liens de cette page sont des liens partenaires. Si vous souscrivez via l'un d'eux, AITEC Solutions peut percevoir une commission, sans aucun surcoût pour vous. Nous ne recommandons que des outils que nous utilisons réellement.</span>
+      </div>
+
+      <!-- ==========================================================
+           ADSENSE UNIT 1
+           Uncomment once your publisher ID is set in the head script.
+           Replace both the data-ad-client and data-ad-slot values.
+      =========================================================== -->
+      <div class="ad-slot" data-reveal>
+        <!--
+        <p class="ad-slot__label">Publicité</p>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+      </div>
+
+      <!-- Hébergement -->
+      <div class="tool-cat" data-reveal style="--tc:#0369A1">
+        <div class="tool-cat__head">
+          <div class="tool-cat__ico">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M2 12h20"/><path d="M12 3a15 15 0 0 1 4 9 15 15 0 0 1-4 9 15 15 0 0 1-4-9 15 15 0 0 1 4-9z"/></svg>
+          </div>
+          <div>
+            <h2 class="tool-cat__title">Hébergement &amp; Domaines</h2>
+            <p class="tool-cat__sub">Pour héberger votre site et gérer vos noms de domaine</p>
+          </div>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-card" style="--tc:#0369A1">
+            <h3 class="tool-card__name">Hostinger</h3>
+            <p class="tool-card__desc">Hébergement mutualisé et VPS à prix accessible, avec panneau de gestion simple. Adapté aux sites vitrines et boutiques de PME.</p>
+            <a class="tool-card__cta" href="https://www.hostinger.com" target="_blank" rel="sponsored nofollow noopener">Découvrir l'offre <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+          <div class="tool-card" style="--tc:#0369A1">
+            <h3 class="tool-card__name">Namecheap</h3>
+            <p class="tool-card__desc">Enregistrement et renouvellement de noms de domaine à tarif compétitif, avec protection WHOIS incluse et certificats SSL.</p>
+            <a class="tool-card__cta" href="https://www.namecheap.com" target="_blank" rel="sponsored nofollow noopener">Découvrir l'offre <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+          <div class="tool-card" style="--tc:#0369A1">
+            <h3 class="tool-card__name">OVHcloud</h3>
+            <p class="tool-card__desc">Serveurs dédiés et cloud européen, avec des datacenters proches de l'Algérie pour une latence réduite sur vos applications critiques.</p>
+            <a class="tool-card__cta" href="https://www.ovhcloud.com" target="_blank" rel="sponsored nofollow noopener">Découvrir l'offre <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cybersécurité -->
+      <div class="tool-cat" data-reveal style="--tc:#ED1C24">
+        <div class="tool-cat__head">
+          <div class="tool-cat__ico">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5L3 7v5C3 17.2 7 21.5 12 23c5-1.5 9-5.8 9-11V7z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <div>
+            <h2 class="tool-cat__title">Cybersécurité &amp; Antivirus</h2>
+            <p class="tool-cat__sub">Protection des postes, serveurs et données de votre entreprise</p>
+          </div>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-card" style="--tc:#ED1C24">
+            <h3 class="tool-card__name">Bitdefender</h3>
+            <p class="tool-card__desc">Protection endpoint reconnue pour son taux de détection et son impact minimal sur les performances. Console centralisée pour les parcs multi-postes.</p>
+            <a class="tool-card__cta" href="https://www.bitdefender.com" target="_blank" rel="sponsored nofollow noopener">Découvrir l'offre <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+          <div class="tool-card" style="--tc:#ED1C24">
+            <h3 class="tool-card__name">Kaspersky</h3>
+            <p class="tool-card__desc">Suite de sécurité entreprise avec chiffrement, contrôle des applications et protection des serveurs de fichiers.</p>
+            <a class="tool-card__cta" href="https://www.kaspersky.com" target="_blank" rel="sponsored nofollow noopener">Découvrir l'offre <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+          <div class="tool-card" style="--tc:#ED1C24">
+            <h3 class="tool-card__name">Proton</h3>
+            <p class="tool-card__desc">Messagerie chiffrée et VPN professionnel, utiles pour les équipes qui manipulent des données sensibles ou travaillent à distance.</p>
+            <a class="tool-card__cta" href="https://proton.me" target="_blank" rel="sponsored nofollow noopener">Découvrir l'offre <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADSENSE UNIT 2 -->
+      <div class="ad-slot" data-reveal>
+        <!--
+        <p class="ad-slot__label">Publicité</p>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+      </div>
+
+      <!-- Logiciels -->
+      <div class="tool-cat" data-reveal style="--tc:#7B2D8B">
+        <div class="tool-cat__head">
+          <div class="tool-cat__ico">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="8" height="8" rx="1.5"/><rect x="14" y="3" width="8" height="8" rx="1.5"/><rect x="2" y="13" width="8" height="8" rx="1.5"/><rect x="14" y="13" width="8" height="8" rx="1.5"/></svg>
+          </div>
+          <div>
+            <h2 class="tool-cat__title">Logiciels &amp; Productivité</h2>
+            <p class="tool-cat__sub">Les plateformes que nous déployons et configurons chez nos clients</p>
+          </div>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-card" style="--tc:#7B2D8B">
+            <h3 class="tool-card__name">Microsoft 365</h3>
+            <p class="tool-card__desc">Messagerie professionnelle, Office, Teams et stockage OneDrive. La suite la plus déployée en entreprise, que nous installons et migrons.</p>
+            <a class="tool-card__cta" href="https://www.microsoft.com/microsoft-365" target="_blank" rel="sponsored nofollow noopener">Découvrir l'offre <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+          <div class="tool-card" style="--tc:#7B2D8B">
+            <h3 class="tool-card__name">Odoo</h3>
+            <p class="tool-card__desc">ERP complet couvrant la comptabilité, les stocks, les RH et le CRM. Nous assurons l'implémentation, la migration des données et la formation.</p>
+            <a class="tool-card__cta" href="https://www.odoo.com" target="_blank" rel="sponsored nofollow noopener">Découvrir l'offre <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+          <div class="tool-card" style="--tc:#7B2D8B">
+            <h3 class="tool-card__name">Adobe Creative Cloud</h3>
+            <p class="tool-card__desc">Photoshop, Illustrator et InDesign pour les équipes marketing et communication qui produisent leurs supports en interne.</p>
+            <a class="tool-card__cta" href="https://www.adobe.com/creativecloud.html" target="_blank" rel="sponsored nofollow noopener">Découvrir l'offre <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marketing -->
+      <div class="tool-cat" data-reveal style="--tc:#D946EF">
+        <div class="tool-cat__head">
+          <div class="tool-cat__ico">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+          </div>
+          <div>
+            <h2 class="tool-cat__title">Marketing &amp; Création</h2>
+            <p class="tool-cat__sub">Pour développer votre visibilité en ligne</p>
+          </div>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-card" style="--tc:#D946EF">
+            <h3 class="tool-card__name">Canva Pro</h3>
+            <p class="tool-card__desc">Création rapide de visuels, de publications pour les réseaux sociaux et de supports imprimés, sans compétences en design.</p>
+            <a class="tool-card__cta" href="https://www.canva.com" target="_blank" rel="sponsored nofollow noopener">Découvrir l'offre <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+          <div class="tool-card" style="--tc:#D946EF">
+            <h3 class="tool-card__name">Semrush</h3>
+            <p class="tool-card__desc">Analyse SEO, suivi de positionnement et étude de la concurrence. L'outil que nous utilisons pour nos audits de référencement.</p>
+            <a class="tool-card__cta" href="https://www.semrush.com" target="_blank" rel="sponsored nofollow noopener">Découvrir l'offre <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+          <div class="tool-card" style="--tc:#D946EF">
+            <h3 class="tool-card__name">Mailchimp</h3>
+            <p class="tool-card__desc">Newsletters et campagnes email automatisées, avec segmentation des contacts et rapports de performance détaillés.</p>
+            <a class="tool-card__cta" href="https://mailchimp.com" target="_blank" rel="sponsored nofollow noopener">Découvrir l'offre <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADSENSE UNIT 3 -->
+      <div class="ad-slot" data-reveal>
+        <!--
+        <p class="ad-slot__label">Publicité</p>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="contact-cta">
+    <div class="container contact-cta__inner">
+      <div class="contact-cta__blob" aria-hidden="true"></div>
+      <div class="contact-cta__text" data-reveal>
+        <p class="section-label section-label--light">Besoin d'aide</p>
+        <h2>Nous installons et<br>configurons pour vous.</h2>
+        <p>Nos ingénieurs déploient ces outils chez vous, clés en main.</p>
+      </div>
+      <div class="contact-cta__links" data-reveal>
+        <a href="contact.html" class="btn btn--white">Demander un devis</a>
+        <a href="https://wa.me/213658029033" target="_blank" rel="noopener" class="btn btn--outline-light">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="AITEC Solutions" class="footer__logo" onerror="this.outerHTML='<span class=&quot;logo-text&quot;>AITEC</span>'" />
+        <p>Le partenaire technologique<br>tout-en-un.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5zM20 19h-3v-5.6c0-3.37-4-3.11-4 0V19h-3V8h3v1.77c1.4-2.59 7-2.78 7 2.48V19z"/></svg></a>
+        </div>
+      </div>
+      <nav class="footer__nav">
+        <p class="footer__nav-title">Navigation</p>
+        <a href="index.html">Accueil</a><a href="services.html">Services</a>
+        <a href="portfolio.html">Références</a><a href="blog.html">Blog</a>
+        <a href="about.html">À propos</a><a href="contact.html">Contact</a>
+        <a href="partenaires.html">Outils recommandés</a>
+      </nav>
+      <div class="footer__services">
+        <p class="footer__nav-title">Services</p>
+        <a href="services.html">IA &amp; Intelligence</a><a href="services.html">Infrastructure &amp; Serveurs</a>
+        <a href="services.html">Web &amp; Mobile</a><a href="services.html">Cloud &amp; Cybersécurité</a>
+        <a href="services.html">ERP Odoo</a><a href="services.html">Vidéosurveillance CCTV</a>
+        <a href="services.html">Système de Pointage</a><a href="services.html">Installation POS</a>
+        <a href="services.html">Contrôle d'Accès</a><a href="services.html">Standard Téléphonique</a>
+        <a href="services.html">Marketing Digital</a>
+      </div>
+      <div class="footer__contact-info">
+        <p class="footer__nav-title">Contact</p>
+        <p><a href="mailto:contact@aitecsolution.net">contact@aitecsolution.net</a></p>
+        <p><a href="tel:+213658029033">+213 658 029 033</a></p>
+        <p>Alger</p>
+      </div>
+    </div>
+    <div class="footer__bottom"><div class="container"><span>© 2026 AITEC Solutions</span></div></div>
+  </footer>
+
+  <script src="script.js?v=3"></script>
+</body>
+</html>
