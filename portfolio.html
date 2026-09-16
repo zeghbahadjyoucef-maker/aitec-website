@@ -58,31 +58,40 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=Sora:wght@400..700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=36" />
+  <link rel="stylesheet" href="styles.css?v=37" />
   <style>
   .ref-intro { max-width: 720px; margin: 0 auto 48px; }
   .ref-intro p { font-size: 16.5px; line-height: 1.75; color: var(--c-muted); margin: 0; text-align: center; }
 
   .ref-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 20px; margin-bottom: 56px;
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px; margin-bottom: 64px;
   }
-  @media (max-width: 900px) { .ref-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 900px) { .ref-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 580px) { .ref-grid { grid-template-columns: 1fr; } }
 
   .ref-card {
-    padding: 26px 24px; background: #fff;
-    border: 1.5px solid var(--c-line); border-radius: 18px;
-    border-top: 3px solid var(--rc);
-    box-shadow: 0 2px 14px -4px rgba(15,27,45,0.07);
-    transition: transform .25s ease, box-shadow .25s ease;
+    position: relative; overflow: hidden;
+    padding: 28px 24px 32px;
+    border-radius: var(--r-lg);
+    background: color-mix(in srgb, var(--rc) 8%, #fff);
   }
-  .ref-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 18px 42px -10px color-mix(in srgb, var(--rc) 24%, transparent);
+  .ref-card__icon {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    width: 48px; height: 48px; margin-bottom: 16px;
+    border-radius: 14px;
+    background: var(--rc); color: #fff;
+    box-shadow: 0 10px 20px -10px color-mix(in srgb, var(--rc) 80%, transparent);
   }
-  .ref-card h3 { font-size: 16.5px; font-weight: 700; color: var(--c-ink); margin: 0 0 10px; }
-  .ref-card p { font-size: 13.8px; line-height: 1.68; color: var(--c-muted); margin: 0; }
+  .ref-card__icon svg { width: 24px; height: 24px; }
+  .ref-card__mark {
+    position: absolute; right: -22px; bottom: -22px;
+    width: 150px; height: 150px;
+    color: var(--rc); opacity: 0.10; pointer-events: none;
+  }
+  .ref-card h3 { position: relative; font-size: 18px; font-weight: 700; line-height: 1.3; color: var(--c-ink); margin: 0 0 12px; }
+  .ref-card p { position: relative; font-size: 15px; line-height: 1.65; color: var(--c-text); margin: 0; }
 
   .ref-sectors { text-align: center; margin-bottom: 40px; }
   .ref-sectors__title {
@@ -93,10 +102,6 @@
   .ref-note { max-width: 620px; margin: 0 auto; text-align: center; }
   .ref-note p { font-size: 13.5px; line-height: 1.7; color: var(--c-muted); margin: 0; }
 
-  @media (prefers-reduced-motion: reduce) {
-    .ref-card { transition: none; }
-    .ref-card:hover { transform: none; }
-  }
   </style>
 </head>
 <body>
@@ -159,31 +164,43 @@
       <div class="ref-grid">
 
         <div class="ref-card" data-reveal style="--rc:#5AAA2A">
+          <svg class="ref-card__mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="6" rx="2"/><rect x="3" y="13" width="18" height="6" rx="2"/><circle cx="7" cy="6" r="1" fill="currentColor"/><circle cx="7" cy="16" r="1" fill="currentColor"/><path d="M11 6h7"/><path d="M11 16h7"/></svg>
+          <span class="ref-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="6" rx="2"/><rect x="3" y="13" width="18" height="6" rx="2"/><circle cx="7" cy="6" r="1" fill="currentColor"/><circle cx="7" cy="16" r="1" fill="currentColor"/><path d="M11 6h7"/><path d="M11 16h7"/></svg></span>
           <h3>Infrastructure réseau multi-sites</h3>
           <p>Câblage structuré, déploiement de serveurs physiques et virtualisés, couverture Wi-Fi dimensionnée par densité d'usage, et supervision continue avec alertes. Ces chantiers concernent le plus souvent des entreprises réparties sur plusieurs implantations qui souhaitent unifier leur système d'information.</p>
         </div>
 
         <div class="ref-card" data-reveal style="--rc:#0F766E">
+          <svg class="ref-card__mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="8" width="12" height="8" rx="2"/><circle cx="8" cy="12" r="2.5"/><circle cx="8" cy="12" r="1" fill="currentColor" stroke="none"/><path d="M14 10l5-3v10l-5-3"/><path d="M5 16v3"/><path d="M3 19h4"/></svg>
+          <span class="ref-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="8" width="12" height="8" rx="2"/><circle cx="8" cy="12" r="2.5"/><circle cx="8" cy="12" r="1" fill="currentColor" stroke="none"/><path d="M14 10l5-3v10l-5-3"/><path d="M5 16v3"/><path d="M3 19h4"/></svg></span>
           <h3>Sécurité des locaux</h3>
           <p>Vidéosurveillance HD et 4K, contrôle d'accès par badge ou biométrie, détection incendie conforme aux normes. Ces trois systèmes partagent le même câblage et la même armoire technique, ce qui permet de les traiter dans une intervention unique plutôt qu'en trois chantiers séparés.</p>
         </div>
 
         <div class="ref-card" data-reveal style="--rc:#875A7B">
+          <svg class="ref-card__mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="8" height="8" rx="1.5"/><rect x="14" y="3" width="8" height="8" rx="1.5"/><rect x="2" y="13" width="8" height="8" rx="1.5"/><rect x="14" y="13" width="8" height="8" rx="1.5"/></svg>
+          <span class="ref-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="8" height="8" rx="1.5"/><rect x="14" y="3" width="8" height="8" rx="1.5"/><rect x="2" y="13" width="8" height="8" rx="1.5"/><rect x="14" y="13" width="8" height="8" rx="1.5"/></svg></span>
           <h3>Déploiement ERP Odoo</h3>
           <p>Implémentation complète couvrant la comptabilité, les stocks, les achats et les ressources humaines, avec migration des données depuis le système existant et formation des utilisateurs finaux. La phase de remise en ordre des données précède systématiquement la mise en production.</p>
         </div>
 
         <div class="ref-card" data-reveal style="--rc:#1B75BC">
+          <svg class="ref-card__mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><circle cx="5.5" cy="6.5" r="1" fill="currentColor"/><circle cx="8.5" cy="6.5" r="1" fill="currentColor"/><path d="M6 13h12"/><path d="M6 17h8"/></svg>
+          <span class="ref-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><circle cx="5.5" cy="6.5" r="1" fill="currentColor"/><circle cx="8.5" cy="6.5" r="1" fill="currentColor"/><path d="M6 13h12"/><path d="M6 17h8"/></svg></span>
           <h3>Développement web et mobile</h3>
           <p>Sites vitrines optimisés pour le référencement, boutiques en ligne, applications mobiles et espaces client. Chaque projet inclut l'hébergement, les certificats SSL, les sauvegardes automatisées et la maintenance dans la durée.</p>
         </div>
 
         <div class="ref-card" data-reveal style="--rc:#ED1C24">
+          <svg class="ref-card__mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.5L3 7v5C3 17.2 7 21.5 12 23c5-1.5 9-5.8 9-11V7z"/><polyline points="9 12 11 14 15 10"/></svg>
+          <span class="ref-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.5L3 7v5C3 17.2 7 21.5 12 23c5-1.5 9-5.8 9-11V7z"/><polyline points="9 12 11 14 15 10"/></svg></span>
           <h3>Cloud et cybersécurité</h3>
           <p>Migration vers AWS, Azure ou infrastructure privée selon les contraintes de localisation des données, configuration de pare-feu, VPN d'entreprise, audits de sécurité et plan de reprise après sinistre.</p>
         </div>
 
         <div class="ref-card" data-reveal style="--rc:#0284C7">
+          <svg class="ref-card__mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h2"/><path d="M10 15h6"/><path d="M8 20h8"/><line x1="12" y1="18" x2="12" y2="20"/></svg>
+          <span class="ref-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h2"/><path d="M10 15h6"/><path d="M8 20h8"/><line x1="12" y1="18" x2="12" y2="20"/></svg></span>
           <h3>Points de vente et accueil</h3>
           <p>Caisses tactiles et terminaux de paiement configurés avant livraison, gestion de file d'attente avec bornes et écrans d'appel, affichage dynamique piloté à distance. Ces installations concernent le commerce, la banque et les établissements recevant du public.</p>
         </div>
@@ -193,14 +210,14 @@
       <div class="ref-sectors" data-reveal>
         <p class="ref-sectors__title">Secteurs que nous servons</p>
         <div class="sector-tags">
-          <span class="sector-tag" style="--st:#1B75BC">Hôtellerie &amp; Tourisme</span>
-          <span class="sector-tag" style="--st:#7B2D8B">Banque &amp; Finance</span>
-          <span class="sector-tag" style="--st:#ED1C24">Santé &amp; Cliniques</span>
-          <span class="sector-tag" style="--st:#F7941D">Commerce &amp; Distribution</span>
-          <span class="sector-tag" style="--st:#0891B2">Industrie &amp; Production</span>
-          <span class="sector-tag" style="--st:#5AAA2A">Administrations</span>
-          <span class="sector-tag" style="--st:#D946EF">&Eacute;ducation &amp; Formation</span>
-          <span class="sector-tag" style="--st:#059669">Transport &amp; Logistique</span>
+          <span class="sector-tag" style="--st:#1B75BC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>Hôtellerie &amp; Tourisme</span>
+          <span class="sector-tag" style="--st:#7B2D8B"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="3" y1="21" x2="21" y2="21"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 3 20 8 4 8"/></svg>Banque &amp; Finance</span>
+          <span class="sector-tag" style="--st:#ED1C24"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>Santé &amp; Cliniques</span>
+          <span class="sector-tag" style="--st:#F7941D"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Commerce &amp; Distribution</span>
+          <span class="sector-tag" style="--st:#0891B2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/></svg>Industrie &amp; Production</span>
+          <span class="sector-tag" style="--st:#5AAA2A"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>Administrations</span>
+          <span class="sector-tag" style="--st:#D946EF"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>&Eacute;ducation &amp; Formation</span>
+          <span class="sector-tag" style="--st:#059669"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>Transport &amp; Logistique</span>
         </div>
       </div>
 
