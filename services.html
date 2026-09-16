@@ -198,7 +198,7 @@
   }
   .tile__link {
     display: flex; justify-content: center;
-    font-size: 13px; font-weight: 700; color: var(--accent);
+    font-size: 13px; font-weight: 700; color: var(--accent-ink, var(--accent));
     transition: color .2s;
   }
 
@@ -644,12 +644,12 @@
       img: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&fit=crop&q=70'
     },
     {
-      id: 'cctv', num: '08', cat: 'installation', accent: '#0F766E',
+      id: 'cctv', num: '08', cat: 'installation', accent: '#D71820',
       title: 'Vidéosurveillance CCTV',
       tagline: 'Caméras HD/4K installées et configurées par nos techniciens',
       desc: 'Caméras IP, enregistreurs DVR/NVR, accès mobile à distance.',
       pills: ['Hikvision', 'DVR / NVR', 'Accès mobile'],
-      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="12" height="8" rx="2"/><circle cx="8" cy="12" r="2.5"/><circle cx="8" cy="12" r="1" fill="currentColor" stroke="none"/><path d="M14 10l5-3v10l-5-3"/><path d="M5 16v3"/><path d="M3 19h4"/></svg>',
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h13a3 3 0 0 1 3 3V9"/><rect x="6" y="7" width="12" height="7" rx="2"/><circle cx="14.5" cy="10.5" r="1.8"/><circle cx="9" cy="10.5" r="0.9" fill="currentColor" stroke="none"/><path d="M10 14v3H4"/><path d="M4 14v6"/></svg>',
       longDesc: "La sécurité physique de vos locaux commence par une bonne vidéosurveillance. AITEC installe des systèmes de CCTV professionnels adaptés à tous les environnements : bureaux, entrepôts, commerces, hôtels et résidences. Installation soignée, caméras discrètes et accès à distance depuis votre smartphone.",
       features: [
         'Caméras IP extérieures et intérieures Full HD / 4K',
@@ -666,12 +666,12 @@
       img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=500&fit=crop&q=70'
     },
     {
-      id: 'pointage', num: '09', cat: 'installation', accent: '#B45309',
+      id: 'pointage', num: '09', cat: 'installation', accent: '#7AC143', accentInk: '#497428',
       title: 'Système de Pointage',
       tagline: 'Présences automatisées, paie simplifiée',
       desc: 'Terminaux biométriques RFID, logiciel RH, livraison sur site.',
       pills: ['Empreinte digitale', 'RFID', 'ZKTeco'],
-      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="1" width="16" height="22" rx="2"/><rect x="6" y="3" width="12" height="7" rx="1"/><path d="M8 6h8M9 8.5h6"/><circle cx="12" cy="16.5" r=".5" fill="currentColor" stroke="none"/><path d="M11 17.5 Q12 15.5 13 17.5"/><path d="M10 18.5 Q12 14.5 14 18.5"/><path d="M9 19.5 Q12 13.5 15 19.5"/><circle cx="12" cy="21.5" r=".7" fill="currentColor" stroke="none"/></svg>',
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-5a8 8 0 0 1 16 0v3"/><path d="M8 19v-8a4 4 0 0 1 8 0v5"/><path d="M12 11v9"/></svg>',
       longDesc: "Fini les feuilles de présence manuelles et les erreurs de paie. AITEC installe des systèmes de pointage biométriques fiables qui gèrent automatiquement les horaires, les retards, les heures supplémentaires et génèrent les données prêtes pour votre logiciel de paie.",
       features: [
         'Terminaux empreinte digitale, reconnaissance faciale et RFID',
@@ -853,6 +853,7 @@
     tile.className = 'tile';
     tile.dataset.cat = s.cat;
     tile.style.setProperty('--accent', s.accent);
+    tile.style.setProperty('--accent-ink', s.accentInk || s.accent);
     tile.setAttribute('role', 'button');
     tile.setAttribute('tabindex', '0');
     tile.setAttribute('aria-label', 'En savoir plus sur ' + s.title);
@@ -913,7 +914,7 @@
   var content = document.getElementById('svcDrawerContent');
 
   function openDrawer(s) {
-    drawer.style.setProperty('--drawer-accent', s.accent);
+    drawer.style.setProperty('--drawer-accent', s.accentInk || s.accent);
 
     /* Build drawer header background (gradient + photo) */
     var dHex = s.accent.replace('#', '');
@@ -926,7 +927,7 @@
 
     var featHTML = s.features.map(function(f) {
       return '<li>' +
-        '<span class="drawer__feat-ico" style="background:color-mix(in srgb,' + s.accent + ' 13%,#fff);color:' + s.accent + '">' +
+        '<span class="drawer__feat-ico" style="background:color-mix(in srgb,' + s.accent + ' 13%,#fff);color:' + (s.accentInk || s.accent) + '">' +
           '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>' +
         '</span>' + f + '</li>';
     }).join('');
