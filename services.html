@@ -461,7 +461,7 @@
         <img src="assets/logo.png" alt="AITEC Solutions" class="footer__logo" onerror="this.outerHTML='<span class=&quot;logo-text&quot;>AITEC</span>'" />
         <p>Le partenaire technologique<br>tout-en-un.</p>
         <div class="footer__social">
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61589920257619" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
           <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
           <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5zM20 19h-3v-5.6c0-3.37-4-3.11-4 0V19h-3V8h3v1.77c1.4-2.59 7-2.78 7 2.48V19z"/></svg></a>
         </div>
@@ -482,7 +482,7 @@
         <a href="services.html">ERP Odoo</a>
         <a href="services.html">Vid&eacute;osurveillance CCTV</a>
         <a href="services.html">Syst&egrave;me de Pointage</a>
-        <a href="services.html">Installation POS</a>
+        <a href="point-de-vente.html">Installation POS</a>
         <a href="services.html">Contrôle d'Accès</a>
         <a href="services.html">Standard Téléphonique</a>
         <a href="services.html">Marketing Digital</a>
@@ -692,6 +692,7 @@
       title: 'Installation POS',
       tagline: 'Caisses tactiles et TPE pour tous vos points de vente',
       desc: 'Caisses enregistreuses, imprimantes tickets, logiciel caisse.',
+      page: 'point-de-vente.html',
       pills: ['Tactile', 'Multi-magasins', 'SAV inclus'],
       icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h2"/><path d="M10 15h6"/><path d="M8 20h8"/><line x1="12" y1="18" x2="12" y2="20"/></svg>',
       longDesc: "Une caisse enregistreuse lente ou qui tombe en panne en plein rush, c’est un cauchemar. AITEC livre et installe des systèmes POS complets, stables et intuitifs pour restaurants, boutiques, pharmacies, stations-service et grandes surfaces. Tout est configuré avant livraison : vos articles, vos catégories, vos imprimantes.",
@@ -967,6 +968,7 @@
         '</div>' +
         '<div class="drawer__ctas">' +
           '<a href="contact.html" class="drawer__cta-primary">Demander un devis</a>' +
+          (s.page ? '<a href="' + s.page + '" class="drawer__cta-secondary">Page détaillée</a>' : '') +
           '<a href="tel:+213658029033" class="drawer__cta-secondary">Appel gratuit</a>' +
         '</div>' +
       '</div>';
