@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta charset="UTF-8" />
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5652436365737346"
           crossorigin="anonymous"></script>
@@ -27,12 +28,11 @@
   </script>
   <noscript><img height="1" width="1" style="display:none" alt=""
     src="https://www.facebook.com/tr?id=1115520791162479&ev=PageView&noscript=1" /></noscript>
-  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
   <link rel="apple-touch-icon" href="/assets/favicon.png" />
   <title>Références & Portfolio | AITEC Solutions</title>
-  <meta name="description" content="Références d'AITEC Solutions en Algérie : sites web en ligne (Modati Ahlami, Mili Industry, Business Tours), infrastructure réseau, CCTV, ERP et cybersécurité." />
+  <meta name="description" content="Références d'AITEC Solutions : sites web en ligne (MFQ, Modati Ahlami, Mili Industry, Business Tours), réseau, CCTV, ERP et cybersécurité." />
   <link rel="canonical" href="https://aitecsolution.net/portfolio.html" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="AITEC Solutions" />
@@ -71,9 +71,10 @@
         "@type": "ItemList",
         "name": "Sites web réalisés par AITEC Solutions",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "item": { "@type": "WebSite", "name": "Modati Ahlami", "url": "https://modatiahlami.com/" } },
-          { "@type": "ListItem", "position": 2, "item": { "@type": "WebSite", "name": "Mili Industry", "url": "https://www.miliindustry.com/" } },
-          { "@type": "ListItem", "position": 3, "item": { "@type": "WebSite", "name": "Business Tours", "url": "https://www.businesstours.net/" } }
+          { "@type": "ListItem", "position": 1, "item": { "@type": "WebSite", "name": "MFQ", "url": "https://www.mfqdz.com/" } },
+          { "@type": "ListItem", "position": 2, "item": { "@type": "WebSite", "name": "Modati Ahlami", "url": "https://modatiahlami.com/" } },
+          { "@type": "ListItem", "position": 3, "item": { "@type": "WebSite", "name": "Mili Industry", "url": "https://www.miliindustry.com/" } },
+          { "@type": "ListItem", "position": 4, "item": { "@type": "WebSite", "name": "Business Tours", "url": "https://www.businesstours.net/" } }
         ]
       }
     ]
@@ -127,9 +128,9 @@
   }
 
   .site-grid {
-    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;
+    max-width: 1040px; margin: 0 auto;
   }
-  @media (max-width: 900px) { .site-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 580px) { .site-grid { grid-template-columns: 1fr; } }
 
   .site-card {
@@ -243,9 +244,21 @@
 
       <div class="ref-live">
         <h2 class="ref-live__title" data-reveal>Sites web que nous avons mis en ligne</h2>
-        <p class="ref-live__lead" data-reveal>Trois projets récents, publiés et consultables en ligne.</p>
+        <p class="ref-live__lead" data-reveal>Des projets récents, publiés et consultables en ligne.</p>
 
         <div class="site-grid">
+
+        <article class="site-card" data-reveal style="--sc:#C2410C">
+          <span class="site-card__shot">
+            <img src="assets/work/mfqdz.jpg" width="760" height="475" loading="lazy" decoding="async" alt="Page d&#39;accueil du site MFQ" />
+          </span>
+          <div class="site-card__body">
+            <h3><a href="https://www.mfqdz.com/" target="_blank" rel="noopener">MFQ<span class="vh"> (nouvel onglet)</span></a></h3>
+            <span class="site-card__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>mfqdz.com</span>
+            <p>Site vitrine et catalogue d&#39;un fournisseur professionnel d&#39;Alger : treize univers de produits, de la quincaillerie à la cuisine professionnelle. Catalogue par rayon, catalogue PDF téléchargeable, demande de devis et version arabe.</p>
+            <div class="site-card__tags"><span>Site vitrine</span><span>Catalogue en ligne</span><span>Français et arabe</span></div>
+          </div>
+        </article>
 
         <article class="site-card" data-reveal style="--sc:#7B2D8B">
           <span class="site-card__shot">
